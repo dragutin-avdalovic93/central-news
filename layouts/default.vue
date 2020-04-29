@@ -2,13 +2,15 @@
   <div class="layout">
     <MenuTop/>
     <nuxt />
+    <Footer/>
   </div>
 </template>
 <script>
   import MenuTop from '../components/MenuTop'
+  import Footer from '../components/Footer'
   export default {
     layout: 'default',
-    components: { MenuTop}
+    components: { MenuTop, Footer}
   }
 </script>
 <style>

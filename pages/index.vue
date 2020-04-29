@@ -20,7 +20,7 @@
             </div>
             <div class="post-footer">
               <div class="category">
-                {{blog.tags[0]}},{{blog.tags[1]}}
+                {{blog.tagname}}
               </div>
               <div class="read-more" @click="visitPost(blog.id)">
                 <a href="" target="">
@@ -40,15 +40,36 @@ export default {
   name: 'Blog',
   data () {
     return {
-      posts: []
+      posts: [],
+      tags: []
     }
   },
   methods: {
     async fetchPosts() {
       const posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
+      const tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?_embed');
 
       this.posts = posts;
+      this.tags = tags;
+
+      this.posts.forEach((entry) => {
+        console.log(entry);
+        let tagname = '';
+        if(entry.tags[0] !== undefined) {
+          this.tags.forEach((tag) => {
+            if(tag.id === entry.tags[0]) {
+              tagname = tag.name;
+              entry.tagname = tagname;
+              console.log('tag', tagname);
+            }
+          });
+        } else {
+          tagname = '';
+          entry.tagname = tagname;
+        }
+      });
       console.log('posts', posts);
+      console.log('tags', tags);
     },
     visitPost(id) {
       this.$router.push('/post/' + id);

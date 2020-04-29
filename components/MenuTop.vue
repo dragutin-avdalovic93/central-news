@@ -26,7 +26,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .header-cont {
-    background: #1b8ae8;
+    background: darkslategrey;
   }
   .header {
     display: flex;
