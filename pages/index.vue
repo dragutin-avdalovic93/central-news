@@ -72,7 +72,7 @@ export default {
       grid-template-columns: repeat(2, 1fr) !important;
       grid-gap: 20px;
       grid-auto-rows: minmax(100px, auto);
-      padding: 10px 0;
+      padding: 10px;
     }
   }
   @media (max-width: 768px) {
@@ -82,7 +82,7 @@ export default {
       grid-template-columns: repeat(1, 1fr) !important;
       grid-gap: 20px;
       grid-auto-rows: minmax(100px, auto);
-      padding: 10px 0;
+      padding: 20px;
     }
   }
   .blog-post-small {
@@ -90,37 +90,47 @@ export default {
     margin: auto;
     display: flex;
     flex-direction: column;
-    min-height: 200px;
   }
   .blog-post-small .thumb-img {
     width: 100%;
     height: auto;
     max-width: 377px;
-    max-height: 228px;
+    min-height: 200px;
+    max-height: 200px;
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: unset;
+      max-width: 390px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
       max-width: 390px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 1024px) {
     .blog-post-small .thumb-img {
       max-width: 450px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 568px) {
     .blog-post-small .thumb-img {
       max-width: 340px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 340px) {
     .blog-post-small .thumb-img {
       max-width: 290px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   .blog-post-small .blog-post-small-inner {
@@ -132,7 +142,7 @@ export default {
   }
   @media (max-width: 2400px) {
     .blog-post-small .blog-post-small-inner {
-      max-width: unset;
+      max-width: 390px;
     }
   }
   @media (max-width: 2400px) {
@@ -155,11 +165,14 @@ export default {
       max-width: 290px;
     }
   }
-  .blog-post-small .blog-post-small-inner:hover .content .title {
+  .blog-post-small .blog-post-small-inner .content .title:hover {
     color: #0ddac2;
   }
-  .blog-post-small .blog-post-small-inner:hover .post-footer .read-more a {
+  .blog-post-small .blog-post-small-inner  .post-footer .read-more a:hover {
     color: #0ddac2;
+  }
+  .blog-post-small .blog-post-small-inner  .post-footer .category:hover {
+    color: #7f828b;
   }
   .blog-post-small .blog-post-small-inner .content {
     transition: color 300ms ease-in-out;
@@ -211,24 +224,21 @@ export default {
     transition: all 200ms ease-in-out;
     text-overflow: ellipsis;
   }
-  .blog-post-small .blog-post-small-inner .content .title:hover {
-    color: #12cead;
-  }
   .blog-post-small .blog-post-small-inner .content .description {
     transition: all 200ms ease-in-out;
     padding-bottom: 7px;
     margin-bottom: 0;
     overflow: hidden;
     text-overflow: clip;
-    max-height: 70px;
-    min-height: 70px;
+    max-height: 80px;
+    min-height: 80px;
     font-size: 14px;
     text-align: justify;
   }
   @media (max-width: 1024px) {
     .blog-post-small .blog-post-small-inner .content .description {
-      max-height: 70px;
-      min-height: 70px;
+      max-height: 80px;
+      min-height: 80px;
     }
   }
   .blog-post-small .blog-post-small-inner .content .description p {
@@ -272,12 +282,10 @@ export default {
     letter-spacing: 0;
     opacity: 1;
   }
-  .blog-post-small .blog-post-small-inner .post-footer .read-more a:hover {
-    color: #12cead;
-  }
-  .blog-post-small .blog-post-small-inner .post-footer .read-more a svg {
-    height: 20px;
-    width: 20px;
+  .blog-post-small .blog-post-small-inner .post-footer .read-more a i {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-left: 5px;
   }
   .blog-post-small .blog-post-small-inner .post-footer .read-more a .read {
     font-size: 14px;

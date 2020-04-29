@@ -38,10 +38,7 @@
     margin: 10px 0;
     color: white;
     font-size: 28px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: 700;
   }
   @media (min-width: 0px) and (max-width: 728px) {
     h1 {
