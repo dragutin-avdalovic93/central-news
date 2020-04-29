@@ -1,28 +1,28 @@
 <template>
   <div class="bl">
       <div class="grid-container">
-        <div class="blog-post-small" v-for="blog in posts" v-bind:key="blog.id">
-          <img class="thumb-img" v-bind:src="blog._embedded['wp:featuredmedia']['0'].source_url" @click="visitPost(blog.id)">
+        <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
+          <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)">
           <div class="blog-post-small-inner">
             <div class="content">
-              <h2 class="title" @click="visitPost(blog.id)">
-                {{blog.title.rendered}}
+              <h2 class="title" @click="visitPost(post.id)">
+                {{post.title.rendered}}
               </h2>
               <div class="metadata">
                 <div class="created_at">
                   <img src="../static/calendar.svg"/>
-                  {{blog.date.split('T')[0]}}
+                  {{post.date.split('T')[0]}}
                 </div>
               </div>
-              <div class='excerpt-container' @click="visitPost(blog.id)">
-                <p class="description" v-html="blog.excerpt.rendered"></p>
+              <div class='excerpt-container' @click="visitPost(post.id)">
+                <p class="description" v-html="post.excerpt.rendered"></p>
               </div>
             </div>
             <div class="post-footer">
               <div class="category">
-                {{blog.tagname}}
+                {{post.tagname}}
               </div>
-              <div class="read-more" @click="visitPost(blog.id)">
+              <div class="read-more" @click="visitPost(post.id)">
                 <a href="" target="">
                   <span class="read">Pročitaj Više </span><i class="fa fa-angle-right"/>
                 </a>
@@ -35,23 +35,18 @@
 </template>
 
 <script>
-  import data from 'static/data.json'
 export default {
   name: 'Blog',
-  data () {
+  data() {
     return {
       posts: [],
       tags: []
     }
   },
   methods: {
-    async fetchPosts() {
-      const posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
-      const tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?_embed');
-
-      this.posts = posts;
-      this.tags = tags;
-
+      async fetchPosts() {
+      this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
+      this.tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?_embed');
       this.posts.forEach((entry) => {
         console.log(entry);
         let tagname = '';
@@ -68,8 +63,6 @@ export default {
           entry.tagname = tagname;
         }
       });
-      console.log('posts', posts);
-      console.log('tags', tags);
     },
     visitPost(id) {
       this.$router.push('/post/' + id);

@@ -1,6 +1,6 @@
 <template>
   <div class="header-cont">
-    <div class="header">
+    <div class="header" @click="goHome">
       <h1>CENTRAL news</h1>
     </div>
   </div>
@@ -33,6 +33,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
   h1 {
     margin: 10px 0;
