@@ -2,20 +2,20 @@
   <div class="bl">
       <div class="grid-container">
         <div class="blog-post-small" v-for="blog in posts" v-bind:key="blog.id">
-          <img class="thumb-img" v-bind:src="blog.image" @click="visitPost(blog.id)">
+          <img class="thumb-img" v-bind:src="blog._embedded['wp:featuredmedia']['0'].source_url" @click="visitPost(blog.id)">
           <div class="blog-post-small-inner">
             <div class="content">
               <h2 class="title" @click="visitPost(blog.id)">
-                {{blog.title}}
+                {{blog.title.rendered}}
               </h2>
               <div class="metadata">
                 <div class="created_at">
                   <img src="../static/calendar.svg"/>
-                  {{blog.created}}
+                  {{blog.date.split('T')[0]}}
                 </div>
               </div>
               <div class='excerpt-container' @click="visitPost(blog.id)">
-                <p class="description">{{blog.description}}</p>
+                <p class="description" v-html="blog.excerpt.rendered"></p>
               </div>
             </div>
             <div class="post-footer">
@@ -44,6 +44,14 @@ export default {
     }
   },
   methods: {
+    async fetchPosts() {
+      const posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
+      const media = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/media');
+
+      this.posts = posts;
+      console.log('posts', posts);
+      console.log(media);
+    },
     visitPost(id) {
       this.$router.push('/post/' + id);
     },
@@ -52,12 +60,15 @@ export default {
     }
   },
   created(){
-    Object.assign(this.posts, data.posts);
+    this.fetchPosts();
   }
 }
 </script>
 
 <style>
+  .bl {
+    min-height: calc(100vh - 53px);
+  }
   .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
