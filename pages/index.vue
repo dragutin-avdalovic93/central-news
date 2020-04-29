@@ -46,11 +46,9 @@ export default {
   methods: {
     async fetchPosts() {
       const posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
-      const media = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/media');
 
       this.posts = posts;
       console.log('posts', posts);
-      console.log(media);
     },
     visitPost(id) {
       this.$router.push('/post/' + id);
