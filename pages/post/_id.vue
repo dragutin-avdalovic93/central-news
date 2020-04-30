@@ -1,39 +1,47 @@
 <template>
-  <div  v-if="loaded" class="article">
-        <div class="article">
-          <div class="blog-detail-post">
-            <img class="thumb-img" v-bind:src="post.featured_image_url">
-            <div class="blog-detail-post-inner">
-              <div class="content">
-                <h2 class="title">
-                  {{post.title.rendered}}
-                </h2>
-                <div class="metadata">
-                  <div class="created_at">
-                    <img src="../../static/calendar.svg"/>
-                    {{post.date.split('T')[0]}}
-                  </div>
-                </div>
-                <div class='excerpt-container'>
-                  <p class="description" v-html="post.content.rendered"></p>
-                </div>
+  <div class="parent">
+    <loading :active.sync="loading"
+             :can-cancel="false"
+             :is-full-page="true"
+             :color="color"
+             :width="width"
+             :height="height"
+             :loader="loader"
+    ></loading>
+    <div class="article"   v-if="!loading" >
+      <div class="blog-detail-post">
+        <img class="thumb-img" v-bind:src="post.featured_image_url">
+        <div class="blog-detail-post-inner">
+          <div class="content">
+            <h2 class="title">
+              {{post.title.rendered}}
+            </h2>
+            <div class="metadata">
+              <div class="created_at">
+                <img src="../../static/calendar.svg"/>
+                {{post.date.split('T')[0]}}
               </div>
-              <div class="post-footer">
-                <div class="category">
-
-                </div>
-                <div class="read-more" @click="goBack">
-                  <a @click="goBack">
-                    <span class="read">Nazad</span><i class="fa fa-angle-left"/>
-                  </a>
-                </div>
-              </div>
+            </div>
+            <div class='excerpt-container'>
+              <p class="description" v-html="post.content.rendered"></p>
+            </div>
+          </div>
+          <div class="post-footer">
+            <div class="category">
+            </div>
+            <div class="read-more" @click="goBack">
+              <a @click="goBack">
+                <span class="read">Nazad</span><i class="fa fa-angle-left"/>
+              </a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+  import Loading from 'vue-loading-overlay';
   export default {
     name: 'PostDetail',
     layout: 'blog',
@@ -42,8 +50,15 @@
         posts: [],
         post: {},
         id: "",
-        loaded: false
+        loading: true,
+        color: '#ff0000',
+        height: 128,
+        width: 128,
+        loader: 'bars'
       }
+    },
+    components: {
+      Loading
     },
     methods: {
       goBack() {
@@ -58,7 +73,7 @@
           if(String(post.id) === String(this.id)) {
             console.log('post1', this.post);
             this.post = post;
-            this.loaded = true;
+            this.loading = false;
           }
         });
       }
@@ -70,9 +85,14 @@
 </script>
 
 <style scoped>
-  .article {
+  .parent {
     min-height: calc(100vh - 53px);
     background: #0099ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .article {
     margin: auto auto 20px auto;
     width: 98%;
   }
@@ -90,35 +110,35 @@
   }
   @media (max-width: 2400px) {
     .blog-detail-post .thumb-img {
-      max-width: 810px;
+      max-width: 800px;
       margin: auto;
       max-height: 400px;
     }
   }
   @media (max-width: 2400px) {
     .blog-detail-post .thumb-img {
-      max-width: 810px;
+      max-width: 800px;
       margin: auto;
       max-height: 400px;
     }
   }
   @media (max-width: 1024px) {
     .blog-detail-post .thumb-img {
-      max-width: 660px;
+      max-width: 650px;
       margin: auto;
       max-height: 350px;
     }
   }
   @media (max-width: 568px) {
     .blog-detail-post .thumb-img {
-      max-width: 460px;
+      max-width: 450px;
       margin: auto;
       max-height: 350px;
     }
   }
   @media (max-width: 340px) {
     .blog-detail-post .thumb-img {
-      max-width: 300px;
+      max-width: 290px;
       margin: auto;
       max-height: 200px;
     }
@@ -290,5 +310,18 @@
     margin-left: 0.714rem;
     width: 1.5rem;
     height: 1.5rem;
+  }
+  .page-enter-active {
+    animation: zoomIn 1s;
+  }
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.4, 0.4, 0.4);
+    }
+
+    50% {
+      opacity: 1;
+    }
   }
 </style>

@@ -324,4 +324,10 @@ export default {
     width: 1.5rem;
     height: 1.5rem;
   }
+  .page-enter-active, .page-leave-active {
+    transition: opacity 0.5s;
+  }
+  .page-enter, .page-leave-active {
+    opacity: 0;
+  }
 </style>
