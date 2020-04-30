@@ -14,14 +14,11 @@
             <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
             <div class="content">
               <div class="category">
-                <span class="cat" v-if="post.tagname">{{post.tagname}}</span>
+                <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
               </div>
               <h2 class="title" @click="visitPost(post.id)">
                 {{post.title.rendered}}
               </h2>
-              <!--              <div class='excerpt-container' @click="visitPost(post.id)">-->
-              <!--                <p class="description" v-html="post.excerpt.rendered"></p>-->
-              <!--              </div>-->
             </div>
           </div>
           <div class="blog-post-small-inner">
@@ -64,25 +61,47 @@ export default {
     Loading
   },
   methods: {
-      async fetchPosts() {
+    async fetchData() {
       this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
       this.tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?_embed');
-      this.posts.forEach((entry) => {
-        console.log(entry);
-        let tagname = '';
-        if(entry.tags[0] !== undefined) {
-          this.tags.forEach((tag) => {
-            if(tag.id === entry.tags[0]) {
-              tagname = tag.name;
-              entry.tagname = tagname;
-              console.log('tag', tagname);
-            }
-          });
-        } else {
-          tagname = '';
-          entry.tagname = false;
-        }
+      this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?_embed');
+      this.posts.forEach((post) => {
+        let tagnames = [];
+        let catnames = [];
+        post.tags.forEach((tagNum) => {
+          post.hasCat = false;
+          post.hasTag = false;
+          if(tagNum !== undefined) {
+            this.tags.forEach((tag) => {
+              if(tag.id === tagNum) {
+                tagnames.push(tag.name);
+                post.hasTag = true;
+              }
+            });
+            post.tagnames = tagnames;
+          } else {
+            tagnames = [];
+            post.tagnames = [];
+            post.hasTag = false;
+          }
+        });
+        post.categories.forEach((catNum) => {
+          if(catNum !== undefined) {
+            this.categories.forEach((cat) => {
+              if(cat.id === catNum) {
+                catnames.push(cat.name);
+                post.hasCat = true;
+              }
+            });
+            post.catnames = catnames;
+          } else {
+            catnames = [];
+            post.catnames = [];
+            post.hasCat = false;
+          }
+        });
       });
+      console.log('POSTOVI', this.posts);
       this.loading = false;
     },
     visitPost(id) {
@@ -93,7 +112,7 @@ export default {
     }
   },
   created(){
-    this.fetchPosts();
+    this.fetchData();
   }
 }
 </script>
@@ -223,7 +242,7 @@ export default {
   .blog-post-small .blog-post-small-inner .read-more a:hover {
     color: #12cead !important;
   }
-  .blog-post-small .main-container .content .category:hover {
+  .blog-post-small .main-container .content .category .cat:hover {
     color: #000 !important;
   }
   .blog-post-small .content {
@@ -333,9 +352,11 @@ export default {
     background: #00c834;
     padding: 5px;
     border-radius: 5px;
+    text-transform: uppercase;
     font-size: 14px;
     cursor: pointer;
     font-weight: 500;
+    margin-right: 5px;
   }
   .blog-post-small .blog-post-small-inner .post-footer .read-more a {
     display: flex;

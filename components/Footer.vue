@@ -40,7 +40,6 @@
 <style>
   @media (max-width: 576px) {
     .nav-menu {
-      min-height: 80px !important;
       padding-left: 0 !important;
     }
   }

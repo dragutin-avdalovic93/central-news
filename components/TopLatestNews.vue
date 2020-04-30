@@ -6,7 +6,7 @@
           <div class="top-stories-label">
             <div class="top-stories-label-wrap">
               <span class="flash-icon"></span>
-              <span class="label-txt">POSLEDNJE OBJAVE</span>
+              <span class="label-txt"><a href="">VIJEST DANA</a></span>
             </div>
           </div>
         </div>
@@ -37,22 +37,65 @@
     },
     data: function () {
       return {
-        posts: []
+        posts: [],
+        tags: [],
+        categories: [],
+        newsOfDay: {}
       }
     },
     methods: {
-      async fetchPosts() {
+      async fetchData() {
         this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
+        this.tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?_embed');
+        this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?_embed');
+        this.posts.forEach((post) => {
+          let tagnames = [];
+          let catnames = [];
+          post.tags.forEach((tagNum) => {
+            post.hasCat = false;
+            post.hasTag = false;
+            if(tagNum !== undefined) {
+              this.tags.forEach((tag) => {
+                if(tag.id === tagNum) {
+                  tagnames.push(tag.name);
+                  post.hasTag = true;
+                }
+              });
+              post.tagnames = tagnames;
+            } else {
+              tagnames = [];
+              post.tagnames = [];
+              post.hasTag = false;
+            }
+          });
+          post.categories.forEach((catNum) => {
+            if(catNum !== undefined) {
+              this.categories.forEach((cat) => {
+                if(cat.id === catNum) {
+                  catnames.push(cat.name);
+                  post.hasCat = true;
+                }
+              });
+              post.catnames = catnames;
+            } else {
+              catnames = [];
+              post.catnames = [];
+              post.hasCat = false;
+            }
+          });
+        });
       },
       goHome() {
         this.$router.push('/');
       },
       goTo(id) {
         this.$router.push('/post/' + id);
+      },
+      extractNewsOfDay() {
       }
     },
     created(){
-      this.fetchPosts();
+      this.fetchData();
     }
   }
 </script>
@@ -173,6 +216,13 @@
     font-size: 18px;
     cursor: pointer;
   }
+  .top-stories-bar .top-stories-label .label-txt a{
+    color: #333333 !important;
+  }
+  .top-stories-bar .top-stories-label .label-txt a:hover{
+    color: #c80000 !important;
+    text-decoration: none;
+  }
   .top-stories-bar .top-stories-label .flash-icon {
     position: absolute;
     height: 10px;
@@ -180,7 +230,7 @@
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    background-color: #00c834;
+    background-color: #c80000;
     top: 50%;
     margin-top: -5px;
     left: 10px;
@@ -194,7 +244,7 @@
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    border: 1px solid #00c834;
+    border: 1px solid #c80000;
     top: 50%;
     margin-top: -5px;
     left: 50%;
@@ -215,7 +265,7 @@
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
-    border: 1px solid #00c834;
+    border: 1px solid #c80000;
     top: 50%;
     margin-top: -5px;
     left: 50%;
