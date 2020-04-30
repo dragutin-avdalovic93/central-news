@@ -68,38 +68,43 @@ export default {
       this.posts.forEach((post) => {
         let tagnames = [];
         let catnames = [];
-        post.tags.forEach((tagNum) => {
-          post.hasCat = false;
-          post.hasTag = false;
-          if(tagNum !== undefined) {
-            this.tags.forEach((tag) => {
-              if(tag.id === tagNum) {
-                tagnames.push(tag.name);
+        if(post.tags.length !== 0){
+          post.tags.forEach((tagNum) => {
+            if(tagNum !== undefined) {
+              this.tags.forEach((tag) => {
                 post.hasTag = true;
-              }
-            });
-            post.tagnames = tagnames;
-          } else {
-            tagnames = [];
-            post.tagnames = [];
-            post.hasTag = false;
-          }
-        });
-        post.categories.forEach((catNum) => {
-          if(catNum !== undefined) {
-            this.categories.forEach((cat) => {
-              if(cat.id === catNum) {
-                catnames.push(cat.name);
-                post.hasCat = true;
-              }
-            });
-            post.catnames = catnames;
-          } else {
-            catnames = [];
-            post.catnames = [];
-            post.hasCat = false;
-          }
-        });
+                if(tag.id === tagNum) {
+                  tagnames.push(tag.name);
+                }
+              });
+              post.tagnames = tagnames;
+            } else {
+              tagnames = [];
+              post.tagnames = [];
+            }
+          });
+        }else {
+          post.hasTag = false;
+        }
+        if(post.categories.length !== 0){
+          post.categories.forEach((catNum) => {
+            if(catNum !== undefined) {
+              post.hasCat = true;
+              this.categories.forEach((cat) => {
+                if(cat.id === catNum) {
+                  catnames.push(cat.name);
+                }
+              });
+              post.catnames = catnames;
+            } else {
+              catnames = [];
+              post.catnames = [];
+            }
+          });
+        }
+        else {
+          post.hasCat = false;
+        }
       });
       console.log('POSTOVI', this.posts);
       this.loading = false;
@@ -172,33 +177,33 @@ export default {
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 390px;
+      max-width: 300px;
       min-height: 200px;
       max-height: 200px;
     }
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 390px;
+      max-width: 300px;
       min-height: 200px;
       max-height: 200px;
     }
   }
   @media (max-width: 1024px) {
     .blog-post-small .thumb-img {
-      max-width: 450px;
+      max-width: 300px;
       min-height: 200px;
       max-height: 200px;
     }
   }
   @media (max-width: 568px) {
     .blog-post-small .thumb-img {
-      max-width: 340px;
+      max-width: 300px;
       min-height: 200px;
       max-height: 200px;
     }
   }
-  @media (max-width: 340px) {
+  @media (max-width: 300px) {
     .blog-post-small .thumb-img {
       max-width: 290px;
       min-height: 200px;
@@ -213,12 +218,12 @@ export default {
   }
   @media (max-width: 2400px) {
     .blog-post-small .blog-post-small-inner {
-      max-width: 390px;
+      max-width: 300px;
     }
   }
   @media (max-width: 2400px) {
     .blog-post-small .blog-post-small-inner {
-      max-width: 390px;
+      max-width: 300px;
     }
   }
   @media (max-width: 1024px) {
@@ -228,12 +233,12 @@ export default {
   }
   @media (max-width: 568px) {
     .blog-post-small .blog-post-small-inner {
-      max-width: 340px;
+      max-width: 300px;
     }
   }
   @media (max-width: 340px) {
     .blog-post-small .blog-post-small-inner {
-      max-width: 290px;
+      max-width: 300px;
     }
   }
   .blog-post-small .content .title:hover {

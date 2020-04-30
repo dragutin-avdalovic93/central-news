@@ -6,7 +6,7 @@
           <div class="top-stories-label">
             <div class="top-stories-label-wrap">
               <span class="flash-icon"></span>
-              <span class="label-txt"><a href="">VIJEST DANA</a></span>
+              <span class="label-txt"><a @click="goTo(newsOfDay.id)">VIJEST DANA</a></span>
             </div>
           </div>
         </div>
@@ -15,8 +15,8 @@
             <div class="col">
               <div class="marquee">
                 <div class="marquee__content">
-                  <ul class="list-inline" v-for="post in posts">
-                    <li><a @click="goTo(post.id)">{{post.title.rendered}}</a></li>
+                  <ul class="list-inline" v-for="post in latestPosts">
+                    <li class="marquee-li"><span v-if="post.hasCat" class="marquee-box">{{post.catnames[0]}} {{post.date.split('T')[1]}}</span><a @click="goTo(post.id)">{{post.title.rendered}}</a></li>
                   </ul>
                 </div>
               </div>
@@ -40,7 +40,8 @@
         posts: [],
         tags: [],
         categories: [],
-        newsOfDay: {}
+        newsOfDay: {},
+        latestPosts: []
       }
     },
     methods: {
@@ -51,39 +52,45 @@
         this.posts.forEach((post) => {
           let tagnames = [];
           let catnames = [];
-          post.tags.forEach((tagNum) => {
-            post.hasCat = false;
-            post.hasTag = false;
-            if(tagNum !== undefined) {
-              this.tags.forEach((tag) => {
-                if(tag.id === tagNum) {
-                  tagnames.push(tag.name);
+          if(post.tags.length !== 0){
+            post.tags.forEach((tagNum) => {
+              if(tagNum !== undefined) {
+                this.tags.forEach((tag) => {
                   post.hasTag = true;
-                }
-              });
-              post.tagnames = tagnames;
-            } else {
-              tagnames = [];
-              post.tagnames = [];
-              post.hasTag = false;
-            }
-          });
-          post.categories.forEach((catNum) => {
-            if(catNum !== undefined) {
-              this.categories.forEach((cat) => {
-                if(cat.id === catNum) {
-                  catnames.push(cat.name);
-                  post.hasCat = true;
-                }
-              });
-              post.catnames = catnames;
-            } else {
-              catnames = [];
-              post.catnames = [];
-              post.hasCat = false;
-            }
-          });
+                  if(tag.id === tagNum) {
+                    tagnames.push(tag.name);
+                  }
+                });
+                post.tagnames = tagnames;
+              } else {
+                tagnames = [];
+                post.tagnames = [];
+              }
+            });
+          }else {
+            post.hasTag = false;
+          }
+          if(post.categories.length !== 0){
+            post.categories.forEach((catNum) => {
+              if(catNum !== undefined) {
+                post.hasCat = true;
+                this.categories.forEach((cat) => {
+                  if(cat.id === catNum) {
+                    catnames.push(cat.name);
+                  }
+                });
+                post.catnames = catnames;
+              } else {
+                catnames = [];
+                post.catnames = [];
+              }
+            });
+          }
+          else {
+            post.hasCat = false;
+          }
         });
+        console.log('POSTOVI', this.posts);
       },
       goHome() {
         this.$router.push('/');
@@ -92,10 +99,24 @@
         this.$router.push('/post/' + id);
       },
       extractNewsOfDay() {
+        this.posts.forEach((post) => {
+          console.log('post', post);
+          if(post.hasTag !== false) {
+            if(post.tagnames.includes("vijestdana")) {
+              this.newsOfDay = post;
+            } else {
+              this.newsOfDay = {};
+            }
+          }
+        });
+        console.log('vest dana', this.newsOfDay);
       }
     },
     created(){
-      this.fetchData();
+      this.fetchData().then( _ => {
+        this.extractNewsOfDay();
+        this.latestPosts = this.posts.splice(0,3);
+      })
     }
   }
 </script>
@@ -130,7 +151,12 @@
     display: flex;
     line-height: 30px;
     animation: marquee 15s linear infinite forwards;
+    background-color: #8C8C86;
   }
+  @media (max-width: 768px) {
+    .marquee__content {
+    }
+    }
   .marquee__content:hover {
     animation-play-state: paused;
   }
@@ -143,6 +169,23 @@
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+  .marquee-li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .marquee-box {
+    text-transform: uppercase;
+    margin-left: 10px;
+    height: 80%;
+    display: flex;
+    background-color: #00133a;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    color: white;
   }
   @keyframes marquee {
     0% {
@@ -313,12 +356,15 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding-left: 50px;
-    color: #333333;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
     height: 50px;
   }
   .top-stories-bar .top-stories-lists .marquee a:hover {
-    color: #00c834;
+    color: #00133a;
   }
   .top-stories-bar .top-stories-lists:after {
     content: "";
