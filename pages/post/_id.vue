@@ -23,9 +23,7 @@
 
                 </div>
                 <div class="read-more" @click="goBack">
-                  <a @click="goBack">
                     <span class="read">Nazad</span><i class="fa fa-angle-left"/>
-                  </a>
                 </div>
               </div>
             </div>

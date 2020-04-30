@@ -23,9 +23,7 @@
                 {{post.tagname}}
               </div>
               <div class="read-more" @click="visitPost(post.id)">
-                <a href="" target="">
                   <span class="read">Pročitaj Više </span><i class="fa fa-angle-right"/>
-                </a>
               </div>
             </div>
           </div>
