@@ -302,7 +302,7 @@ export default {
     text-align: left;
     letter-spacing: 0;
     color: #fff;
-    background: #000;
+    background: #142850;
     opacity: 1;
     transition: all 200ms ease-in-out;
     text-overflow: ellipsis;

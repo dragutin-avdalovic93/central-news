@@ -222,7 +222,7 @@
     font-weight: 600;
     text-align: left;
     letter-spacing: 0;
-    color: #12cead;
+    color: #000;
     opacity: 1;
     transition: all 200ms ease-in-out;
     text-overflow: ellipsis;
@@ -285,7 +285,7 @@
     align-items: center;
     justify-content: center;
     transition: all 200ms ease-in-out;
-    color: #00909e;
+    color: #2b2b2b;
     text-decoration: none;
     font-size: 14px !important;
     text-align: left;
@@ -295,7 +295,7 @@
   .blog-detail-post .blog-detail-post-inner .post-footer .read-more a i {
     font-size: 20px;
     margin-left: 5px;
-    color: #00909e;
+    color: #2b2b2b;
   }
   .blog-detail-post .blog-detail-post-inner .post-footer .read-more a .read {
     font-size: 16px;
