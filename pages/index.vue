@@ -1,30 +1,40 @@
 <template>
   <div class="bl">
-      <div class="grid-container">
+    <loading :active.sync="loading"
+             :can-cancel="false"
+             :is-full-page="true"
+             :color="color"
+             :width="width"
+             :height="height"
+             :loader="loader"
+    ></loading>
+      <div class="grid-container" v-if="!loading">
         <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
-          <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)">
-          <div class="blog-post-small-inner">
+          <div class="main-container">
+            <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
             <div class="content">
+              <div class="category">
+                <span class="cat" v-if="post.tagname">{{post.tagname}}</span>
+              </div>
               <h2 class="title" @click="visitPost(post.id)">
                 {{post.title.rendered}}
               </h2>
+              <!--              <div class='excerpt-container' @click="visitPost(post.id)">-->
+              <!--                <p class="description" v-html="post.excerpt.rendered"></p>-->
+              <!--              </div>-->
+            </div>
+          </div>
+          <div class="blog-post-small-inner">
+            <div class="post-footer">
               <div class="metadata">
                 <div class="created_at">
                   <img src="../static/calendar.svg"/>
                   {{post.date.split('T')[0]}}
                 </div>
               </div>
-              <div class='excerpt-container' @click="visitPost(post.id)">
-                <p class="description" v-html="post.excerpt.rendered"></p>
-              </div>
-            </div>
-            <div class="post-footer">
-              <div class="category">
-                {{post.tagname}}
-              </div>
               <div class="read-more" @click="visitPost(post.id)">
                 <a @click="visitPost(post.id)">
-                  <span class="read">Pročitaj Više </span><i class="fa fa-angle-right"/>
+                  <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
                 </a>
               </div>
             </div>
@@ -35,14 +45,23 @@
 </template>
 
 <script>
+  import Loading from 'vue-loading-overlay';
 export default {
   name: 'Blog',
   layout: 'blog',
   data() {
     return {
       posts: [],
-      tags: []
+      tags: [],
+      loading: true,
+      color: '#00909e',
+      height: 128,
+      width: 128,
+      loader: 'bars'
     }
+  },
+  components: {
+    Loading
   },
   methods: {
       async fetchPosts() {
@@ -61,9 +80,10 @@ export default {
           });
         } else {
           tagname = '';
-          entry.tagname = tagname;
+          entry.tagname = false;
         }
       });
+      this.loading = false;
     },
     visitPost(id) {
       this.$router.push('/post/' + id);
@@ -79,10 +99,18 @@ export default {
 </script>
 
 <style>
+  .main-container {
+    position: relative;
+  }
   .bl {
     min-height: calc(100vh - 53px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .grid-container {
+    align-self: start;
+    justify-self: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -160,10 +188,9 @@ export default {
   }
   .blog-post-small .blog-post-small-inner {
     width: 100%;
-    background: #DAE1E7 0 0 no-repeat padding-box;
+    background: #dae1e7  0 0 no-repeat padding-box;
     color: #2b2b2b;
     cursor: pointer;
-    padding: 5px;
   }
   @media (max-width: 2400px) {
     .blog-post-small .blog-post-small-inner {
@@ -190,51 +217,57 @@ export default {
       max-width: 290px;
     }
   }
-  .blog-post-small .blog-post-small-inner .content .title:hover {
-    color: #0ddac2;
+  .blog-post-small .content .title:hover {
+    color: #12cead;
   }
-  .blog-post-small .blog-post-small-inner  .post-footer .read-more a:hover {
-    color: #0ddac2;
+  .blog-post-small .blog-post-small-inner .read-more a:hover {
+    color: #12cead !important;
   }
-  .blog-post-small .blog-post-small-inner  .post-footer .category:hover {
-    color: #7f828b;
+  .blog-post-small .main-container .content .category:hover {
+    color: #000 !important;
   }
-  .blog-post-small .blog-post-small-inner .content {
+  .blog-post-small .content {
     transition: color 300ms ease-in-out;
-    padding: 0 0 0 0 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
   }
-  .blog-post-small .blog-post-small-inner .content .metadata {
+  .blog-post-small .metadata {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 25px;
+    padding-bottom: 0;
+    background: #dae1e7;
   }
-  .blog-post-small .blog-post-small-inner .content .metadata .created_at {
+  .blog-post-small .metadata .created_at {
     display: flex;
     align-items: center;
     font-size: 12px;
     text-align: left;
     letter-spacing: 0;
+    font-weight: 600;
     color: #4b4361;
     opacity: 1;
     transition: all 200ms ease-in-out;
   }
-  .blog-post-small .blog-post-small-inner .content .metadata .created_at img {
+  .blog-post-small .metadata .created_at img {
     margin-right: 10px;
     width: 14px;
     height: 14px;
     margin-bottom: 2px;
   }
-  .blog-post-small .blog-post-small-inner .content .excerpt-container {
+  .blog-post-small .content .excerpt-container {
     max-height: 90px;
     min-height: 90px;
   }
   @media (max-width: 1024px) {
-    .blog-post-small .blog-post-small-inner .content .excerpt-container {
+    .blog-post-small .content .excerpt-container {
       max-height: 85px;
       min-height: 85px;
     }
   }
-  .blog-post-small .blog-post-small-inner .content .title {
+  .blog-post-small .content .title {
     max-height: 70px;
     overflow: hidden;
     min-height: 70px;
@@ -244,12 +277,13 @@ export default {
     font-weight: 600;
     text-align: left;
     letter-spacing: 0;
-    color: #423b57;
+    color: #fff;
     opacity: 1;
     transition: all 200ms ease-in-out;
     text-overflow: ellipsis;
+    cursor: pointer;
   }
-  .blog-post-small .blog-post-small-inner .content .description {
+  .blog-post-small .content .description {
     transition: all 200ms ease-in-out;
     padding-bottom: 7px;
     margin-bottom: 0;
@@ -261,12 +295,12 @@ export default {
     text-align: justify;
   }
   @media (max-width: 1024px) {
-    .blog-post-small .blog-post-small-inner .content .description {
+    .blog-post-small .content .description {
       max-height: 80px;
       min-height: 80px;
     }
   }
-  .blog-post-small .blog-post-small-inner .content .description p {
+  .blog-post-small .content .description p {
     text-align: left;
     opacity: 1;
     max-height: 78px;
@@ -274,7 +308,7 @@ export default {
     color: black !important;
   }
   @media (max-width: 1024px) {
-    .blog-post-small .blog-post-small-inner .content .description p {
+    .blog-post-small .content .description p {
       max-height: 70px;
       min-height: 70px;
     }
@@ -284,16 +318,24 @@ export default {
     transition: all 300ms ease-in-out;
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
+    padding: 0 10px;
   }
-  .blog-post-small .blog-post-small-inner .post-footer .category{
+  .blog-post-small  .main-container .content .category{
     transition: all 200ms ease-in-out;
     font-size: 14px !important;
     text-align: left;
     letter-spacing: 0;
-    color: #12cead;
+    color: #fff;
     opacity: 1;
     text-decoration: none;
+  }
+  .blog-post-small .main-container .content .category .cat {
+    background: #00c834;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
   }
   .blog-post-small .blog-post-small-inner .post-footer .read-more a {
     display: flex;
@@ -311,10 +353,11 @@ export default {
     font-size: 18px;
     opacity: 0.8;
     margin-left: 5px;
+    margin-bottom: 2px;
   }
   .blog-post-small .blog-post-small-inner .post-footer .read-more a .read {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
   }
   .blog-post-small .blog-post-small-inner .post-footer .shares {
     display: flex;
@@ -327,7 +370,7 @@ export default {
     height: 1.5rem;
   }
   .page-enter-active, .page-leave-active {
-    transition: opacity 0.5s;
+    transition: opacity 1s;
   }
   .page-enter, .page-leave-active {
     opacity: 0;
