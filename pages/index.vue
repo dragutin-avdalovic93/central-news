@@ -37,6 +37,7 @@
 <script>
 export default {
   name: 'Blog',
+  layout: 'blog',
   data() {
     return {
       posts: [],
@@ -120,6 +121,7 @@ export default {
     max-width: 377px;
     min-height: 200px;
     max-height: 200px;
+    cursor: pointer;
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {

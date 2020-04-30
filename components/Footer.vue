@@ -4,9 +4,10 @@
       <div class="footer-primary-navigation">
         <ul id="menu-primary-menu" class="nav-menu">
           <li class="list"><a @click="goHome">Početna</a></li>
-          <li class="list"><a @click="goTo('about')">O nama</a></li>
-          <li class="list"><a @click="goTo('contact')">Kontakt</a></li>
-          <li class="list"><a @click="goTo('privacy')">Politika privatnosti</a></li>
+          <li class="list"><span>|</span></li>
+          <li class="list"><a @click="goTo('')">O nama</a></li>
+          <li class="list"><span>|</span></li>
+          <li class="list"><a @click="goTo('')">Kontakt</a></li>
         </ul>
       </div>
       <div class="copyright">
@@ -40,6 +41,7 @@
   @media (max-width: 576px) {
     .nav-menu {
       min-height: 80px !important;
+      padding-left: 0 !important;
     }
   }
   .nav-menu {
@@ -49,7 +51,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin: 0 !important;
+  }
+  .nav-menu span {
+    color: white;
   }
   .list {
     list-style-type: none;
@@ -81,5 +86,10 @@
   .copyright {
     color: #17a2b8;
     font-size:14px;
+    text-align: center;
+    cursor: pointer;
+  }
+  ul {
+    padding-left: 0 !important;
   }
 </style>

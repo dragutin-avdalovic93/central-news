@@ -44,14 +44,14 @@
   import Loading from 'vue-loading-overlay';
   export default {
     name: 'PostDetail',
-    layout: 'blog',
+    layout: 'default',
     data() {
       return {
         posts: [],
         post: {},
         id: "",
         loading: true,
-        color: '#ff0000',
+        color: 'darkslategrey',
         height: 128,
         width: 128,
         loader: 'bars'
@@ -285,7 +285,7 @@
     align-items: center;
     justify-content: center;
     transition: all 200ms ease-in-out;
-    color: #ec251a;
+    color: #00c834;
     text-decoration: none;
     font-size: 14px !important;
     text-align: left;
@@ -295,7 +295,7 @@
   .blog-detail-post .blog-detail-post-inner .post-footer .read-more a i {
     font-size: 20px;
     margin-left: 5px;
-    color: #ec251a;
+    color: #00c834;
   }
   .blog-detail-post .blog-detail-post-inner .post-footer .read-more a .read {
     font-size: 16px;
