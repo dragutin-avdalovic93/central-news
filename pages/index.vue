@@ -298,14 +298,16 @@ export default {
     margin-top: 15px;
     line-height: 1.3;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 800;
     text-align: left;
     letter-spacing: 0;
     color: #fff;
+    background: #000;
     opacity: 1;
     transition: all 200ms ease-in-out;
     text-overflow: ellipsis;
     cursor: pointer;
+    text-align: center;
   }
   .blog-post-small .content .description {
     transition: all 200ms ease-in-out;
