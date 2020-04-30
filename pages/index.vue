@@ -160,7 +160,7 @@ export default {
   }
   .blog-post-small .blog-post-small-inner {
     width: 100%;
-    background: #fff 0 0 no-repeat padding-box;
+    background: #DAE1E7 0 0 no-repeat padding-box;
     color: #2b2b2b;
     cursor: pointer;
     padding: 5px;

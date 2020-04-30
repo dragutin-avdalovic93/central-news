@@ -51,7 +51,7 @@
         post: {},
         id: "",
         loading: true,
-        color: 'darkslategrey',
+        color: '#00909e',
         height: 128,
         width: 128,
         loader: 'bars'
@@ -87,7 +87,7 @@
 <style scoped>
   .parent {
     min-height: calc(100vh - 53px);
-    background: #0099ff;
+    background: #27496d;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -311,17 +311,10 @@
     width: 1.5rem;
     height: 1.5rem;
   }
-  .page-enter-active {
-    animation: zoomIn 1s;
+  .page-enter-active, .page-leave-active {
+    transition: opacity 0.5s;
   }
-  @keyframes zoomIn {
-    from {
-      opacity: 0;
-      transform: scale3d(0.4, 0.4, 0.4);
-    }
-
-    50% {
-      opacity: 1;
-    }
+  .page-enter, .page-leave-active {
+    opacity: 0;
   }
 </style>

@@ -128,7 +128,7 @@
     left: 0;
     bottom: 0;
     width: 50%;
-    background-color: #dddddd;
+    background-color: #dae1e7;
   }
   .top-stories-bar {
     height: 50px;
@@ -139,7 +139,7 @@
     padding-left: 15px;
     margin-left: -15px;
     margin-right: -15px;
-    background-color: #dddddd;
+    background-color: #dae1e7;
     position: relative;
     height: 100%;
     display: table;
@@ -151,7 +151,7 @@
     bottom: 0;
     right: -19%;
     width: 39%;
-    background-color: #dddddd;
+    background-color: #dae1e7;
     transform: skew(20deg);
     -webkit-transform: skew(20deg);
     -moz-transform: skew(20deg);

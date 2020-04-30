@@ -27,7 +27,7 @@ html {
   box-sizing: border-box;
 }
 .layout {
-  background: #0099ff;
+  background: #27496d;
 }
 *,
 *:before,

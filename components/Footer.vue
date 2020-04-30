@@ -54,14 +54,14 @@
     margin: 0 !important;
   }
   .nav-menu span {
-    color: white;
+    color: #DAE1E7
   }
   .list {
     list-style-type: none;
     padding: 5px;
   }
   .footer-container {
-    background: darkslategrey;
+    background: #142850;
     width: 100%;
     padding: 5px 10px;
   }
@@ -72,7 +72,7 @@
   }
   .list a {
     font-size: 14px;
-    color: white !important;
+    color: #DAE1E7 !important;
     cursor: pointer !important;
     padding: 5px 5px 0 5px !important;
   }
@@ -84,7 +84,7 @@
     margin-top: 10px;
   }
   .copyright {
-    color: #17a2b8;
+    color: #00909e;
     font-size:14px;
     text-align: center;
     cursor: pointer;

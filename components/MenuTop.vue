@@ -26,7 +26,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .header-cont {
-    background: darkslategrey;
+    background: #142850;
   }
   .header {
     display: flex;
@@ -37,9 +37,9 @@
   }
   h1 {
     margin: 10px 0;
-    color: white;
     font-size: 28px;
     font-weight: 700;
+    color: #dae1e7;
   }
   @media (min-width: 0px) and (max-width: 728px) {
     h1 {
