@@ -2,6 +2,7 @@
   <div class="layout">
     <MenuTop/>
     <TopLatestNews/>
+    <MainMenu/>
     <nuxt />
     <Footer/>
   </div>
@@ -10,9 +11,10 @@
   import MenuTop from '../components/MenuTop'
   import Footer from '../components/Footer'
   import TopLatestNews from '../components/TopLatestNews'
+  import MainMenu from '../components/MainMenu'
   export default {
     layout: 'default',
-    components: { MenuTop, Footer, TopLatestNews}
+    components: { MenuTop, Footer, TopLatestNews, MainMenu}
   }
 </script>
 <style>
