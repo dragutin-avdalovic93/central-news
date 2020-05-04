@@ -4,43 +4,13 @@
       <!-- desktop navigation -->
       <ul>
         <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class="header-selected-bg show-loader" href="https://www.princip.news/naslovna" data-target="#">Naslovna</a>
+          <a itemprop="url" class="header-selected-bg show-loader" href="" data-target="#">Početna</a>
         </li>
-        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music">
-          <a itemprop="url" class="dropdown-toggle " href="#" data-target="#" data-toggle="dropdown">Vijesti <em class="caret"></em></a>
-          <ul class="dropdown-sub-menu width_200px">
-            <li><a href="https://www.princip.news/vijesti/istocno-sarajevo" class="show-loader">Istočno Sarajevo</a></li>
-            <li><a href="https://www.princip.news/vijesti/republika-srpska" class="show-loader">Republika Srpska</a></li>
-            <li><a href="https://www.princip.news/vijesti/bih" class="show-loader">BIH</a></li>
-            <li><a href="https://www.princip.news/vijesti/region" class="show-loader">Region</a></li>
-            <li><a href="https://www.princip.news/vijesti/svijet" class="show-loader">Svijet</a></li>
-          </ul>
-        </li>
-
-        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music">
-          <a itemprop="url" class="dropdown-toggle " href="#" data-target="#" data-toggle="dropdown">Magazin <em class="caret"></em></a>
-          <ul class="dropdown-sub-menu width_200px">
-            <li><a href="https://www.princip.news/magazin/tema" class="show-loader">Tema</a></li><li><a href="https://www.princip.news/magazin/kultura" class="show-loader">Kultura</a></li><li><a href="https://www.princip.news/magazin/sport" class="show-loader">Sport</a></li><li><a href="https://www.princip.news/magazin/na-danasnji-dan" class="show-loader">Na današnji dan</a></li><li><a href="https://www.princip.news/magazin/auto-svijet" class="show-loader">Auto svijet</a></li><li><a href="https://www.princip.news/magazin/zanimljivosti" class="show-loader">Zanimljivosti</a></li><li><a href="https://www.princip.news/magazin/trejleri" class="show-loader">Trejleri</a></li>
-          </ul>
-        </li>
-
-        <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class=" show-loader" href="https://www.princip.news/intervju" data-target="#">Intervju</a>
-        </li>
-        <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class=" show-loader" href="https://www.princip.news/kolumne" data-target="#">Kolumne</a>
-        </li>
-        <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class=" show-loader" href="https://www.princip.news/bilbord" data-target="#">Bilbord</a>
-        </li>
-        <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class=" show-loader" href="https://www.princip.news/oglasi" data-target="#">Oglasi</a>
-        </li>
-        <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class=" show-loader" href="https://www.princip.news/web-kamere" data-target="#">Web kamere</a>
-        </li>
-        <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class=" show-loader" href="https://www.princip.news/kontakt" data-target="#">Kontakt</a>
+        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryParents">
+          <a itemprop="url" class="dropdown-toggle " href="#" data-target="#" data-toggle="dropdown">{{item.name}} <em class="caret"></em></a>
+          <ul class="dropdown-sub-menu width_200px" v-if="item.hasChildren">
+            <li v-for="(child,index) in item.children"><a href="" class="show-loader">{{child.name}}</a></li>
+         </ul>
         </li>
       </ul>
       <!-- end desktop navigation -->
@@ -150,10 +120,13 @@
   import $ from 'jquery';
   export default {
     name: 'MainMenu',
-    props: {
-    },
-    data: function () {
+    props: {},
+    data: function() {
       return {
+        categories: [],
+        categoryParents: [],
+        categoryChilds: [],
+        categoryFinal: []
       }
     },
     methods: {
@@ -162,10 +135,8 @@
       }
     },
     mounted() {
-
 // JavaScript Document
       $(document).ready(function() {
-
         /**
          * Mobile menu
          */
@@ -177,11 +148,8 @@
           e.preventDefault();
           $("#sidebar-wrapper").toggleClass("active");
         });
-
         // -------------------------------------------------------------------------
-
       });
-
       $(function() {
         function slideMenu() {
           var activeState = $('#menu-container .menu-list').hasClass('active');
@@ -189,6 +157,7 @@
             left: activeState ? '0%' : '-100%'
           }, 400);
         }
+
         $('#menu-wrapper').click(function(event) {
           event.stopPropagation();
           $('#hamburger-menu').toggleClass('open');
@@ -214,14 +183,40 @@
 
       }); // jQuery load
       // Mobile menu
-      $('.menu-tab').click(function(){
+      $('.menu-tab').click(function() {
         $('.menu-hide').toggleClass('show');
         $('.menu-tab').toggleClass('active');
       });
-      $('.mobile_close').click(function(){
+      $('.mobile_close').click(function() {
         $('.menu-hide').removeClass('show');
         $('.menu-tab').removeClass('active');
       });
+    },
+    async created() {
+      this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?per_page=100');
+      this.categories.forEach((category) => {
+        if (category.parent === 0) {
+          delete category["parent"];
+          this.categoryParents.push(category);
+        } else {
+          this.categoryChilds.push(category);
+        }
+      });
+      this.categoryChilds.forEach((child) => {
+        this.categoryParents.forEach((parent) => {
+          if(child.parent === parent.id) {
+            if(parent["children"] === undefined) {
+              parent["children"] = [];
+            }
+            delete child["parent"];
+            parent["hasChildren"] = true;
+            parent["children"].push(child);
+          } else {
+            parent["hasChildren"] = false;
+          }
+        });
+      });
+      console.log('fin data', this.categoryParents);
     }
   }
 </script>
