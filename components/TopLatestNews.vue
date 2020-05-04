@@ -1,6 +1,6 @@
 <template>
   <div class="top-stories-bar">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row top-stories-box clearfix">
         <div class="col-sm-auto">
           <div class="top-stories-label">
@@ -46,9 +46,9 @@
     },
     methods: {
       async fetchData() {
-        this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
-        this.tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?_embed');
-        this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?_embed');
+        this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?per_page=100');
+        this.tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?per_page=100');
+        this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?per_page=100');
         this.posts.forEach((post) => {
           let tagnames = [];
           let catnames = [];
@@ -90,7 +90,6 @@
             post.hasCat = false;
           }
         });
-        console.log('POSTOVI', this.posts);
       },
       goHome() {
         this.$router.push('/');
@@ -98,7 +97,7 @@
       goTo(id) {
         this.$router.push('/post/' + id);
       },
-      extractNewsOfDay() {
+      async extractNewsOfDay() {
         this.posts.forEach((post) => {
           console.log('post', post);
           if(post.hasTag !== false) {
@@ -108,13 +107,13 @@
             }
           }
         });
-        console.log('vest dana', this.newsOfDay);
       }
     },
     created(){
       this.fetchData().then( _ => {
-        this.extractNewsOfDay();
-        this.latestPosts = this.posts.splice(0,3);
+        this.extractNewsOfDay().then( _ => {
+          this.latestPosts = this.posts.splice(0,5);
+        })
       })
     }
   }
@@ -162,9 +161,7 @@
   .list-inline {
     display: flex;
     justify-content: space-around;
-    width: 100%;
     cursor: pointer;
-    /* reset list */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -228,6 +225,13 @@
     position: relative;
     height: 100%;
     display: table;
+  }
+  @media (max-width: 991px) {
+    .top-stories-bar .top-stories-label {
+      padding-top: 0 !important;
+      padding-bottom: 5px !important;
+      max-height: 30px;
+    }
   }
   .top-stories-bar .top-stories-label:after {
     content: "";
@@ -327,6 +331,7 @@
     position: relative;
     overflow: hidden;
     padding-left: 0;
+    padding-right: 0;
     background-color: #ffffff;
     height: 50px;
   }
@@ -369,10 +374,6 @@
     content: "";
     position: absolute;
     top: 0;
-    right: 15px;
-    bottom: 0;
-    width: 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
   }
   /*--------------------------------------------------------------
 # Media Queries

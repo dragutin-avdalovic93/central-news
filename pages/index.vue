@@ -62,9 +62,9 @@ export default {
   },
   methods: {
     async fetchData() {
-      this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
-      this.tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?_embed');
-      this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?_embed');
+      this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?per_page=100');
+      this.tags = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/tags?per_page=100');
+      this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?per_page=100');
       this.posts.forEach((post) => {
         let tagnames = [];
         let catnames = [];
@@ -106,7 +106,6 @@ export default {
           post.hasCat = false;
         }
       });
-      console.log('POSTOVI', this.posts);
       this.loading = false;
     },
     visitPost(id) {
@@ -136,7 +135,7 @@ export default {
     align-self: start;
     justify-self: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     grid-auto-rows: minmax(100px, auto);
     padding: 10px 0;
@@ -145,7 +144,7 @@ export default {
     .grid-container {
       display: grid;
       max-width: unset;
-      grid-template-columns: repeat(2, 1fr) !important;
+      grid-template-columns: repeat(3, 1fr) !important;
       grid-gap: 20px;
       grid-auto-rows: minmax(100px, auto);
       padding: 10px;
@@ -170,23 +169,23 @@ export default {
   .blog-post-small .thumb-img {
     width: 100%;
     height: auto;
-    max-width: 377px;
-    min-height: 200px;
-    max-height: 200px;
+    max-width: 220px;
+    min-height: 155px;
+    max-height: 155px;
     cursor: pointer;
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 300px;
-      min-height: 200px;
-      max-height: 200px;
+      max-width: 220px;
+      min-height: 155px;
+      max-height: 155px;
     }
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 300px;
-      min-height: 200px;
-      max-height: 200px;
+      max-width: 220px;
+      min-height: 155px;
+      max-height: 155px;
     }
   }
   @media (max-width: 1024px) {
@@ -299,7 +298,6 @@ export default {
     line-height: 1.3;
     font-size: 18px;
     font-weight: 800;
-    text-align: left;
     letter-spacing: 0;
     color: #fff;
     background: #142850;
@@ -348,21 +346,24 @@ export default {
   }
   .blog-post-small  .main-container .content .category{
     transition: all 200ms ease-in-out;
-    font-size: 14px !important;
     text-align: left;
     letter-spacing: 0;
     color: #fff;
     opacity: 1;
     text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 60px;
   }
   .blog-post-small .main-container .content .category .cat {
     background: #00c834;
+    margin-bottom: 5px;
     padding: 5px;
     border-radius: 5px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 700;
     margin-right: 5px;
   }
   .blog-post-small .blog-post-small-inner .post-footer .read-more a {

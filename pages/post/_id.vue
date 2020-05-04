@@ -8,7 +8,7 @@
              :height="height"
              :loader="loader"
     ></loading>
-    <div class="article"   v-if="!loading" >
+    <div class="article" v-if="!loading">
       <div class="blog-detail-post">
         <img class="thumb-img" v-bind:src="post.featured_image_url">
         <div class="blog-detail-post-inner">
@@ -16,18 +16,16 @@
             <h2 class="title">
               {{post.title.rendered}}
             </h2>
-            <div class="metadata">
-              <div class="created_at">
-                <img src="../../static/calendar.svg"/>
-                {{post.date.split('T')[0]}}
-              </div>
-            </div>
             <div class='excerpt-container'>
               <p class="description" v-html="post.content.rendered"></p>
             </div>
           </div>
           <div class="post-footer">
-            <div class="category">
+            <div class="metadata">
+              <div class="created_at">
+                <img src="../../static/calendar.svg"/>
+                {{post.date.split('T')[0]}}
+              </div>
             </div>
             <div class="read-more" @click="goBack">
               <a @click="goBack">
@@ -47,7 +45,6 @@
     layout: 'default',
     data() {
       return {
-        posts: [],
         post: {},
         id: "",
         loading: true,
@@ -65,17 +62,9 @@
         this.$router.push('/');
       },
       async fetchPost() {
-        this.posts = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts?_embed');
         this.id = this.$route.params.id;
-        console.log('id', this.id);
-        this.posts.forEach((post) => {
-          console.log('post', post);
-          if(String(post.id) === String(this.id)) {
-            console.log('post1', this.post);
-            this.post = post;
-            this.loading = false;
-          }
-        });
+        this.post = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts/' + this.id);
+        this.loading = false;
       }
     },
     created() {
@@ -183,22 +172,23 @@
     transition: color 300ms ease-in-out;
     padding: 0 0 0 0 !important;
   }
-  .blog-detail-post .blog-detail-post-inner .content .metadata {
+  .blog-detail-post .post-footer.metadata {
     display: flex;
     justify-content: space-between;
     padding-bottom: 25px;
   }
-  .blog-detail-post .blog-detail-post-inner .content .metadata .created_at {
+  .blog-detail-post .post-footer .metadata .created_at {
     display: flex;
     align-items: center;
     font-size: 12px;
+    font-weight: 600;
     text-align: left;
     letter-spacing: 0;
     color: #4b4361;
     opacity: 1;
     transition: all 200ms ease-in-out;
   }
-  .blog-detail-post .blog-detail-post-inner .content .metadata .created_at img {
+  .blog-detail-post .post-footer .metadata .created_at img {
     margin-right: 10px;
     width: 14px;
     height: 14px;
@@ -226,6 +216,7 @@
     opacity: 1;
     transition: all 200ms ease-in-out;
     text-overflow: ellipsis;
+    padding-bottom: 15px;
   }
   .blog-detail-post .blog-detail-post-inner .content .description {
     transition: all 200ms ease-in-out;

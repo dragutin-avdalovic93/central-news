@@ -1,7 +1,7 @@
 <template>
   <div class="header-cont">
     <div class="header" @click="goHome">
-      <h1>CENTRAL news</h1>
+      <h1>CENTRAL <span class="red">news</span></h1>
     </div>
   </div>
 </template>
@@ -25,6 +25,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .red {
+    color: #df2027;
+  }
   .header-cont {
     background: #142850;
   }
