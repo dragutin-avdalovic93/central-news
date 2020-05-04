@@ -23,71 +23,19 @@
 
         <!-- menu-wrapper -->
         <ul class="menu-list accordion" style="left: -100%;">
-          <li id="1" class="toggle accordion-toggle show-loader" onclick="window.location.href='https://www.princip.news/naslovna';return false;">Naslovna</li>
-          <li id="2" class="toggle accordion-toggle">
-            <span class="plus_span"><span class="icon-plus"></span></span>
-            <a class="menu-link" href="#">Vijesti </a>
+          <li id="1" class="toggle accordion-toggle show-loader" onclick="window.location.href='';return false;">Početna</li>
+          <span v-for="(item,index) in categoryParents.slice().reverse()">
+          <li :id="index" class="toggle accordion-toggle">
+            <span class="plus_span"><span class="icon-plus" v-if="item.hasChildren"></span></span>
+            <a class="menu-link" href="#">{{item.name}}</a>
           </li>
-          <ul class="menu-submenu accordion-content">
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/vijesti/istocno-sarajevo">Istočno Sarajevo</a>
+          <ul class="menu-submenu accordion-content" v-if="item.hasChildren">
+            <li class="show-loader" v-for="(child,index) in item.children">
+              <a class="head text-uppercase" href="">{{child.name}}</a>
             </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/vijesti/republika-srpska">Republika Srpska</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/vijesti/bih">BIH</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/vijesti/region">Region</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/vijesti/svijet">Svijet</a>
-            </li>
-
           </ul>
-
-          <li id="4" class="toggle accordion-toggle">
-            <span class="plus_span"><span class="icon-plus"></span></span>
-            <a class="menu-link" href="#">Magazin </a>
-          </li>
-          <ul class="menu-submenu accordion-content">
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/magazin/tema">Tema</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/magazin/kultura">Kultura</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/magazin/sport">Sport</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/magazin/na-danasnji-dan">Na današnji dan</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/magazin/auto-svijet">Auto svijet</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/magazin/zanimljivosti">Zanimljivosti</a>
-            </li>
-
-            <li class="show-loader">
-              <a class="head text-uppercase" href="https://www.princip.news/magazin/trejleri">Trejleri</a>
-            </li>
-
-          </ul>
-          <li id="17" class="toggle accordion-toggle show-loader" onclick="window.location.href='https://www.princip.news/intervju';return false;">Intervju</li><li id="18" class="toggle accordion-toggle show-loader" onclick="window.location.href='https://www.princip.news/kolumne';return false;">Kolumne</li><li id="19" class="toggle accordion-toggle show-loader" onclick="window.location.href='https://www.princip.news/bilbord';return false;">Bilbord</li><li id="23" class="toggle accordion-toggle show-loader" onclick="window.location.href='https://www.princip.news/oglasi';return false;">Oglasi</li><li id="25" class="toggle accordion-toggle show-loader" onclick="window.location.href='https://www.princip.news/web-kamere';return false;">Web kamere</li><li id="20" class="toggle accordion-toggle show-loader" onclick="window.location.href='https://www.princip.news/kontakt';return false;">Kontakt</li>                    </ul>
+          </span>
+        </ul>
       </div>
       <div class="search_form_mobile">
       <form id="top-search-form2" class="form-search form-horizontal pull-right" action="">
@@ -765,12 +713,12 @@
 
   .accordion-toggle a {
     color:#fff;
-    padding: 0px !important;
-    width: 100px;
+    padding: 0 !important;
+    width: 80%;
   }
 
   .accordion-toggle a:hover{
-    background: #EB1923 !important;
+    background: #df2027 !important;
   }
 
   .icon-minus:before {
