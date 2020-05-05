@@ -6,7 +6,7 @@
         <li itemprop="name" data-xicon="fa fa-paper-plane">
           <a itemprop="url" class="header-selected-bg show-loader" href="" data-target="#">Početna</a>
         </li>
-        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryParents">
+        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryFinal">
           <a itemprop="url" href="" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
           <a itemprop="url" class="dropdown-toggle " href="#" data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
           <ul class="dropdown-sub-menu width_200px" v-if="item.hasChildren">
@@ -75,6 +75,8 @@
         categories: [],
         categoryParents: [],
         categoryChilds: [],
+        categoryFinalSketch: ["vijesti","intervju", "kultura", "sport", "zabava", "zdravljeiljepota", "vrijeme", "ostalo"],
+        submenuSketch: ["istocnosarajevo","republikasrpska", "bih", "region", "svijet"],
         categoryFinal: []
       }
     },
@@ -117,7 +119,6 @@
         });
 
         $(".menu-list").on('click', '.accordion-toggle', function() {
-          console.log('click');
           $(this).toggleClass("active-tab").find(".plus_span span").toggleClass("icon-minus icon-plus");
           $(this).next().toggleClass("open").slideToggle("fast");
           $(".menu-list .accordion-content").not($(this).next()).slideUp("fast").removeClass("open");
@@ -166,7 +167,26 @@
           }
         });
       });
-      console.log('fin data', this.categoryParents);
+      this.categoryFinalSketch.forEach((sketchName) => {
+        this.categoryParents.forEach((parent) => {
+          if(parent.slug === sketchName) {
+            this.categoryFinal.push(parent);
+          }
+          if(parent.hasChildren) {
+            let newChilds = [];
+            this.submenuSketch.forEach((sub) => {
+              parent.children.forEach((child) => {
+                if(child.slug === sub) {
+                  newChilds.push(child);
+                }
+              });
+            });
+            delete parent["children"];
+            parent["children"] = newChilds;
+          }
+        });
+      });
+      console.log('fin data', this.categoryFinal);
     }
   }
 </script>
