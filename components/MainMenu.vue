@@ -24,7 +24,7 @@
         <!-- menu-wrapper -->
         <ul class="menu-list accordion" style="left: -100%;">
           <li id="1" class="toggle accordion-toggle show-loader" onclick="window.location.href='';return false;">Početna</li>
-          <span v-for="(item,index) in categoryParents.slice().reverse()">
+          <span  class="in-span" v-for="(item,index) in categoryParents.slice().reverse()">
           <li :id="index" class="toggle accordion-toggle">
             <span class="plus_span"><span class="icon-plus" v-if="item.hasChildren"></span></span>
             <a class="menu-link" href="#">{{item.name}}</a>
@@ -116,14 +116,15 @@
           $('body').toggleClass('overflow-hidden');
         });
 
-        $(".menu-list").find('.accordion-toggle').click(function() {
+        $(".menu-list").on('click', '.accordion-toggle', function() {
+          console.log('click');
           $(this).toggleClass("active-tab").find(".plus_span span").toggleClass("icon-minus icon-plus");
           $(this).next().toggleClass("open").slideToggle("fast");
           $(".menu-list .accordion-content").not($(this).next()).slideUp("fast").removeClass("open");
           $(".menu-list .accordion-toggle").not($(this)).removeClass("active-tab").find(".plus_span span").removeClass("icon-minus").addClass("icon-plus")
         });
 
-        $(".menu-list").find('.accordion-toggle-sub').click(function() {
+        $(".menu-list").on('click', '.accordion-toggle-sub', function() {
           $(this).toggleClass("active-tab").find(".plus_span span").toggleClass("icon-minus icon-plus");
           $(this).next().toggleClass("open").slideToggle("fast");
           $(".menu-list .accordion-content-sub").not($(this).next()).slideUp("fast").removeClass("open");
