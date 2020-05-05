@@ -6,7 +6,7 @@
         <li itemprop="name" data-xicon="fa fa-paper-plane">
           <a itemprop="url" class="header-selected-bg show-loader" href="" data-target="#">Početna</a>
         </li>
-        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryParents.slice().reverse()">
+        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryParents">
           <a itemprop="url" href="" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
           <a itemprop="url" class="dropdown-toggle " href="#" data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
           <ul class="dropdown-sub-menu width_200px" v-if="item.hasChildren">
@@ -24,7 +24,7 @@
         <!-- menu-wrapper -->
         <ul class="menu-list accordion" style="left: -100%;">
           <li id="1" class="toggle accordion-toggle show-loader" onclick="window.location.href='';return false;">Početna</li>
-          <span  class="in-span" v-for="(item,index) in categoryParents.slice().reverse()">
+          <span  class="in-span" v-for="(item,index) in categoryParents">
           <li :id="index" class="toggle accordion-toggle">
             <span class="plus_span"><span class="icon-plus" v-if="item.hasChildren"></span></span>
             <a class="menu-link" href="#">{{item.name}}</a>
@@ -208,7 +208,7 @@
   .header-navigation-inner ul li {
     float: left;
     border-right: 1px solid rgba(0, 0, 0, 0.16);
-    box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.55);
   }
 
   .header-navigation-inner ul li a {
@@ -313,7 +313,7 @@
   }
 
   .dropdown-sub-menu a:hover, .dropdown-sub-menu2 a:hover{
-    color: #EB1923 !important;
+    color: #f80000 !important;
     background: none !important;
   }
 
@@ -604,11 +604,13 @@
 
   .menu-submenu li{
     font-size: 16px;
-    padding: 15px 20px;
+    padding: 12px 20px;
     color: #333333 !important;
     float: none !important;
     border-right: none !important;
     border-top: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: none !important;
+    background: white;
   }
 
   .menu-submenu li a{
@@ -622,12 +624,13 @@
   }
 
   #menu-container .menu-list {
+    height: calc(100vh - 126px);
     padding-left: 0;
     display: block;
     position: absolute;
     width: 100%;
     max-width: 1070px;
-    background: white;
+    background-color: #7a0000;
     box-shadow: rgba(100,100,100,0.2) 6px 2px 10px;
     z-index: 999;
     overflow-y: auto;
@@ -636,8 +639,8 @@
   }
 
   #menu-container .menu-list li.accordion-toggle, #menu-container .menu-list li.accordion-toggle-sub, #menu-container .menu-list .menu-login {
-    font-size: 16px;
-    padding: 15px 20px;
+    font-size: 14px;
+    padding: 12px 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.16);
     background-color: #7a0000;
     color:#fff !important;
