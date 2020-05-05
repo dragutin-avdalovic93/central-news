@@ -42,7 +42,7 @@
   import Loading from 'vue-loading-overlay';
   export default {
     name: 'PostDetail',
-    layout: 'default',
+    layout: 'blog',
     data() {
       return {
         post: {},

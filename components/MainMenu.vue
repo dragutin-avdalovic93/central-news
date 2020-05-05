@@ -184,7 +184,7 @@
   }
 
   .header-navigation {
-    background-color: #df2027;
+    background-color: #7a0000;
     min-height: 49px;
     line-height: 49px;
     color:#fff;
@@ -207,6 +207,7 @@
   .header-navigation-inner ul li {
     float: left;
     border-right: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.75);
   }
 
   .header-navigation-inner ul li a {
@@ -491,7 +492,7 @@
   }
 
   .active_class_red {
-    background: #df2027;
+    background: #7a0000;
     color: #fff !important;
   }
 
@@ -637,7 +638,7 @@
     font-size: 16px;
     padding: 15px 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.16);
-    background-color: #df2027;
+    background-color: #7a0000;
     color:#fff !important;
     float: none;
     border-right: none;
@@ -675,8 +676,8 @@
   }
 
   .accordion-content-sub{
-    border-bottom: 2px solid #df2027;
-    color: #df2027;
+    border-bottom: 2px solid #7a0000;
+    color: #7a0000;
   }
 
   .accordion-content-sub li a{
@@ -688,9 +689,9 @@
   }
 
   .accordion-content{
-    border-left: 2px solid #df2027;
-    border-right: 2px solid #df2027;
-    border-bottom: 2px solid #df2027;
+    border-left: 2px solid #7a0000;
+    border-right: 2px solid #7a0000;
+    border-bottom: 2px solid #7a0000;
   }
 
   .accordion-toggle span[class^='icon-'] , .accordion-toggle-sub span[class^='icon-'] {
@@ -718,7 +719,7 @@
   }
 
   .accordion-toggle a:hover{
-    background: #df2027 !important;
+    background: #7a0000 !important;
   }
 
   .icon-minus:before {
