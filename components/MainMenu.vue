@@ -24,7 +24,7 @@
         <!-- menu-wrapper -->
         <ul class="menu-list accordion" style="left: -100%;">
           <li id="1" class="toggle accordion-toggle show-loader" onclick="window.location.href='';return false;">Početna</li>
-          <span  class="in-span" v-for="(item,index) in categoryParents">
+          <span  class="in-span" v-for="(item,index) in categoryFinal">
           <li :id="index" class="toggle accordion-toggle">
             <span class="plus_span"><span class="icon-plus" v-if="item.hasChildren"></span></span>
             <a class="menu-link" href="#">{{item.name}}</a>
