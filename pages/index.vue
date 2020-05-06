@@ -147,7 +147,7 @@ export default {
     min-height: calc(100vh - 53px);
     padding-right: 0;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .latest-news-slot {
       margin-top: 20px;
     }
