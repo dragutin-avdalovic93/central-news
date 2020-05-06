@@ -314,7 +314,7 @@ export default {
     overflow: hidden;
     min-height: 70px;
     margin-top: 0;
-    background-color: rgba(20,40,80,0.75);
+    background-color: rgba(20,40,80,0.65);
     transition: all 200ms ease-in-out;
     cursor: pointer;
   }
