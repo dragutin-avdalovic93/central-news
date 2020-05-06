@@ -1,48 +1,54 @@
 <template>
-  <div class="bl">
-    <loading :active.sync="loading"
-             :can-cancel="false"
-             :is-full-page="true"
-             :color="color"
-             :width="width"
-             :height="height"
-             :loader="loader"
-    ></loading>
+  <div class="container-fluid inner-content">
+    <div class="row">
+    <div class="col-12 col-md-9 col-lg-9 news-slot">
+      <loading :active.sync="loading"
+               :can-cancel="false"
+               :is-full-page="true"
+               :color="color"
+               :width="width"
+               :height="height"
+               :loader="loader"
+      ></loading>
       <div class="grid-container" v-if="!loading">
-        <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
-          <div class="main-container">
-            <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
-            <div class="content">
-              <div class="category">
-                <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
-              </div>
-              <div class="title" @click="visitPost(post.id)">
-                <h3>{{post.title.rendered}}</h3>
-              </div>
+      <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
+        <div class="main-container">
+          <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
+          <div class="content">
+            <div class="category">
+              <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
+            </div>
+            <div class="title" @click="visitPost(post.id)">
+              <h3>{{post.title.rendered}}</h3>
             </div>
           </div>
-          <div class="blog-post-small-inner">
-            <div class="post-footer">
-              <div class="metadata">
-                <div class="created_at">
-                  <img src="../static/calendar.svg"/>
-                  {{post.date.split('T')[0]}}
-                </div>
+        </div>
+        <div class="blog-post-small-inner">
+          <div class="post-footer">
+            <div class="metadata">
+              <div class="created_at">
+                <img src="../static/calendar.svg"/>
+                {{post.date.split('T')[0]}}
               </div>
-              <div class="read-more" @click="visitPost(post.id)">
-                <a @click="visitPost(post.id)">
-                  <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
-                </a>
-              </div>
+            </div>
+            <div class="read-more" @click="visitPost(post.id)">
+              <a @click="visitPost(post.id)">
+                <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    </div>
+    <div class="col-12 col-md-3 col-lg-3 latest-news-slot"><LatestNews/></div>
+    </div>
   </div>
 </template>
 
 <script>
   import Loading from 'vue-loading-overlay';
+  import LatestNews from '../components/LatestNews'
 export default {
   name: 'Blog',
   layout: 'blog',
@@ -58,7 +64,8 @@ export default {
     }
   },
   components: {
-    Loading
+    Loading,
+    LatestNews
   },
   methods: {
     async fetchData() {
@@ -111,14 +118,6 @@ export default {
           post.hasCat = false;
         }
       });
-      this.category = this.$route.params.category;
-      console.log('kat',this.category);
-      console.log('postovi', this.posts);
-      this.posts.forEach((post) => {
-        if(post.catslugs.includes(this.category)) {
-          this.postsFiltered.push(post);
-        }
-      });
       this.loading = false;
     },
     visitPost(id) {
@@ -135,23 +134,28 @@ export default {
 </script>
 
 <style>
+  .inner-content {
+    padding: 20px 15px;
+  }
   .main-container {
     position: relative;
   }
-  .bl {
-    min-height: calc(100vh - 53px);
+  .news-slot {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: calc(100vh - 53px);
+    padding-right: 0;
+  }
+  .latest-news-slot {
   }
   .grid-container {
     align-self: start;
     justify-self: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-gap: 5px;
     grid-auto-rows: minmax(100px, auto);
-    padding: 10px 0;
   }
   @media (max-width: 1024px) {
     .grid-container {
@@ -160,17 +164,24 @@ export default {
       grid-template-columns: repeat(3, 1fr) !important;
       grid-gap: 20px;
       grid-auto-rows: minmax(100px, auto);
-      padding: 10px;
     }
   }
   @media (max-width: 768px) {
     .grid-container {
       display: grid;
       max-width: unset;
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-gap: 20px;
+      grid-auto-rows: minmax(100px, auto);
+    }
+  }
+  @media (max-width: 688px) {
+    .grid-container {
+      display: grid;
+      max-width: unset;
       grid-template-columns: repeat(1, 1fr) !important;
       grid-gap: 20px;
       grid-auto-rows: minmax(100px, auto);
-      padding: 20px;
     }
   }
   .blog-post-small {
