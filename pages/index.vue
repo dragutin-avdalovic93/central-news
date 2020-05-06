@@ -307,11 +307,12 @@ export default {
     }
   }
   .blog-post-small .content .title {
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     display: flex;
     max-height: 70px;
     overflow: hidden;
+    text-overflow: ellipsis;
     min-height: 70px;
     margin-top: 0;
     background-color: rgba(20,40,80,0.65);
