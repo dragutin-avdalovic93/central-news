@@ -4,13 +4,13 @@
       <!-- desktop navigation -->
       <ul>
         <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class="header-selected-bg show-loader" href="" data-target="#">Početna</a>
+          <a itemprop="url" class="header-selected-bg show-loader" @click="goHome()" data-target="#">Početna</a>
         </li>
         <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryFinal">
-          <a itemprop="url" href="" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
-          <a itemprop="url" class="dropdown-toggle " href="#" data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
+          <a itemprop="url" :href="item.slug" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
+          <a itemprop="url" class="dropdown-toggle " :href="item.slug" data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
           <ul class="dropdown-sub-menu width_200px" v-if="item.hasChildren">
-            <li v-for="(child,index) in item.children"><a href="" class="show-loader">{{child.name}}</a></li>
+            <li v-for="(child,index) in item.children"><a :href="child.slug" class="show-loader">{{child.name}}</a></li>
          </ul>
         </li>
       </ul>
@@ -23,15 +23,15 @@
 
         <!-- menu-wrapper -->
         <ul class="menu-list accordion" style="left: -100%;">
-          <li id="1" class="toggle accordion-toggle show-loader" onclick="window.location.href='';return false;">Početna</li>
+          <li id="1" class="toggle accordion-toggle show-loader" @click="goHomeMobile()">Početna</li>
           <span  class="in-span" v-for="(item,index) in categoryFinal">
           <li :id="index" class="toggle accordion-toggle">
             <span class="plus_span"><span class="icon-plus" v-if="item.hasChildren"></span></span>
-            <a class="menu-link" href="#">{{item.name}}</a>
+            <a class="menu-link" :href="item.slug">{{item.name}}</a>
           </li>
           <ul class="menu-submenu accordion-content" v-if="item.hasChildren">
             <li class="show-loader" v-for="(child,index) in item.children">
-              <a class="head text-uppercase" href="">{{child.name}}</a>
+              <a class="head text-uppercase" :href="child.slug">{{child.name}}</a>
             </li>
           </ul>
           </span>
@@ -67,6 +67,7 @@
 <!--      </script>-->
 <script>
   import $ from 'jquery';
+  import _ from 'lodash';
   export default {
     name: 'MainMenu',
     props: {},
@@ -83,6 +84,10 @@
     methods: {
       goHome() {
         this.$router.push('/');
+      },
+      goHomeMobile() {
+        this.$router.push('/');
+        document.getElementById("hamburger-menu").click();
       }
     },
     mounted() {
@@ -187,7 +192,10 @@
         });
       });
       console.log('fin data', this.categoryFinal);
-    }
+    },
+    goHome() {
+      this.$router.push('/');
+    },
   }
 </script>
 
@@ -232,7 +240,7 @@
   }
 
   .header-navigation-inner ul li a {
-
+    cursor: pointer;
     color: #fff;
     text-rendering: optimizeLegibility;
     font-weight: 400;

@@ -9,7 +9,7 @@
              :loader="loader"
     ></loading>
       <div class="grid-container" v-if="!loading">
-        <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
+        <div class="blog-post-small" v-for="post in postsFiltered" v-bind:key="post.id">
           <div class="main-container">
             <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
             <div class="content">
@@ -54,7 +54,9 @@ export default {
       color: '#00909e',
       height: 128,
       width: 128,
-      loader: 'bars'
+      loader: 'bars',
+      category: '',
+      postsFiltered: []
     }
   },
   components: {
@@ -119,6 +121,7 @@ export default {
           this.postsFiltered.push(post);
         }
       });
+      console.log('postovi after', this.postsFiltered);
       this.loading = false;
     },
     visitPost(id) {
