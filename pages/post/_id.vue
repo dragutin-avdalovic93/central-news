@@ -59,7 +59,7 @@
     },
     methods: {
       goBack() {
-        this.$router.push('/');
+        this.$router.push('/').catch(err => {});
       },
       async fetchPost() {
         this.id = this.$route.params.id;

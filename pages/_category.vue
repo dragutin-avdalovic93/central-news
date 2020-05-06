@@ -1,7 +1,17 @@
 <template>
-  <div class="container-fluid inner-content">
-    <div class="row">
-      <div class="col-12 col-md-9 col-lg-9 news-slot">
+  <div class="container inner-content">
+    <div class="row main-row">
+      <div class="col-12 col-md-2 col-lg-2 banners">
+        <div class="divider-15"></div>
+        <div><a href="https://www.princip.news/banner/statistics/72b32a1f754ba1c09b3695e0cb6cde7f" title="Zavod za zaposljavanje baner" target="_self"><img src="https://www.princip.news/uploads/zzrs_190421_214134_183.png" class="img-fluid" alt="Zavod za zaposljavanje baner"></a></div><div class="divider-15"></div>
+        <div><a href="https://www.princip.news/banner/statistics/d9d4f495e875a2e075a1a4a6e1b9770f" title="SKI centar Ravna planina" target="_blank"><img src="https://www.princip.news/uploads/banner_skicentarravnaplanina_181013_94511_613.png" class="img-fluid" alt="SKI centar Ravna planina"></a></div><div class="divider-15"></div>
+        <div><a href="https://www.princip.news/banner/statistics/67c6a1e7ce56d3d6fa748ab6d9af3fd7" title="Prestige Jahorina" target="_blank"><img src="https://www.princip.news/uploads/banner_webcamjahorinaprestige_181013_94549_942.png" class="img-fluid" alt="Prestige Jahorina"></a></div><div class="divider-15"></div>
+        <div><a href="https://www.princip.news/banner/statistics/c0c7c76d30bd3dcaefc96f40275bdc0a" title="Baner Drugarska prica" target="_self"><img src="https://www.princip.news/uploads/drugarska-prica_181230_222642_147.png" class="img-fluid" alt="Baner Drugarska prica"></a></div><div class="divider-15"></div>
+        <div><a href="https://www.princip.news/banner/statistics/7f39f8317fbdb1988ef4c628eba02591" title="Hercegovacka kuca" target="_self"><img src="https://www.princip.news/uploads/herzeghouse_190816_82157_824.jpg" class="img-fluid" alt="Hercegovacka kuca"></a></div><div class="divider-15"></div>
+        <div><a href="https://www.princip.news/banner/statistics/44f683a84163b3523afe57c2e008bc8c" title="Baner ZZZ RS novi" target="_self"><img src="https://www.princip.news/uploads/zzzrs-cir_190912_74822_787.gif" class="img-fluid" alt="Baner ZZZ RS novi"></a></div>
+        <div class="divider-15"></div>
+      </div>
+      <div class="col-12 col-md-7 col-lg-7 news-slot">
         <loading :active.sync="loading"
                  :can-cancel="false"
                  :is-full-page="true"
@@ -132,7 +142,7 @@ export default {
       this.loading = false;
     },
     visitPost(id) {
-      this.$router.push('/post/' + id);
+      this.$router.push('/post/' + id).catch(err => {});
     },
     onLangsPageChange() {
       window.scrollTo(0, 0);
@@ -145,8 +155,31 @@ export default {
 </script>
 
 <style>
+  .divider-15 {
+    height: 15px;
+    clear: both;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  .banners {
+    background: #dae1e7;
+  }
+  @media (max-width: 1024px) {
+    .banners {
+      margin-bottom: 20px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .img-fluid {
+      width: 90%;
+      margin:  0 5%;
+      height: auto;
+    }
+  }
   .inner-content {
-    padding: 20px 15px;
+    padding: 20px 0;
   }
   .main-container {
     position: relative;
@@ -156,7 +189,12 @@ export default {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 53px);
-    padding-right: 0;
+  }
+  .latest-news-slot {
+    background: #dae1e7;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
   @media (max-width: 768px) {
     .latest-news-slot {
@@ -167,7 +205,7 @@ export default {
     align-self: start;
     justify-self: center;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
     grid-auto-rows: minmax(100px, auto);
   }
@@ -175,7 +213,7 @@ export default {
     .grid-container {
       display: grid;
       max-width: unset;
-      grid-template-columns: repeat(3, 1fr) !important;
+      grid-template-columns: repeat(2, 1fr) !important;
       grid-gap: 20px;
       grid-auto-rows: minmax(100px, auto);
     }

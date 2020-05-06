@@ -1,84 +1,90 @@
 <template>
-  <div class="lat-news">
-    <div class="news-section-name">Najnovije vijesti</div>
-    <div class="row" v-for="post in latestPosts">
-      <div class="col-4 news-section-col-image">
-        <div class="news-background-image" :style="'background-image: url(' + post.featured_image_url + ');'">
-          <a href=""><div class="news-background-image-space-70 show-loader"></div></a>
-          <a href="">
-            <div class="news-section-category-badge show-loader" v-if="post.hasCat">{{post.catnames[0]}}</div>
-            <div class="news-section-category-badge show-loader" v-else-if="!post.hasCat">Ostalo</div>
-          </a>
+  <div class="cont">
+    <loading :active.sync="loading"
+             :can-cancel="false"
+             :is-full-page="true"
+             :color="color"
+             :width="width"
+             :height="height"
+             :loader="loader"
+    ></loading>
+    <div class="lat-news"  v-if="!loading">
+      <div class="news-section-name">Najnovije vijesti</div>
+      <div class="row" v-for="post in latestPosts">
+        <div class="col-4 news-section-col-image">
+          <div class="news-background-image" :style="'background-image: url(' + post.featured_image_url + ');'">
+            <a :href="'/post/' + post.id"><div class="news-background-image-space-70 show-loader"></div></a>
+            <a :href="'/post/' + post.id">
+              <div class="news-section-category-badge show-loader" v-if="post.hasCat">{{post["catnames"][0]}}</div>
+            </a>
+          </div>
         </div>
+        <div class="col-8">
+          <a :href="'/post/' + post.id" class="news-section-title show-loader">{{post.title.rendered}}</a>
+          <div class="news-section-description" v-html="post.excerpt.rendered.substring(0,100)"></div>
+          <div class="news-section-date"><i class="far fa-calendar"> </i> {{post.date.split('T')[0]}} <span>{{post.date.split('T')[1]}} </span></div>
+        </div>
+        <div class="news-section-divider"></div>
       </div>
-      <div class="col-8">
-        <a :href="'/post/' + post.id" class="news-section-title show-loader">{{post.title.rendered}}</a>
-        <div class="news-section-description" v-html="post.excerpt.rendered.substring(0,100)"></div>
-        <div class="news-section-date"><i class="far fa-calendar"> </i> {{post.date.split('T')[0]}} <span>{{post.date.split('T')[1]}} </span></div>
-      </div>
-      <div class="news-section-divider"></div>
+
+  <!--    <div class="news-section-divider"></div>-->
+  <!--    <a href="https://www.princip.news/vijesti/istocno-sarajevo/mladen-savic-poklonio-portret-doktora-lazica-domu-zdravlja-u-istocnom-sarajevu" title="MLADEN SAVIĆ POKLONIO PORTRET DOKTORA LAZIĆA DOMU ZDRAVLJA U ISTOČNOM SARAJEVU" class="show-loader">-->
+  <!--      <div class="news-main-background-image" style="background-image:url(https://www.princip.news/uploads/new_project_-_2020-05-05t142819_200505_124053_674.png); position: relative;">-->
+  <!--        <div class="news-main-background-image-space-70"></div>-->
+  <!--        <div class="news-main-category-badge show-loader" onclick="location.href='https://www.princip.news/vijesti/istocno-sarajevo/';return false;">Istočno Sarajevo</div>-->
+  <!--        <div class="news-main-image-text-other">-->
+  <!--          <div class="news-main-image-title">MLADEN SAVIĆ POKLONIO PORTRET DOKTORA LAZIĆA DOMU ZDRAVLJA U ISTOČNOM SARAJEVU</div>-->
+  <!--          <div class="news-main-image-title-date">Utorak, 05.05.2020.</div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </a>-->
+  <!--    <div class="divider-15"></div>-->
+
+  <!--    <a href="https://www.princip.news/vijesti/republika-srpska/za&#45;&#45;ur-evdan-policijski-cas-pocinje-u-15-casova" title="ZA ĐURĐEVDAN POLICIJSKI ČAS POČINJE U 15 ČASOVA" class="show-loader">-->
+  <!--      <div class="news-main-background-image" style="background-image:url(https://www.princip.news/uploads/new_project_43_i_200505_134502_722.png); position: relative;">-->
+  <!--        <div class="news-main-background-image-space-70"></div>-->
+  <!--        <div class="news-main-category-badge show-loader" onclick="location.href='https://www.princip.news/vijesti/republika-srpska/';return false;">Republika Srpska</div>-->
+  <!--        <div class="news-main-image-text-other">-->
+  <!--          <div class="news-main-image-title">ZA ĐURĐEVDAN POLICIJSKI ČAS POČINJE U 15 ČASOVA</div>-->
+  <!--          <div class="news-main-image-title-date">Utorak, 05.05.2020.</div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </a>-->
+  <!--    <div class="divider-15"></div>-->
+
+  <!--    <a href="https://www.princip.news/vijesti/bih/ministar-kosarac-dosao-sam-cestitati-ro-endan-prijatelju" title="MINISTAR KOŠARAC: DOŠAO SAM ČESTITATI ROĐENDAN PRIJATELJU" class="show-loader">-->
+  <!--      <div class="news-main-background-image" style="background-image:url(https://www.princip.news/uploads/k1_200505_71007_905.jpg); position: relative;">-->
+  <!--        <div class="news-main-background-image-space-70"></div>-->
+  <!--        <div class="news-main-category-badge show-loader" onclick="location.href='https://www.princip.news/vijesti/bih/';return false;">BIH</div>-->
+  <!--        <div class="news-main-image-text-other">-->
+  <!--          <div class="news-main-image-title">MINISTAR KOŠARAC: DOŠAO SAM ČESTITATI ROĐENDAN PRIJATELJU</div>-->
+  <!--          <div class="news-main-image-title-date">Utorak, 05.05.2020.</div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </a>-->
+  <!--    <div class="divider-15"></div>-->
     </div>
-
-    <!-- banner position 05 -->
-<!--    <div><a href="https://www.princip.news/banner/statistics/72b32a1f754ba1c09b3695e0cb6cde7f" title="Zavod za zaposljavanje baner" target="_self"><img src="https://www.princip.news/uploads/zzrs_190421_214134_183.png" class="img-fluid" alt="Zavod za zaposljavanje baner"></a></div><div class="divider-15"></div><div><a href="https://www.princip.news/banner/statistics/d9d4f495e875a2e075a1a4a6e1b9770f" title="SKI centar Ravna planina" target="_blank"><img src="https://www.princip.news/uploads/banner_skicentarravnaplanina_181013_94511_613.png" class="img-fluid" alt="SKI centar Ravna planina"></a></div><div class="divider-15"></div><div><a href="https://www.princip.news/banner/statistics/67c6a1e7ce56d3d6fa748ab6d9af3fd7" title="Prestige Jahorina" target="_blank"><img src="https://www.princip.news/uploads/banner_webcamjahorinaprestige_181013_94549_942.png" class="img-fluid" alt="Prestige Jahorina"></a></div><div class="divider-15"></div><div><a href="https://www.princip.news/banner/statistics/c0c7c76d30bd3dcaefc96f40275bdc0a" title="Baner Drugarska prica" target="_self"><img src="https://www.princip.news/uploads/drugarska-prica_181230_222642_147.png" class="img-fluid" alt="Baner Drugarska prica"></a></div><div class="divider-15"></div><div><a href="https://www.princip.news/banner/statistics/7f39f8317fbdb1988ef4c628eba02591" title="Hercegovacka kuca" target="_self"><img src="https://www.princip.news/uploads/herzeghouse_190816_82157_824.jpg" class="img-fluid" alt="Hercegovacka kuca"></a></div><div class="divider-15"></div><div><a href="https://www.princip.news/banner/statistics/44f683a84163b3523afe57c2e008bc8c" title="Baner ZZZ RS novi" target="_self"><img src="https://www.princip.news/uploads/zzzrs-cir_190912_74822_787.gif" class="img-fluid" alt="Baner ZZZ RS novi"></a></div>                        &lt;!&ndash; end banner position 05 &ndash;&gt;-->
-
-    <!-- poll -->
-<!--    <div class="news-section-divider"></div>-->
-<!--    <div class="poll-banner show-loader" onclick="location.href='https://www.princip.news/anketa'">-->
-<!--      <div class="poll-banner-title">Anketa</div>-->
-<!--      <div class="poll-banner-name">Da li ste zabrinuti zbog širenja korona virusa ?</div>-->
-<!--      <div class="poll-banner-vote">Glasaj</div>-->
-<!--    </div>-->
-    <!-- end poll -->
-
-<!--    <div class="news-section-divider"></div>-->
-<!--    <a href="https://www.princip.news/vijesti/istocno-sarajevo/mladen-savic-poklonio-portret-doktora-lazica-domu-zdravlja-u-istocnom-sarajevu" title="MLADEN SAVIĆ POKLONIO PORTRET DOKTORA LAZIĆA DOMU ZDRAVLJA U ISTOČNOM SARAJEVU" class="show-loader">-->
-<!--      <div class="news-main-background-image" style="background-image:url(https://www.princip.news/uploads/new_project_-_2020-05-05t142819_200505_124053_674.png); position: relative;">-->
-<!--        <div class="news-main-background-image-space-70"></div>-->
-<!--        <div class="news-main-category-badge show-loader" onclick="location.href='https://www.princip.news/vijesti/istocno-sarajevo/';return false;">Istočno Sarajevo</div>-->
-<!--        <div class="news-main-image-text-other">-->
-<!--          <div class="news-main-image-title">MLADEN SAVIĆ POKLONIO PORTRET DOKTORA LAZIĆA DOMU ZDRAVLJA U ISTOČNOM SARAJEVU</div>-->
-<!--          <div class="news-main-image-title-date">Utorak, 05.05.2020.</div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </a>-->
-<!--    <div class="divider-15"></div>-->
-
-<!--    <a href="https://www.princip.news/vijesti/republika-srpska/za&#45;&#45;ur-evdan-policijski-cas-pocinje-u-15-casova" title="ZA ĐURĐEVDAN POLICIJSKI ČAS POČINJE U 15 ČASOVA" class="show-loader">-->
-<!--      <div class="news-main-background-image" style="background-image:url(https://www.princip.news/uploads/new_project_43_i_200505_134502_722.png); position: relative;">-->
-<!--        <div class="news-main-background-image-space-70"></div>-->
-<!--        <div class="news-main-category-badge show-loader" onclick="location.href='https://www.princip.news/vijesti/republika-srpska/';return false;">Republika Srpska</div>-->
-<!--        <div class="news-main-image-text-other">-->
-<!--          <div class="news-main-image-title">ZA ĐURĐEVDAN POLICIJSKI ČAS POČINJE U 15 ČASOVA</div>-->
-<!--          <div class="news-main-image-title-date">Utorak, 05.05.2020.</div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </a>-->
-<!--    <div class="divider-15"></div>-->
-
-<!--    <a href="https://www.princip.news/vijesti/bih/ministar-kosarac-dosao-sam-cestitati-ro-endan-prijatelju" title="MINISTAR KOŠARAC: DOŠAO SAM ČESTITATI ROĐENDAN PRIJATELJU" class="show-loader">-->
-<!--      <div class="news-main-background-image" style="background-image:url(https://www.princip.news/uploads/k1_200505_71007_905.jpg); position: relative;">-->
-<!--        <div class="news-main-background-image-space-70"></div>-->
-<!--        <div class="news-main-category-badge show-loader" onclick="location.href='https://www.princip.news/vijesti/bih/';return false;">BIH</div>-->
-<!--        <div class="news-main-image-text-other">-->
-<!--          <div class="news-main-image-title">MINISTAR KOŠARAC: DOŠAO SAM ČESTITATI ROĐENDAN PRIJATELJU</div>-->
-<!--          <div class="news-main-image-title-date">Utorak, 05.05.2020.</div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </a>-->
-<!--    <div class="divider-15"></div>-->
   </div>
 </template>
 
 <script>
+  import  Loading from 'vue-loading-overlay';
   export default {
     name: 'LatestNews',
     props: {
     },
     data: function () {
       return {
-        latestPosts: []
+        latestPosts: [],
+        loading: true,
+        color: '#00909e',
+        height: 128,
+        width: 128,
+        loader: 'bars'
       }
+    },
+    components: {
+      Loading
     },
     methods: {
       async getLatestPosts() {
@@ -131,13 +137,14 @@
             post.hasCat = false;
           }
         });
+        this.loading = false;
         console.log(this.latestPosts);
       },
       goHome() {
-        this.$router.push('/');
+        this.$router.replace('/').catch(err => {});
       },
       visitPost(id) {
-        this.$router.push('/post/' + id);
+        this.$router.replace('/post/' + id).catch(err => {});
       },
     },
     created(){
@@ -148,6 +155,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .cont {
+  }
   .lat-news
   {
     background: #dae1e7;

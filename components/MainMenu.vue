@@ -4,13 +4,13 @@
       <!-- desktop navigation -->
       <ul>
         <li itemprop="name" data-xicon="fa fa-paper-plane">
-          <a itemprop="url" class="header-selected-bg show-loader" @click="goHome()" data-target="#">Početna</a>
+          <a itemprop="url" class="header-selected-bg show-loader" href="/" data-target="#">Početna</a>
         </li>
         <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryFinal">
-          <a itemprop="url" @click="goTo(item.slug)" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
-          <a itemprop="url" class="dropdown-toggle " @click="goTo(item.slug)"  data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
+          <a itemprop="url" :href="'/' + item.slug" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
+          <a itemprop="url" class="dropdown-toggle " :href="'/' + item.slug"  data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
           <ul class="dropdown-sub-menu width_200px" v-if="item.hasChildren">
-            <li v-for="(child,index) in item.children"><a @click="goTo(child.slug)"  class="show-loader">{{child.name}}</a></li>
+            <li v-for="(child,index) in item.children"><a :href="'/' + child.slug"  class="show-loader">{{child.name}}</a></li>
          </ul>
         </li>
       </ul>
@@ -83,7 +83,7 @@
     },
     methods: {
       goTo(cat) {
-        this.$router.replace('/' + cat);
+        this.$router.replace('/' + cat).catch(err => {});
         document.getElementById("hamburger-menu").click();
         this.categories = [];
         this.categoryParents = [];
@@ -92,10 +92,10 @@
         this.fetchCategories();
       },
       goHome() {
-        this.$router.replace('/');
+        this.$router.replace('/').catch(err => {});
       },
       goHomeMobile() {
-        this.$router.replace('/');
+        this.$router.replace('/').catch(err => {});
         document.getElementById("hamburger-menu").click();
         this.categories = [];
         this.categoryParents = [];
