@@ -16,9 +16,9 @@
               <div class="category">
                 <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
               </div>
-              <h2 class="title" @click="visitPost(post.id)">
-                {{post.title.rendered}}
-              </h2>
+              <div class="title" @click="visitPost(post.id)">
+                <h3>{{post.title.rendered}}</h3>
+              </div>
             </div>
           </div>
           <div class="blog-post-small-inner">
@@ -256,6 +256,9 @@ export default {
   .blog-post-small .content .title:hover {
     color: #12cead;
   }
+  .blog-post-small .content .title h3:hover {
+    color: #12cead;
+  }
   .blog-post-small .blog-post-small-inner .read-more a:hover {
     color: #12cead !important;
   }
@@ -265,7 +268,7 @@ export default {
   .blog-post-small .content {
     transition: color 300ms ease-in-out;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     right: 0;
     padding: 0 10px;
@@ -304,21 +307,28 @@ export default {
     }
   }
   .blog-post-small .content .title {
+    align-items: center;
+    justify-content: center;
+    display: flex;
     max-height: 70px;
     overflow: hidden;
     min-height: 70px;
-    margin-top: 15px;
+    margin-top: 0;
+    background-color: rgba(20,40,80,0.75);
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+  }
+  .blog-post-small .content .title h3 {
+    overflow: hidden;
     line-height: 1.3;
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 18px !important;
+    font-weight: 900;
     letter-spacing: 0;
     color: #fff;
-    background: #142850;
-    opacity: 1;
-    transition: all 200ms ease-in-out;
     text-overflow: ellipsis;
     cursor: pointer;
     text-align: center;
+    margin: 0;
   }
   .blog-post-small .content .description {
     transition: all 200ms ease-in-out;
