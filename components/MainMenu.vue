@@ -7,10 +7,10 @@
           <a itemprop="url" class="header-selected-bg show-loader" @click="goHome()" data-target="#">Početna</a>
         </li>
         <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryFinal">
-          <a itemprop="url" :href="item.slug" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
-          <a itemprop="url" class="dropdown-toggle " :href="item.slug" data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
+          <a itemprop="url" @click="goTo(item.slug)" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
+          <a itemprop="url" class="dropdown-toggle " @click="goTo(item.slug)"  data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
           <ul class="dropdown-sub-menu width_200px" v-if="item.hasChildren">
-            <li v-for="(child,index) in item.children"><a :href="child.slug" class="show-loader">{{child.name}}</a></li>
+            <li v-for="(child,index) in item.children"><a @click="goTo(child.slug)"  class="show-loader">{{child.name}}</a></li>
          </ul>
         </li>
       </ul>
@@ -27,11 +27,11 @@
           <span  class="in-span" v-for="(item,index) in categoryFinal">
           <li :id="index" class="toggle accordion-toggle">
             <span class="plus_span"><span class="icon-plus" v-if="item.hasChildren"></span></span>
-            <a class="menu-link" :href="item.slug">{{item.name}}</a>
+            <a class="menu-link" @click="goTo(item.slug)">{{item.name}}</a>
           </li>
           <ul class="menu-submenu accordion-content" v-if="item.hasChildren">
             <li class="show-loader" v-for="(child,index) in item.children">
-              <a class="head text-uppercase" :href="child.slug">{{child.name}}</a>
+              <a class="head text-uppercase" @click="goTo(child.slug)" >{{child.name}}</a>
             </li>
           </ul>
           </span>
@@ -82,11 +82,20 @@
       }
     },
     methods: {
+      goTo(cat) {
+        this.$router.replace('/' + cat);
+        document.getElementById("hamburger-menu").click();
+        this.categories = [];
+        this.categoryParents = [];
+        this.categoryChilds = [];
+        this.categoryFinal = [];
+        this.fetchCategories();
+      },
       goHome() {
-        this.$router.push('/');
+        this.$router.replace('/');
       },
       goHomeMobile() {
-        this.$router.push('/');
+        this.$router.replace('/');
         document.getElementById("hamburger-menu").click();
         this.categories = [];
         this.categoryParents = [];
