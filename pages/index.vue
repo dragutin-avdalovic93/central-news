@@ -147,7 +147,10 @@ export default {
     min-height: calc(100vh - 53px);
     padding-right: 0;
   }
-  .latest-news-slot {
+  @media (max-width: 1024px) {
+    .latest-news-slot {
+      margin-top: 20px;
+    }
   }
   .grid-container {
     align-self: start;
