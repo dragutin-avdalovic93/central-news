@@ -88,6 +88,55 @@
       goHomeMobile() {
         this.$router.push('/');
         document.getElementById("hamburger-menu").click();
+        this.categories = [];
+        this.categoryParents = [];
+        this.categoryChilds = [];
+        this.categoryFinal = [];
+        this.fetchCategories();
+      },
+      async fetchCategories() {
+        this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?per_page=100');
+        this.categories.forEach((category) => {
+          if (category.parent === 0) {
+            delete category["parent"];
+            this.categoryParents.push(category);
+          } else {
+            this.categoryChilds.push(category);
+          }
+        });
+        this.categoryChilds.forEach((child) => {
+          this.categoryParents.forEach((parent) => {
+            if(child.parent === parent.id) {
+              if(parent["children"] === undefined) {
+                parent["children"] = [];
+              }
+              delete child["parent"];
+              parent["hasChildren"] = true;
+              parent["children"].push(child);
+            } else {
+              parent["hasChildren"] = false;
+            }
+          });
+        });
+        this.categoryFinalSketch.forEach((sketchName) => {
+          this.categoryParents.forEach((parent) => {
+            if(parent.slug === sketchName) {
+              this.categoryFinal.push(parent);
+            }
+            if(parent.hasChildren) {
+              let newChilds = [];
+              this.submenuSketch.forEach((sub) => {
+                parent.children.forEach((child) => {
+                  if(child.slug === sub) {
+                    newChilds.push(child);
+                  }
+                });
+              });
+              delete parent["children"];
+              parent["children"] = newChilds;
+            }
+          });
+        });
       }
     },
     mounted() {
@@ -148,54 +197,10 @@
         $('.menu-tab').removeClass('active');
       });
     },
-    async created() {
-      this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?per_page=100');
-      this.categories.forEach((category) => {
-        if (category.parent === 0) {
-          delete category["parent"];
-          this.categoryParents.push(category);
-        } else {
-          this.categoryChilds.push(category);
-        }
-      });
-      this.categoryChilds.forEach((child) => {
-        this.categoryParents.forEach((parent) => {
-          if(child.parent === parent.id) {
-            if(parent["children"] === undefined) {
-              parent["children"] = [];
-            }
-            delete child["parent"];
-            parent["hasChildren"] = true;
-            parent["children"].push(child);
-          } else {
-            parent["hasChildren"] = false;
-          }
-        });
-      });
-      this.categoryFinalSketch.forEach((sketchName) => {
-        this.categoryParents.forEach((parent) => {
-          if(parent.slug === sketchName) {
-            this.categoryFinal.push(parent);
-          }
-          if(parent.hasChildren) {
-            let newChilds = [];
-            this.submenuSketch.forEach((sub) => {
-              parent.children.forEach((child) => {
-                if(child.slug === sub) {
-                  newChilds.push(child);
-                }
-              });
-            });
-            delete parent["children"];
-            parent["children"] = newChilds;
-          }
-        });
-      });
+    created() {
+      this.fetchCategories();
       console.log('fin data', this.categoryFinal);
-    },
-    goHome() {
-      this.$router.push('/');
-    },
+    }
   }
 </script>
 

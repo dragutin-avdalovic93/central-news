@@ -16,7 +16,7 @@
               <div class="marquee">
                 <div class="marquee__content">
                   <ul class="list-inline" v-for="post in latestPosts">
-                    <li class="marquee-li"><span v-if="post.hasCat" class="marquee-box">{{post.catnames[0]}} {{post.date.split('T')[1]}}</span><a @click="goTo(post.id)">{{post.title.rendered}}</a></li>
+                    <li class="marquee-li"><span v-if="post.hasCat" class="marquee-box">{{post.catnames[0]}} {{post.date.split('T')[1].substring(0, 5)}}</span><a @click="goTo(post.id)">{{post.title.rendered}}</a></li>
                   </ul>
                 </div>
               </div>
@@ -175,7 +175,7 @@
     margin-left: 10px;
     height: 80%;
     display: flex;
-    background-color: #00133a;
+    background-color: #142850;
     padding: 0 20px;
     align-items: center;
     justify-content: center;
