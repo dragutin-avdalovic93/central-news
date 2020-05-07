@@ -208,7 +208,6 @@
     },
     created() {
       this.fetchCategories();
-      console.log('fin data', this.categoryFinal);
     }
   }
 </script>
