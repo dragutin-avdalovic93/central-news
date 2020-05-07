@@ -434,7 +434,7 @@ export default {
     transition: all 300ms ease-in-out;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 5px;
   }
   .blog-post-small  .main-container .content .category{
     transition: all 200ms ease-in-out;
