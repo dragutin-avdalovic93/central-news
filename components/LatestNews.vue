@@ -21,7 +21,7 @@
         </div>
         <div class="col-8">
           <a :href="'/post/' + post.id" class="news-section-title show-loader">{{post.title.rendered}}</a>
-          <div class="news-section-description" v-html="post.excerpt.rendered.substring(0,100)"></div>
+          <div class="news-section-description" v-html="post.excerpt.rendered.substring(0,100) + '...'"></div>
           <div class="news-section-date"><i class="far fa-calendar"> </i> {{post.date.split('T')[0]}} <span>{{post.date.split('T')[1]}} </span></div>
         </div>
         <div class="news-section-divider"></div>
@@ -155,8 +155,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .cont {
-  }
   .lat-news
   {
     background: #dae1e7;
@@ -246,7 +244,7 @@
     color: #777;
     padding: 5px 0;
   }
-  .news-section-description {
+  body > .news-section-description > p{
     margin-bottom: 0 !important;
   }
 

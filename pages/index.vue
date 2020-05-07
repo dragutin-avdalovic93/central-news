@@ -3,15 +3,12 @@
     <div class="row main-row">
       <div class="col-12 col-md-2 col-lg-2 banners">
         <div class="divider-15"></div>
-        <div><a href="https://www.princip.news/banner/statistics/72b32a1f754ba1c09b3695e0cb6cde7f" title="Zavod za zaposljavanje baner" target="_self"><img src="https://www.princip.news/uploads/zzrs_190421_214134_183.png" class="img-fluid" alt="Zavod za zaposljavanje baner"></a></div><div class="divider-15"></div>
-        <div><a href="https://www.princip.news/banner/statistics/d9d4f495e875a2e075a1a4a6e1b9770f" title="SKI centar Ravna planina" target="_blank"><img src="https://www.princip.news/uploads/banner_skicentarravnaplanina_181013_94511_613.png" class="img-fluid" alt="SKI centar Ravna planina"></a></div><div class="divider-15"></div>
-        <div><a href="https://www.princip.news/banner/statistics/67c6a1e7ce56d3d6fa748ab6d9af3fd7" title="Prestige Jahorina" target="_blank"><img src="https://www.princip.news/uploads/banner_webcamjahorinaprestige_181013_94549_942.png" class="img-fluid" alt="Prestige Jahorina"></a></div><div class="divider-15"></div>
-        <div><a href="https://www.princip.news/banner/statistics/c0c7c76d30bd3dcaefc96f40275bdc0a" title="Baner Drugarska prica" target="_self"><img src="https://www.princip.news/uploads/drugarska-prica_181230_222642_147.png" class="img-fluid" alt="Baner Drugarska prica"></a></div><div class="divider-15"></div>
-        <div><a href="https://www.princip.news/banner/statistics/7f39f8317fbdb1988ef4c628eba02591" title="Hercegovacka kuca" target="_self"><img src="https://www.princip.news/uploads/herzeghouse_190816_82157_824.jpg" class="img-fluid" alt="Hercegovacka kuca"></a></div><div class="divider-15"></div>
-        <div><a href="https://www.princip.news/banner/statistics/44f683a84163b3523afe57c2e008bc8c" title="Baner ZZZ RS novi" target="_self"><img src="https://www.princip.news/uploads/zzzrs-cir_190912_74822_787.gif" class="img-fluid" alt="Baner ZZZ RS novi"></a></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div
+        ><div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
         <div class="divider-15"></div>
       </div>
-      <div class="col-12 col-md-7 col-lg-7 news-slot">
+      <div class="col-12 col-md-6 col-lg-6 news-slot">
       <loading :active.sync="loading"
                :can-cancel="false"
                :is-full-page="true"
@@ -51,8 +48,16 @@
       </div>
     </div>
     </div>
-    <div class="col-12 col-md-3 col-lg-3 latest-news-slot"><LatestNews/></div>
-    </div>
+      <div class="col-12 col-md-3 col-lg-3 latest-news-slot"><LatestNews/></div>
+      <div class="col-12 col-md-1 col-lg-1 banners-end">
+        <div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
+        <div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
+        <div class="divider-15"></div>
+      </div>
+
+      </div>
   </div>
 </template>
 
@@ -144,6 +149,9 @@ export default {
 </script>
 
 <style>
+  .main-row {
+    margin: 0!important;
+  }
   .divider-15 {
     height: 15px;
     clear: both;
@@ -153,10 +161,18 @@ export default {
     height: auto;
   }
   .banners {
-    background: #dae1e7;
+    background: #dae1e7
   }
   @media (max-width: 1024px) {
     .banners {
+      margin-bottom: 20px;
+    }
+  }
+  .banners-end {
+    background: #dae1e7;
+  }
+  @media (max-width: 1024px) {
+    .banners-end {
       margin-bottom: 20px;
     }
   }
@@ -178,6 +194,7 @@ export default {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 53px);
+    background: #dae1e7;
   }
   .latest-news-slot {
     background: #dae1e7;
@@ -197,6 +214,7 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
     grid-auto-rows: minmax(100px, auto);
+    padding: 5px;
   }
   @media (max-width: 1024px) {
     .grid-container {
@@ -235,22 +253,22 @@ export default {
     width: 100%;
     height: auto;
     max-width: 220px;
-    min-height: 155px;
-    max-height: 155px;
+    min-height: 135px;
+    max-height: 135px;
     cursor: pointer;
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
       max-width: 220px;
-      min-height: 155px;
-      max-height: 155px;
+      min-height: 135px;
+      max-height: 135px;
     }
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
       max-width: 220px;
-      min-height: 155px;
-      max-height: 155px;
+      min-height: 135px;
+      max-height: 135px;
     }
   }
   @media (max-width: 1024px) {
@@ -276,7 +294,7 @@ export default {
   }
   .blog-post-small .blog-post-small-inner {
     width: 100%;
-    background: #dae1e7  0 0 no-repeat padding-box;
+    background: #8C8C86  0 0 no-repeat padding-box;
     color: #2b2b2b;
     cursor: pointer;
   }
@@ -329,7 +347,6 @@ export default {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0;
-    background: #dae1e7;
   }
   .blog-post-small .metadata .created_at {
     display: flex;
@@ -338,7 +355,7 @@ export default {
     text-align: left;
     letter-spacing: 0;
     font-weight: 600;
-    color: #4b4361;
+    color: #dae1e7;
     opacity: 1;
     transition: all 200ms ease-in-out;
   }
