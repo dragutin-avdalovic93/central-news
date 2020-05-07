@@ -1,45 +1,67 @@
 <template>
-  <div class="parent">
-    <loading :active.sync="loading"
-             :can-cancel="false"
-             :is-full-page="true"
-             :color="color"
-             :width="width"
-             :height="height"
-             :loader="loader"
-    ></loading>
-    <div class="article" v-if="!loading">
-      <div class="blog-detail-post">
-        <img class="thumb-img" v-bind:src="post.featured_image_url">
-        <div class="blog-detail-post-inner">
-          <div class="content">
-            <h2 class="title">
-              {{post.title.rendered}}
-            </h2>
-            <div class='excerpt-container'>
-              <p class="description" v-html="post.content.rendered"></p>
-            </div>
-          </div>
-          <div class="post-footer">
-            <div class="metadata">
-              <div class="created_at">
-                <img src="../../static/calendar.svg"/>
-                {{post.date.split('T')[0]}}
+  <div class="container inner-content">
+    <div class="row main-row">
+      <div class="col-12 col-md-2 col-lg-2 banners">
+        <div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
+        <div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
+        <div class="divider-15"></div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6 news-slot">
+        <div class="parent">
+          <loading :active.sync="loading"
+                   :can-cancel="false"
+                   :is-full-page="true"
+                   :color="color"
+                   :width="width"
+                   :height="height"
+                   :loader="loader"
+          ></loading>
+          <div class="article" v-if="!loading">
+            <div class="blog-detail-post">
+              <img class="thumb-img" v-bind:src="post.featured_image_url">
+              <div class="blog-detail-post-inner">
+                <div class="content">
+                  <h2 class="title">
+                    {{post.title.rendered}}
+                  </h2>
+                  <div class='excerpt-container'>
+                    <p class="description" v-html="post.content.rendered"></p>
+                  </div>
+                </div>
+                <div class="post-footer">
+                  <div class="metadata">
+                    <div class="created_at">
+                      <img src="../../static/calendar.svg"/>
+                      {{post.date.split('T')[0]}}
+                    </div>
+                  </div>
+                  <div class="read-more" @click="goBack">
+                    <a @click="goBack">
+                      <span class="read">Nazad</span><i class="fa fa-angle-left"/>
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="read-more" @click="goBack">
-              <a @click="goBack">
-                <span class="read">Nazad</span><i class="fa fa-angle-left"/>
-              </a>
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-12 col-md-3 col-lg-3 latest-news-slot"><LatestNews/></div>
+      <div class="col-12 col-md-1 col-lg-1 banners-end">
+        <div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
+        <div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
+        <div class="divider-15"></div>
       </div>
     </div>
   </div>
 </template>
 <script>
   import Loading from 'vue-loading-overlay';
+  import LatestNews from '../../components/LatestNews'
   export default {
     name: 'PostDetail',
     layout: 'blog',
@@ -55,7 +77,8 @@
       }
     },
     components: {
-      Loading
+      Loading,
+      LatestNews
     },
     methods: {
       goBack() {
@@ -74,9 +97,67 @@
 </script>
 
 <style scoped>
+  .main-row {
+    margin: 0!important;
+  }
+  .divider-15 {
+    height: 15px;
+    clear: both;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  .banners {
+    background: #dae1e7
+  }
+  @media (max-width: 1024px) {
+    .banners {
+      margin-bottom: 20px;
+    }
+  }
+  .banners-end {
+    background: #dae1e7;
+  }
+  @media (max-width: 1024px) {
+    .banners-end {
+      margin-bottom: 20px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .img-fluid {
+      width: 90%;
+      margin:  0 5%;
+      height: auto;
+    }
+  }
+  .inner-content {
+    padding: 20px 0;
+  }
+  .main-container {
+    position: relative;
+  }
+  .news-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 53px);
+    background: #dae1e7;
+  }
+  .latest-news-slot {
+    background: #dae1e7;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  @media (max-width: 768px) {
+    .latest-news-slot {
+      margin-top: 20px;
+    }
+  }
   .parent {
     min-height: calc(100vh - 53px);
-    background: #27496d;
+    background: #dae1e7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,7 +168,7 @@
   }
   .blog-detail-post {
     width: auto;
-    margin: 40px auto auto auto;
+    margin: 15px auto auto auto;
     display: flex;
     flex-direction: column;
   }

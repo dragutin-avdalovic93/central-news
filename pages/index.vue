@@ -3,8 +3,8 @@
     <div class="row main-row">
       <div class="col-12 col-md-2 col-lg-2 banners">
         <div class="divider-15"></div>
-        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div
-        ><div class="divider-15"></div>
+        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
+        <div class="divider-15"></div>
         <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
         <div class="divider-15"></div>
       </div>
@@ -56,7 +56,6 @@
         <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
         <div class="divider-15"></div>
       </div>
-
       </div>
   </div>
 </template>
