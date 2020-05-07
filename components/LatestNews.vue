@@ -141,10 +141,10 @@
         console.log(this.latestPosts);
       },
       goHome() {
-        this.$router.replace('/').catch(err => {});
+        this.$router.replace('/');
       },
       visitPost(id) {
-        this.$router.replace('/post/' + id).catch(err => {});
+        this.$router.replace('/post/' + id);
       },
     },
     created(){

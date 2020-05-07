@@ -3,7 +3,28 @@
     <MenuTop/>
     <TopLatestNews/>
     <MainMenu/>
-    <nuxt />
+    <div class="container inner-content">
+      <div class="row main-row">
+        <div class="col-12 col-md-2 col-lg-2 banners order-1 order-sm-1 order-xs-1 order-md-0 order-lg-0 order-xl-0">
+          <div class="divider-15"></div>
+          <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
+          <div class="divider-15"></div>
+          <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
+          <div class="divider-15"></div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 order-0 order-sm-0 order-xs-0 order-md-1 order-lg-1 order-xl-1">
+          <nuxt/>
+        </div>
+        <div class="col-12 col-md-3 col-lg-3 latest-news-slot order-2 order-sm-2 order-xs-2 order-md-2 order-lg-2 order-xl-2"><LatestNews/></div>
+        <div class="col-12 col-md-1 col-lg-1 banners-end order-3 order-sm-3 order-xs-3 order-md-3 order-lg-3 order-xl-3">
+          <div class="divider-15"></div>
+          <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
+          <div class="divider-15"></div>
+          <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
+          <div class="divider-15"></div>
+        </div>
+      </div>
+    </div>
     <Footer/>
   </div>
 </template>
@@ -12,9 +33,10 @@
   import Footer from '../components/Footer'
   import TopLatestNews from '../components/TopLatestNews'
   import MainMenu from '../components/MainMenu'
+  import LatestNews from '../components/LatestNews'
   export default {
     layout: 'default',
-    components: { MenuTop, Footer, TopLatestNews, MainMenu}
+    components: { MenuTop, Footer, TopLatestNews, MainMenu, LatestNews}
   }
 </script>
 <style>
@@ -36,5 +58,57 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.main-row {
+  margin: 0!important;
+}
+.divider-15 {
+  height: 15px;
+  clear: both;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.banners {
+  background: #dae1e7
+}
+@media (max-width: 1024px) {
+  .banners {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+.banners-end {
+  background: #dae1e7;
+}
+@media (max-width: 1024px) {
+  .banners-end {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .img-fluid {
+    width: 90%;
+    margin:  0 5%;
+    height: auto;
+  }
+}
+.inner-content {
+  padding: 20px 0;
+}
+.latest-news-slot {
+  background: #dae1e7;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .latest-news-slot {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 </style>

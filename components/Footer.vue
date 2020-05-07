@@ -11,7 +11,7 @@
           <div class="divider"></div>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-8">
+        <div class="col-md-8 footer-cnt">
           <loading :active.sync="loading"
                    :can-cancel="false"
                    :is-full-page="true"
@@ -28,7 +28,8 @@
                   <a :href="'/' + category.slug" class="link-footer-navigation-category show-loader">{{category.name}}</a>
                   <div class="footer-navigation-divider"></div>
                 </div>
-              </div>
+              <div class="divider-15"></div>
+            </div>
             <div class="col-6 col-md-4">
                 <div class="footer-navigation-title">Ostalo&nbsp;</div>
                 <div class="divider-15"></div>
@@ -36,15 +37,19 @@
                     <a :href="'/' + category.slug" class="link-footer-navigation-category show-loader">{{category.name}}</a>
                   <div class="footer-navigation-divider"></div>
                 </div>
-              </div>
+              <div class="divider-15"></div>
+            </div>
              <div class="col-6 col-md-4">
               <div class="footer-navigation-title">Uskoro</div>
               <div class="divider-15"></div>
                  <div class="footer-navigation-category">
                    <a href="" class="link-footer-navigation-category show-loader">Anketa</a>
                    <div class="footer-navigation-divider"></div>
+                   <a href="" class="link-footer-navigation-category show-loader">Prijavi vijest</a>
+                   <div class="footer-navigation-divider"></div>
                  </div>
-               </div>
+               <div class="divider-15"></div>
+             </div>
           </div>
         </div>
       </div>
@@ -58,9 +63,7 @@
           <a href="" target="_blank" class="link-footer">Design &amp; development by Dragutin Avdalovic</a>
         </div>
       </div>
-
     </div>
-  </div>
   </div>
 </template>
 
@@ -146,7 +149,9 @@
 
 <style>
   /** footer ********************************************************************/
-
+  .footer-cnt {
+   text-align: center;
+  }
   .footer {
     background: #142850;
   }
@@ -192,10 +197,12 @@
     font-family: 'Roboto', Arial;
     color: #FFF;
     margin-top: 15px;
+    text-align: left;
   }
 
   .footer-navigation-category{
     padding-left: 0px;
+    text-align: left !important;
   }
 
   .footer-navigation-divider{

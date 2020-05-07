@@ -1,63 +1,44 @@
 <template>
-  <div class="container inner-content">
-    <div class="row main-row">
-      <div class="col-12 col-md-2 col-lg-2 banners">
-        <div class="divider-15"></div>
-        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
-        <div class="divider-15"></div>
-        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/640x360.png" class="img-fluid" alt="Primjer reklame"></a></div>
-        <div class="divider-15"></div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-6 news-slot">
-      <loading :active.sync="loading"
-               :can-cancel="false"
-               :is-full-page="true"
-               :color="color"
-               :width="width"
-               :height="height"
-               :loader="loader"
-      ></loading>
-      <div class="grid-container" v-if="!loading">
-      <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
-        <div class="main-container">
-          <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
-          <div class="content">
-            <div class="category">
-              <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
-            </div>
-            <div class="title" @click="visitPost(post.id)">
-              <h3>{{post.title.rendered}}</h3>
-            </div>
-          </div>
-        </div>
-        <div class="blog-post-small-inner">
-          <div class="post-footer">
-            <div class="metadata">
-              <div class="created_at">
-                <img src="../static/calendar.svg"/>
-                {{post.date.split('T')[0]}}
+      <div class="news-slot">
+        <loading :active.sync="loading"
+                 :can-cancel="false"
+                 :is-full-page="true"
+                 :color="color"
+                 :width="width"
+                 :height="height"
+                 :loader="loader"
+        ></loading>
+        <div class="grid-container" v-if="!loading">
+        <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
+          <div class="main-container">
+            <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
+            <div class="content">
+              <div class="category">
+                <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
+              </div>
+              <div class="title" @click="visitPost(post.id)">
+                <h3>{{post.title.rendered}}</h3>
               </div>
             </div>
-            <div class="read-more" @click="visitPost(post.id)">
-              <a @click="visitPost(post.id)">
-                <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
-              </a>
+          </div>
+          <div class="blog-post-small-inner">
+            <div class="post-footer">
+              <div class="metadata">
+                <div class="created_at">
+                  <img src="../static/calendar.svg"/>
+                  {{post.date.split('T')[0]}}
+                </div>
+              </div>
+              <div class="read-more" @click="visitPost(post.id)">
+                <a @click="visitPost(post.id)">
+                  <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-      <div class="col-12 col-md-3 col-lg-3 latest-news-slot"><LatestNews/></div>
-      <div class="col-12 col-md-1 col-lg-1 banners-end">
-        <div class="divider-15"></div>
-        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
-        <div class="divider-15"></div>
-        <div><a href="" title="Primjer reklame" target="_self"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid" alt="Primjer reklame"></a></div>
-        <div class="divider-15"></div>
-      </div>
-      </div>
-  </div>
 </template>
 
 <script>
@@ -135,7 +116,7 @@ export default {
       this.loading = false;
     },
     visitPost(id) {
-      this.$router.push('/post/' + id).catch(err => {});
+      this.$router.replace('/post/' + id);
     },
     onLangsPageChange() {
       window.scrollTo(0, 0);
@@ -148,43 +129,6 @@ export default {
 </script>
 
 <style>
-  .main-row {
-    margin: 0!important;
-  }
-  .divider-15 {
-    height: 15px;
-    clear: both;
-  }
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
-  .banners {
-    background: #dae1e7
-  }
-  @media (max-width: 1024px) {
-    .banners {
-      margin-bottom: 20px;
-    }
-  }
-  .banners-end {
-    background: #dae1e7;
-  }
-  @media (max-width: 1024px) {
-    .banners-end {
-      margin-bottom: 20px;
-    }
-  }
-  @media (max-width: 1024px) {
-    .img-fluid {
-      width: 90%;
-      margin:  0 5%;
-      height: auto;
-    }
-  }
-  .inner-content {
-    padding: 20px 0;
-  }
   .main-container {
     position: relative;
   }

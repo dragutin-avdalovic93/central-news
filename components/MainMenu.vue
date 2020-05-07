@@ -83,7 +83,7 @@
     },
     methods: {
       goTo(cat) {
-        this.$router.replace('/' + cat).catch(err => {});
+        this.$router.replace('/' + cat);
         document.getElementById("hamburger-menu").click();
         this.categories = [];
         this.categoryParents = [];
@@ -92,10 +92,10 @@
         this.fetchCategories();
       },
       goHome() {
-        this.$router.replace('/').catch(err => {});
+        this.$router.replace('/');
       },
       goHomeMobile() {
-        this.$router.replace('/').catch(err => {});
+        this.$router.replace('/');
         document.getElementById("hamburger-menu").click();
         this.categories = [];
         this.categoryParents = [];
