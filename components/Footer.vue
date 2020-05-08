@@ -3,7 +3,7 @@
     <div class="footer-inner">
       <div class="row">
         <div class="col-md-3">
-          <a href="https://www.princip.news/"><img src="http://178.62.199.187/wp-content/uploads/2020/05/200x100.gif" class="img-fluid show-loader"></a>
+          <a href="https://www.princip.news/"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/200x100.gif" class="img-fluid show-loader"></a>
           <div class="divider-15"></div>
           <span class="text-contact-us">Kontaktirajte nas</span><br>
           <a href="mailto:redakcija@centralnews.live" class="link-footer-email">redakcija@centralnews.live</a><br><a href="mailto:marketing@centralnews.live" class="link-footer-email">marketing@centralnews.live</a>
@@ -86,7 +86,7 @@
     },
     methods: {
       async fetchCategories() {
-        this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?per_page=100');
+        this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
         this.categories.forEach((category) => {
           if (category.parent === 0) {
             delete category["parent"];

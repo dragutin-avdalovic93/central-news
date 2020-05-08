@@ -67,7 +67,7 @@
       },
       async fetchPost() {
         this.id = this.$route.params.id;
-        this.post = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/posts/' + this.id);
+        this.post = await this.$axios.$get('https://admincentralnews.xyz/wp/v2/posts/' + this.id);
         this.loading = false;
       }
     },

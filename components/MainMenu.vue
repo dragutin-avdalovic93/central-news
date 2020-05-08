@@ -104,7 +104,7 @@
         this.fetchCategories();
       },
       async fetchCategories() {
-        this.categories = await this.$axios.$get('http://178.62.199.187/wp-json/wp/v2/categories?per_page=100');
+        this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
         this.categories.forEach((category) => {
           if (category.parent === 0) {
             delete category["parent"];
