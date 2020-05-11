@@ -446,7 +446,7 @@ export default {
     height: 1.5rem;
   }
   .page-enter-active, .page-leave-active {
-    transition: opacity 1s;
+    transition: opacity 0.5s;
   }
   .page-enter, .page-leave-active {
     opacity: 0;

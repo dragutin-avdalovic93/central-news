@@ -8,7 +8,8 @@
                  :height="height"
                  :loader="loader"
         ></loading>
-        <div class="grid-container" v-if="!loading">
+        <div class="news"  v-if="!loading">
+        <div class="grid-container">
         <div class="blog-post-small" v-for="post in posts" v-bind:key="post.id">
           <div class="main-container">
             <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
@@ -37,7 +38,13 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
+          <div class="page-nav">
+            <div class="button" v-on:click="switchPage(currentPage-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i> </div>
+            <div class="button" v-for="num in numPages" v-bind:class="num===currentPage ? 'active' : ''" v-on:click="switchPage(num)">{{num}}</div>
+            <div class="button" v-on:click="switchPage(currentPage+1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+          </div>
+        </div>
     </div>
 </template>
 
@@ -55,7 +62,11 @@ export default {
       color: '#00909e',
       height: 128,
       width: 128,
-      loader: 'bars'
+      loader: 'bars',
+      currentPage: 1,
+      totalPosts: 0,
+      numPages: 0,
+      perPage: 15
     }
   },
   components: {
@@ -63,8 +74,28 @@ export default {
     LatestNews
   },
   methods: {
-    async fetchData() {
-      this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?per_page=100');
+    async getNumOfPages() {
+      this.totalPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/total_posts');
+      let chunk = this.totalPosts%this.perPage;
+      let num = Math.floor(this.totalPosts/this.perPage);
+      if( chunk - num === 0) {
+        this.numPages = num;
+      } else {
+        this.numPages = num + 1;
+      }
+    },
+    switchPage(pageNum) {
+      this.fetchData(pageNum);
+    },
+    async fetchData(pageNum) {
+      if(pageNum < 1) {
+        return;
+      }
+      this.currentPage = pageNum;
+      this.posts = null;
+      this.tags = null;
+      this.categories = null;
+      this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?per_page=' + this.perPage + '&page=' + pageNum);
       this.tags = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/tags?per_page=100');
       this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
       this.posts.forEach((post) => {
@@ -123,7 +154,8 @@ export default {
     }
   },
   created(){
-    this.fetchData();
+    this.getNumOfPages();
+    this.fetchData(this.currentPage);
   }
 }
 </script>
@@ -134,7 +166,7 @@ export default {
   }
   .news-slot {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: calc(100vh - 53px);
     background: #dae1e7;
@@ -435,9 +467,35 @@ export default {
     height: 1.5rem;
   }
   .page-enter-active, .page-leave-active {
-    transition: opacity 1s;
+    transition: opacity 0.5s;
   }
   .page-enter, .page-leave-active {
     opacity: 0;
+  }
+  .page-nav {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .button {
+    display: inline-block;
+    border: 1px solid #00c834;
+    color: #00c834;;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 2px;
+  }
+
+  .button:hover {
+    background-color: #00c834;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+  }
+  .active {
+    background-color: #00c834;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
   }
 </style>
