@@ -43,7 +43,7 @@
     height: 108px;
   }
   .bordo {
-    color: #7a0000;
+    color: #f70c0c;
   }
   /*#df2027*/
   .header-cont {
@@ -58,7 +58,6 @@
   }
   h1 {
     margin-top: 48px;
-    margin-bottom: 0;
     font-size: 28px;
     font-weight: 700;
     color: #dae1e7;
@@ -66,6 +65,7 @@
   @media (min-width: 0px) and (max-width: 728px) {
     h1 {
       font-size: 22px !important;
+      margin-top: 48px;
     }
   }
   .logo {
