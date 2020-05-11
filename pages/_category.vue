@@ -67,7 +67,7 @@ export default {
   methods: {
     async fetchData() {
       this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?per_page=100');
-      this.tags = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp-json/wp/v2/tags?per_page=100');
+      this.tags = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/tags?per_page=100');
       this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
       this.posts.forEach((post) => {
         let tagnames = [];
