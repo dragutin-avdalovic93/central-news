@@ -61,11 +61,13 @@
     font-size: 28px;
     font-weight: 700;
     color: #dae1e7;
+    margin-left: -15px;
   }
   @media (min-width: 0px) and (max-width: 728px) {
     h1 {
       font-size: 22px !important;
       margin-top: 48px;
+      margin-left: -15px;
     }
   }
   .logo {
