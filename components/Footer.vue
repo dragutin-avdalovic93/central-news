@@ -2,13 +2,16 @@
   <div class="footer">
     <div class="footer-inner">
       <div class="row">
-        <div class="col-md-3">
-          <a href="https://www.princip.news/"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/200x100.gif" class="img-fluid show-loader"></a>
+        <div class="col-md-3 logo-col">
+          <div class="high-resolution-photo" @click="goHome"></div>
+          <div class="contact">
           <div class="divider-15"></div>
           <span class="text-contact-us">Kontaktirajte nas</span><br>
-          <a href="mailto:redakcija@centralnews.live" class="link-footer-email">redakcija@centralnews.live</a><br><a href="mailto:marketing@centralnews.live" class="link-footer-email">marketing@centralnews.live</a>
+          <a href="mailto:redakcija@centralnews.live" class="link-footer-email">redakcija@centralnews.live</a><br>
+          <a href="mailto:marketing@centralnews.live" class="link-footer-email">marketing@centralnews.live</a>
           <br>
           <div class="divider"></div>
+          </div>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-8 footer-cnt">
@@ -135,7 +138,7 @@
         this.$router.push({name: string});
       },
       goHome() {
-        this.$router.push('/');
+        this.$router.replace('/');
       }
     },
     components: {
@@ -148,6 +151,20 @@
 </script>
 
 <style>
+  .high-resolution-photo {
+    background-image: url('https://admincentralnews.xyz/wp-content/uploads/2020/05/central-news-logo.gif');
+    background-size: 108px 81px;
+    background-repeat: no-repeat;
+    display: block;
+    width: 108px;
+    height: 81px;
+    margin-top: 20px;
+    transform: scale(2.5);
+    z-index: 1;
+  }
+  .contact {
+    z-index: 2;
+  }
   /** footer ********************************************************************/
   .footer-cnt {
    text-align: center;
@@ -344,6 +361,11 @@
     height: 1px;
     background-color: #444;
     margin: 0 0 25px 0;
+  }
+  .logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   /* end social feed */
 

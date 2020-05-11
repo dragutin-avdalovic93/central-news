@@ -200,6 +200,7 @@
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
     -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
     -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
+    z-index: 2;
   }
   .top-stories-bar:before {
     content: "";

@@ -1,6 +1,7 @@
 <template>
   <div class="header-cont">
     <div class="header" @click="goHome">
+      <div class="high-resolution-photo"></div>
       <h1>CENTRAL <span class="bordo">news</span></h1>
     </div>
   </div>
@@ -25,6 +26,22 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .high-resolution-photo {
+    background-image: url('https://admincentralnews.xyz/wp-content/uploads/2020/05/central-news-logo.gif');
+    background-size: 108px 81px;
+    background-repeat: no-repeat;
+    display: block;
+    width: 108px;
+    height: 81px;
+    margin-top: 20px;
+    transform: scale(2.5);
+    z-index: 1;
+  }
+  .normal-photo{
+    background-image: url('https://admincentralnews.xyz/wp-content/uploads/2020/05/central-news-logo.gif');
+    width: 144px;
+    height: 108px;
+  }
   .bordo {
     color: #7a0000;
   }
@@ -49,5 +66,9 @@
     h1 {
       font-size: 22px !important;
     }
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
   }
 </style>
