@@ -57,7 +57,8 @@
     cursor: pointer;
   }
   h1 {
-    margin: 10px 0;
+    margin-top: 48px;
+    margin-bottom: 0;
     font-size: 28px;
     font-weight: 700;
     color: #dae1e7;
