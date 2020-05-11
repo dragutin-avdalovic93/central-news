@@ -11,6 +11,93 @@
           ></loading>
           <div class="article" v-if="!loading">
             <div class="blog-detail-post">
+              <div class="social">
+                <social-sharing :url="'https://www.centralnews.live/post/' + post.id"
+                                :title="post.title.rendered"
+                                :description="post.content.rendered"
+                                :quote="post.excerpt.rendered"
+                                hashtags=""
+                                twitter-user=""
+                                inline-template>
+                  <div class="row handler-row">
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                      <network network="email">
+                        <i class="fa fa-envelope"></i> Email
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="facebook">
+                        <i class="fab fa-facebook"></i> Facebook
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="googleplus">
+                        <i class="fab fa-google-plus"></i> Google +
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                      <network network="line">
+                        <i class="fab fa-line"></i> Line
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="odnoklassniki">
+                        <i class="fab fa-odnoklassniki"></i> Odnoklassniki
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                      <network network="reddit">
+                        <i class="fab fa-reddit"></i> Reddit
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="skype">
+                        <i class="fab fa-skype"></i> Skype
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="sms">
+                        <i class="fa fa-envelope"></i> SMS
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="telegram">
+                        <i class="fab fa-telegram"></i> Telegram
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                      <network network="vk">
+                        <i class="fab fa-vk"></i> VKontakte
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="weibo">
+                        <i class="fab fa-weibo"></i> Weibo
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="whatsapp">
+                        <i class="fab fa-whatsapp"></i> Whatsapp
+                      </network>
+                    </div>
+                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <network network="pinterest">
+                        <i class="fab fa-pinterest"></i> Pinterest
+                      </network>
+                    </div>
+                  </div>
+                </social-sharing>
+              </div>
               <img class="thumb-img" v-bind:src="post.featured_image_url">
               <div class="blog-detail-post-inner">
                 <div class="content">
@@ -68,6 +155,7 @@
       async fetchPost() {
         this.id = this.$route.params.id;
         this.post = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts/' + this.id);
+        console.log(this.post);
         this.loading = false;
       }
     },
@@ -77,7 +165,31 @@
   }
 </script>
 
-<style scoped>
+<style>
+  .social {
+    margin: 10px auto;
+  }
+  .social span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    border: solid 1px #12cead;
+    line-height: 2.5;
+    color: #12cead;
+    cursor: pointer;
+  }
+  .social span {
+    outline: none !important;
+  }
+  .social span:hover {
+    border: solid 1px white;
+    color:white;
+    background: #12cead;
+
+  }
+  .handler-row {
+    text-align: center;
+  }
   .news-slot {
     display: flex;
     align-items: center;
@@ -91,7 +203,7 @@
     align-items: flex-start;
     justify-content: center;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .latest-news-slot {
       margin-top: 20px;
     }
@@ -325,7 +437,7 @@
     height: 1.5rem;
   }
   .page-enter-active, .page-leave-active {
-    transition: opacity 1s;
+    transition: opacity 0.5s;
   }
   .page-enter, .page-leave-active {
     opacity: 0;

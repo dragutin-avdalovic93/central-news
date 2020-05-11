@@ -74,7 +74,7 @@ html {
 .banners {
   background: #dae1e7
 }
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .banners {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -83,7 +83,7 @@ html {
 .banners-end {
   background: #dae1e7;
 }
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .banners-end {
     margin-bottom: 20px;
     margin-top: 20px;
@@ -105,7 +105,7 @@ html {
   align-items: flex-start;
   justify-content: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .latest-news-slot {
     margin-top: 20px;
     margin-bottom: 20px;

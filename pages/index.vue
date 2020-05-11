@@ -77,7 +77,9 @@ export default {
     async getNumOfPages() {
       this.totalPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/total_posts');
       let chunk = this.totalPosts%this.perPage;
+      console.log(chunk);
       let num = Math.floor(this.totalPosts/this.perPage);
+      console.log(num);
       if( chunk - num === 0) {
         this.numPages = num;
       } else {
@@ -177,7 +179,7 @@ export default {
     align-items: flex-start;
     justify-content: center;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .latest-news-slot {
       margin-top: 20px;
     }
