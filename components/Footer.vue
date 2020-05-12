@@ -43,13 +43,15 @@
               <div class="divider-15"></div>
             </div>
              <div class="col-6 col-md-4">
-              <div class="footer-navigation-title">Uskoro</div>
+              <div class="footer-navigation-title">Društvene mreže</div>
               <div class="divider-15"></div>
                  <div class="footer-navigation-category">
-                   <a href="" class="link-footer-navigation-category show-loader">Anketa</a>
-                   <div class="footer-navigation-divider"></div>
-                   <a href="" class="link-footer-navigation-category show-loader">Prijavi vijest</a>
-                   <div class="footer-navigation-divider"></div>
+                   <div class="ml-md-auto d-flex flex-nowrap">
+                     <a class="fab fa-facebook-f social-media-icon ml-0" href="https://www.facebook.com/centralnews.live" title="Facebook" target="_blank"></a>
+                     <a class="fab fa-instagram social-media-icon" href="https://www.instagram.com/central_news_/" title="Instagram" target="_blank"></a>
+                     <a class="fab fa-youtube social-media-icon" href="" title="YouTube" target="_blank"></a>
+                   <a class="fab fa-twitter social-media-icon" href="" title="Twitter" target="_blank"></a>
+                   </div>
                  </div>
                <div class="divider-15"></div>
              </div>
@@ -172,12 +174,38 @@
   .footer {
     background: #142850;
   }
-
+  .footer .fa-facebook-f {
+    background: #3b5998;
+  }
+  .footer .fa-twitter {
+    background: #55acee;
+  }
+  .footer .fa-instagram {
+    background: #bc2a8d;
+  }
+  .footer .fa-youtube {
+    background: red;
+  }
+  .footer .social-media-icon {
+    font-size: 20px;
+    margin-left: 5px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    color: #fff;
+  }
+  .footer .social-media-icon:hover {
+    opacity: .7;
+  }
   .footer-inner {
     max-width: 1140px;
     margin: auto;
     padding: 40px 15px 15px 15px;
-    font-family: 'Roboto', Arial;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     color: #999;
   }
