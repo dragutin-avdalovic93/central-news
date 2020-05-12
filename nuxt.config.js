@@ -49,6 +49,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/moment',
     'nuxt-seo',
     ['@nuxtjs/google-analytics', {
       id: 'G-QCTH5GBLH2'
@@ -59,6 +60,11 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  moment: {
+    /* module options */
+    defaultLocale: 'bs',
+    locales: ['bs']
+  },
   seo: {
     // Module options
     name: 'Central news',

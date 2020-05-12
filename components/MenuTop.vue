@@ -4,6 +4,14 @@
       <div class="high-resolution-photo"></div>
       <h1>CENTRAL <span class="bordo">news</span></h1>
     </div>
+    <div class="footer-navigation-category">
+      <div class="ml-md-auto d-flex flex-nowrap">
+        <a class="fab fa-facebook-f social-media-icon ml-0" href="https://www.facebook.com/centralnews.live" title="Facebook" target="_blank"></a>
+        <a class="fab fa-instagram social-media-icon" href="https://www.instagram.com/central_news_/" title="Instagram" target="_blank"></a>
+        <a class="fab fa-youtube social-media-icon" href="" title="YouTube" target="_blank"></a>
+        <a class="fab fa-twitter social-media-icon" href="" title="Twitter" target="_blank"></a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -26,6 +34,43 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .footer-navigation-category .fa-facebook-f {
+    background: #3b5998;
+  }
+  .footer-navigation-category .fa-twitter {
+    background: #55acee;
+  }
+  .footer-navigation-category .fa-instagram {
+    background: #bc2a8d;
+  }
+  .footer-navigation-category .fa-youtube {
+    background: red;
+  }
+  .footer-navigation-category .social-media-icon {
+    font-size: 20px;
+    margin-left: 5px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    color: #fff;
+  }
+  .footer-navigation-category .social-media-icon:hover {
+    opacity: .7;
+  }
+  .footer-navigation-category {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  @media (min-width: 0px) and (max-width: 728px) {
+    .footer-navigation-category{
+      display: none;
+    }
+  }
   .high-resolution-photo {
     background-image: url('https://admincentralnews.xyz/wp-content/uploads/2020/05/central-news-logo.gif');
     background-size: 108px 81px;
@@ -48,6 +93,7 @@
   /*#df2027*/
   .header-cont {
     background: #142850;
+    position: relative;
   }
   .header {
     display: flex;

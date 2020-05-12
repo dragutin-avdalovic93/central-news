@@ -40,16 +40,16 @@
                   <h2 class="title">
                     {{post[0].title["rendered"]}}
                   </h2>
+                  <div class="created_at">
+                    <img src="../../static/calendar.svg"/>
+                    {{$moment(post.date).format("dddd, DD.MM.YYYY")}}
+                  </div>
                   <div class='excerpt-container'>
                     <p class="description" v-html="post[0].content['rendered']"></p>
                   </div>
                 </div>
                 <div class="post-footer">
                   <div class="metadata">
-                    <div class="created_at">
-                      <img src="../../static/calendar.svg"/>
-                      {{post[0].date.split('T')[0]}}
-                    </div>
                   </div>
                   <div class="read-more" @click="goBack">
                     <a @click="goBack">
@@ -65,7 +65,8 @@
 </template>
 <script>
   import Loading from 'vue-loading-overlay';
-  import LatestNews from '../../components/LatestNews'
+  import LatestNews from '../../components/LatestNews';
+  import moment from 'moment';
   export default {
     name: 'PostDetail',
     layout: 'blog',
@@ -249,22 +250,24 @@
     justify-content: space-between;
     padding-bottom: 25px;
   }
-  .blog-detail-post .post-footer .metadata .created_at {
+  .blog-detail-post .content .created_at {
+    padding-bottom: 15px;
     display: flex;
     align-items: center;
     font-size: 12px;
     font-weight: 600;
     text-align: left;
     letter-spacing: 0;
-    color: #4b4361;
+    color: #999;
     opacity: 1;
     transition: all 200ms ease-in-out;
   }
-  .blog-detail-post .post-footer .metadata .created_at img {
-    margin-right: 10px;
+  .blog-detail-post .content .created_at img {
+    margin-right: 5px;
     width: 14px;
     height: 14px;
     margin-bottom: 2px;
+    color: #999;
   }
   .blog-detail-post .blog-detail-post-inner .content .excerpt-container {
     min-height: 90px;
@@ -288,7 +291,7 @@
     opacity: 1;
     transition: all 200ms ease-in-out;
     text-overflow: ellipsis;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
   }
   .blog-detail-post .blog-detail-post-inner .content .description {
     transition: all 200ms ease-in-out;
