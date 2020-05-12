@@ -49,12 +49,22 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    'nuxt-seo'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  seo: {
+    // Module options
+    name: 'Central news',
+    title: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.',
+    templateTitle: '%name% - %title%',
+    description: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.',
+    image: 'https://www.centralnews.live/central-news-logo.gif',
+
+  },
   /*
    ** Build configuration
    */

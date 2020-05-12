@@ -17,6 +17,7 @@
     "jquery": "^3.5.0",
     "lodash": "^4.17.15",
     "nuxt": "^2.0.0",
+    "nuxt-seo": "^1.2.2",
     "popper.js": "^1.16.1",
     "vue-loading-overlay": "^3.3.2",
     "vue-social-sharing": "^2.4.7"
