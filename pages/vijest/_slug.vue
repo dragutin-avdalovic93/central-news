@@ -20,79 +20,15 @@
                                 twitter-user=""
                                 inline-template>
                   <div class="row handler-row">
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                      <network network="email">
-                        <i class="fa fa-envelope"></i> Email
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
+                    <div class="col-sm-12 col-12 col-lg-12 col-xl-12 col-xs-12 col-sm-12">
                     <network network="facebook">
                         <i class="fab fa-facebook"></i> Facebook
                       </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="googleplus">
-                        <i class="fab fa-google-plus"></i> Google +
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                      <network network="line">
-                        <i class="fab fa-line"></i> Line
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="linkedin">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="odnoklassniki">
-                        <i class="fab fa-odnoklassniki"></i> Odnoklassniki
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                      <network network="reddit">
-                        <i class="fab fa-reddit"></i> Reddit
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="skype">
-                        <i class="fab fa-skype"></i> Skype
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="sms">
-                        <i class="fa fa-envelope"></i> SMS
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="telegram">
-                        <i class="fab fa-telegram"></i> Telegram
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
                     <network network="twitter">
                         <i class="fab fa-twitter"></i> Twitter
                       </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                      <network network="vk">
-                        <i class="fab fa-vk"></i> VKontakte
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="weibo">
-                        <i class="fab fa-weibo"></i> Weibo
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
                     <network network="whatsapp">
                         <i class="fab fa-whatsapp"></i> Whatsapp
-                      </network>
-                    </div>
-                    <div class="col-sm-6 col-6 col-lg-4 col-xl-4 col-xs-4 col-sm-4">
-                    <network network="pinterest">
-                        <i class="fab fa-pinterest"></i> Pinterest
                       </network>
                     </div>
                   </div>
@@ -167,22 +103,24 @@
 
 <style>
   .social {
-    margin: 10px auto;
+    margin: 10px auto 10px 5px;
   }
   .social span {
-    padding: 5px 10px;
+    padding: 2px;
     border-radius: 5px;
     margin: 5px;
-    border: solid 1px #12cead;
+    border: solid 2px #12cead;
     line-height: 2.5;
     color: #12cead;
+    font-size: 14px;
     cursor: pointer;
+    font-weight: 500;
   }
   .social span {
     outline: none !important;
   }
   .social span:hover {
-    border: solid 1px white;
+    border: solid 2px white;
     color:white;
     background: #12cead;
 
