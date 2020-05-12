@@ -214,7 +214,7 @@
     font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
-    font-family: 'Roboto', Arial;
+    font-family: 'Roboto', sans-serif;
     color: #FFF;
     margin-top: 15px;
   }
