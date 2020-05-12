@@ -42,7 +42,7 @@
                   </h2>
                   <div class="created_at">
                     <img src="../../static/calendar.svg"/>
-                    {{$moment(post.date).format("dddd, DD.MM.YYYY")}}
+                    {{$moment(post[0].date).format("dddd, DD.MM.YYYY")}}
                   </div>
                   <div class='excerpt-container'>
                     <p class="description" v-html="post[0].content['rendered']"></p>
