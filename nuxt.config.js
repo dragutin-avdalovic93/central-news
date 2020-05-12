@@ -67,7 +67,7 @@ export default {
     title: 'Central news - novinski portal',
     templateTitle: '%name% - %title%',
     description: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.',
-    image: 'https://www.centralnews.live/central-news-logo.gif',
+    image: 'https://www.centralnews.live/central-news-logo.png',
     url: 'https://www.centralnews.live/',
     openGraph: {
       type: 'website',
@@ -76,7 +76,7 @@ export default {
       title: 'Central news - novinski portal',
       description: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.',
       image: {
-        url: 'https://www.centralnews.live/central-news-logo.gif',
+        url: 'https://www.centralnews.live/central-news-logo.png',
         width: '200',
         height: '200'
       }

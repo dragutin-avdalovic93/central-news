@@ -106,10 +106,10 @@
     margin: 10px auto 10px 5px;
   }
   .social span {
-    padding: 2px;
+    padding: 2px 4px;
     border-radius: 5px;
     margin: 5px;
-    border: solid 2px #12cead;
+    border: solid 1px #12cead;
     line-height: 2.5;
     color: #12cead;
     font-size: 14px;
@@ -120,7 +120,7 @@
     outline: none !important;
   }
   .social span:hover {
-    border: solid 2px white;
+    border: solid 1px white;
     color:white;
     background: #12cead;
 
