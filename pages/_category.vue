@@ -9,14 +9,14 @@
                  :loader="loader"
         ></loading>
         <div class="grid-container" v-if="!loading">
-          <div class="blog-post-small" v-for="post in postsFiltered" v-bind:key="post.id">
+          <div class="blog-post-small" v-for="post in postsFiltered" v-bind:key="post.slug">
             <div class="main-container">
-              <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.id)"/>
+              <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.slug)"/>
               <div class="content">
                 <div class="category">
                   <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
                 </div>
-                <div class="title" @click="visitPost(post.id)">
+                <div class="title" @click="visitPost(post.slug)">
                   <h3>{{post.title.rendered}}</h3>
                 </div>
               </div>
@@ -29,8 +29,8 @@
                     {{post.date.split('T')[0]}}
                   </div>
                 </div>
-                <div class="read-more" @click="visitPost(post.id)">
-                  <a @click="visitPost(post.id)">
+                <div class="read-more" @click="visitPost(post.slug)">
+                  <a @click="visitPost(post.slug)">
                     <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
                   </a>
                 </div>
@@ -126,8 +126,8 @@ export default {
       console.log('postovi after', this.postsFiltered);
       this.loading = false;
     },
-    visitPost(id) {
-      this.$router.replace('/post/' + id);
+    visitPost(slug) {
+      this.$router.replace('/vijest/' + slug);
     },
     onLangsPageChange() {
       window.scrollTo(0, 0);

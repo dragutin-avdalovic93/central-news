@@ -13,14 +13,14 @@
       <div class="row" v-for="post in latestPosts">
         <div class="col-4 news-section-col-image">
           <div class="news-background-image" :style="'background-image: url(' + post.featured_image_url + ');'">
-            <a :href="'/post/' + post.id"><div class="news-background-image-space-70 show-loader"></div></a>
-            <a :href="'/post/' + post.id">
+            <a :href="'/vijest/' + post.slug"><div class="news-background-image-space-70 show-loader"></div></a>
+            <a :href="'/vijest/' + post.slug">
               <div class="news-section-category-badge show-loader" v-if="post.hasCat">{{post["catnames"][0]}}</div>
             </a>
           </div>
         </div>
         <div class="col-8">
-          <a :href="'/post/' + post.id" class="news-section-title show-loader">{{post.title.rendered}}</a>
+          <a :href="'/vijest/' + post.slug" class="news-section-title show-loader">{{post.title.rendered}}</a>
           <div class="news-section-description" v-html="post.excerpt.rendered.substring(0,100) + '...'"></div>
           <div class="news-section-date"><i class="far fa-calendar"> </i> {{post.date.split('T')[0]}} <span>{{post.date.split('T')[1]}} </span></div>
         </div>
@@ -144,7 +144,7 @@
         this.$router.replace('/');
       },
       visitPost(id) {
-        this.$router.replace('/post/' + id);
+        this.$router.replace('/vijest/' + slug);
       },
     },
     created(){

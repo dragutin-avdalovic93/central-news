@@ -12,10 +12,10 @@
           <div class="article" v-if="!loading">
             <div class="blog-detail-post">
               <div class="social">
-                <social-sharing :url="'https://www.centralnews.live/post/' + post.id"
-                                :title="post.title.rendered"
-                                :description="post.content.rendered"
-                                :quote="post.excerpt.rendered"
+                <social-sharing :url="'https://www.centralnews.live/vijest/' + post[0].slug"
+                                :title="post[0].title['rendered']"
+                                :description="post[0].content['rendered']"
+                                :quote="post[0].excerpt['rendered']"
                                 hashtags=""
                                 twitter-user=""
                                 inline-template>
@@ -98,21 +98,21 @@
                   </div>
                 </social-sharing>
               </div>
-              <img class="thumb-img" v-bind:src="post.featured_image_url">
+              <img class="thumb-img" v-bind:src="post[0].featured_image_url">
               <div class="blog-detail-post-inner">
                 <div class="content">
                   <h2 class="title">
-                    {{post.title.rendered}}
+                    {{post[0].title["rendered"]}}
                   </h2>
                   <div class='excerpt-container'>
-                    <p class="description" v-html="post.content.rendered"></p>
+                    <p class="description" v-html="post[0].content['rendered']"></p>
                   </div>
                 </div>
                 <div class="post-footer">
                   <div class="metadata">
                     <div class="created_at">
                       <img src="../../static/calendar.svg"/>
-                      {{post.date.split('T')[0]}}
+                      {{post[0].date.split('T')[0]}}
                     </div>
                   </div>
                   <div class="read-more" @click="goBack">
@@ -153,13 +153,13 @@
         this.$router.replace('/');
       },
       async fetchPost() {
-        this.id = this.$route.params.id;
-        this.post = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts/' + this.id);
+        this.slug = this.$route.params.slug;
+        this.post = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?slug=' + this.slug);
         console.log(this.post);
         this.loading = false;
       }
     },
-    created() {
+    mounted() {
       this.fetchPost();
     }
   }

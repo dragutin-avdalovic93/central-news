@@ -6,7 +6,7 @@
           <div class="top-stories-label">
             <div class="top-stories-label-wrap">
               <span class="flash-icon"></span>
-              <span class="label-txt"><a @click="goTo(newsOfDay.id)">VIJEST DANA</a></span>
+              <span class="label-txt"><a @click="goTo(newsOfDay.slug)">VIJEST DANA</a></span>
             </div>
           </div>
         </div>
@@ -16,7 +16,7 @@
               <div class="marquee">
                 <div class="marquee__content">
                   <ul class="list-inline" v-for="post in latestPosts">
-                    <li class="marquee-li"><span v-if="post.hasCat" class="marquee-box">{{post.catnames[0]}} {{post.date.split('T')[1].substring(0, 5)}}</span><a @click="goTo(post.id)">{{post.title.rendered}}</a></li>
+                    <li class="marquee-li"><span v-if="post.hasCat" class="marquee-box">{{post.catnames[0]}} {{post.date.split('T')[1].substring(0, 5)}}</span><a @click="goTo(post.slug)">{{post.title.rendered}}</a></li>
                   </ul>
                 </div>
               </div>
@@ -92,16 +92,17 @@
         });
       },
       goHome() {
-        this.$router.push('/');
+        this.$router.replace('/');
       },
-      goTo(id) {
-        this.$router.push('/post/' + id);
+      goTo(slug) {
+        this.$router.replace('/vijest/' + slug);
       },
       async extractNewsOfDay() {
         this.posts.forEach((post) => {
           if(post.hasTag !== false) {
             if(post.tagnames.includes("vijestdana")) {
               this.newsOfDay = post;
+              console.log('NEWS OF DAY', this.newsOfDay);
             }
           }
         });
