@@ -126,6 +126,11 @@
             hid: 'og:image:height',
             name: 'og:image:height',
             content: 200
+          },
+          {
+            hid: 'fb:app_id',
+            name: 'fb:app_id',
+            content: '243134206938677'
           }
         ]
       }
