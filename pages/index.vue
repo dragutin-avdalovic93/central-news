@@ -217,7 +217,7 @@ export default {
       display: grid;
       max-width: unset;
       grid-template-columns: repeat(1, 1fr) !important;
-      grid-gap: 5px;
+      grid-gap: 20px;
       grid-auto-rows: minmax(100px, auto);
     }
   }

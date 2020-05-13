@@ -33,7 +33,7 @@
                 </social-sharing>
               </div>
               <div class="created_at">
-                <img src="../../static/calendar.svg"/>
+                <i class="fas fa-calendar" aria-hidden="true"></i>
                 {{$moment(post[0].date).format("dddd, DD.MM.YYYY")}}
               </div>
               <img class="thumb-img" v-bind:src="post[0].featured_image_url">
@@ -180,7 +180,7 @@
     margin: 5px auto 5px 5px;
   }
   .social span {
-    padding: 2px 4px;
+    padding: 4px 8px;
     border-radius: 5px;
     margin: 5px;
     border: solid 1px #12cead;
@@ -333,7 +333,7 @@
     color: #999;
     opacity: 1;
     transition: all 200ms ease-in-out;
-    margin:  0 10px;
+    margin:  5px 10px;
   }
   .blog-detail-post .autor {
     display: flex;
@@ -354,11 +354,10 @@
     height: 14px;
     color: #999;
   }
-  .blog-detail-post .created_at img {
+  .blog-detail-post .created_at i {
     margin-right: 5px;
     width: 14px;
     height: 14px;
-    margin-bottom: 2px;
     color: #999;
   }
   .blog-detail-post .blog-detail-post-inner .content .excerpt-container {
