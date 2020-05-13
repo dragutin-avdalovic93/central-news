@@ -77,12 +77,12 @@ export default {
       {
         hid: 'og:image:width',
         property: 'og:image:width',
-        content: 200
+        content: "200"
       },
       {
         hid: 'og:image:height',
         property: 'og:image:height',
-        content: 200
+        content: "200"
       },
       {
         hid: 'fb:app_id',

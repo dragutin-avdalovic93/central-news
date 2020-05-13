@@ -78,7 +78,7 @@
         meta: [{
           hid: 'description',
           name: 'description',
-          content: this.post[0].excerpt["rendered"].substring(3,100)
+          content: this.post[0].excerpt["rendered"].substring(3,150)
         }, {
           hid: 'twitter:card',
           name: 'twitter:card',
@@ -89,13 +89,13 @@
           content: this.post[0].title["rendered"]
         }, {
           hid: 'og:type',
-          name: 'og:type',
+          property: 'og:type',
           content: 'website'
         },
           {
             hid: 'og:description',
             property: 'og:description',
-            content: this.post[0].excerpt["rendered"].substring(3,100)
+            content: this.post[0].excerpt["rendered"].substring(3,150)
           },
           {
             hid: 'og:title',
@@ -120,12 +120,12 @@
           {
             hid: 'og:image:width',
             property: 'og:image:width',
-            content: 200
+            content: "200"
           },
           {
             hid: 'og:image:height',
             property: 'og:image:height',
-            content: 200
+            content: "200"
           },
           {
             hid: 'fb:app_id',
