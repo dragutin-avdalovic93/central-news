@@ -365,6 +365,7 @@
     color: white;
     font-weight: 400;
     font-size: 16px;
+    font-family: Roboto, sans-serif;
     height: 50px;
   }
   .top-stories-bar .top-stories-lists .marquee a:hover {

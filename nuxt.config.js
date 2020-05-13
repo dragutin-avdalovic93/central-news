@@ -36,7 +36,7 @@ export default {
    */
   plugins: ["~plugins/bootstrap.js",
     "@/plugins/vue-social-sharing.js",
-    { src: '~plugins/ga.js', mode: 'client' }]
+    { src: '@/plugins/ga.js', mode: 'client' }]
 ,
   /*
    ** Nuxt.js dev-modules
