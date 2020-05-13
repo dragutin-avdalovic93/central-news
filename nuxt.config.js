@@ -72,7 +72,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://www.centralnews.live/central-news-logo.png'
+        content: 'https://www.centralnews.live/central-news-logo.gif'
       },
       {
         hid: 'og:image:width',

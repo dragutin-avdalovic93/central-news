@@ -78,7 +78,7 @@
         meta: [{
           hid: 'description',
           name: 'description',
-          content: this.post[0].excerpt["rendered"].substring(3,150)
+          content: this.post[0].excerpt["rendered"].substring(3,250)
         }, {
           hid: 'twitter:card',
           name: 'twitter:card',
@@ -95,7 +95,7 @@
           {
             hid: 'og:description',
             property: 'og:description',
-            content: this.post[0].excerpt["rendered"].substring(3,150)
+            content: this.post[0].excerpt["rendered"].substring(3,250)
           },
           {
             hid: 'og:title',
