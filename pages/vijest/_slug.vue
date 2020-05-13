@@ -74,10 +74,65 @@
   export default {
     name: 'PostDetail',
     layout: 'blog',
+    head() {
+      console.log('head data', this.post[0]);
+      console.log('dd', this.post[0].content["rendered"]);
+      return {
+        title: this.post[0].title["rendered"],
+        meta: [{
+          hid: 'description',
+          name: 'description',
+          content: this.post[0].content["rendered"]
+        }, {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content:this.post[0].title["rendered"]
+        }, {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.post[0].content["rendered"]
+        }, {
+          hid: 'og:type',
+          name: 'og:type',
+          content: 'website'
+        },
+          {
+            hid: 'og:title',
+            name: 'og:title',
+            content: this.post[0].title["rendered"]
+          },
+          {
+            hid: 'og:url',
+            name: 'og:url',
+            content: `https://www.centralnews.live/vijest/${this.post[0].slug}`
+          },
+          {
+            hid: 'og:name',
+            name: 'og:name',
+            content: this.post[0].title["rendered"]
+          },
+          {
+            hid: 'og:image',
+            name: 'og:image',
+            content: this.post[0].featured_image_url
+          }]
+      }
+    },
+    asyncData(context) {
+      console.log('cont', context);
+      console.log('param', context.route.params);
+      const slug = context.route.params;
+      return context.$axios
+        .get('https://admincentralnews.xyz/wp-json/wp/v2/posts?slug=' + slug.slug)
+        .then((res) => {
+          console.log('postic', res);
+          return { post: res.data, loading: false }
+        })
+    },
     data() {
       return {
         post: {},
-        id: "",
+        slug: "",
         loading: true,
         color: '#00909e',
         height: 128,
@@ -100,9 +155,9 @@
         this.loading = false;
       }
     },
-    mounted() {
-      this.fetchPost();
-    }
+    // mounted() {
+    //   this.fetchPost();
+    // }
   }
 </script>
 

@@ -13,6 +13,70 @@ export default {
         hid: 'description',
         name: 'description',
         content: 'Central news - novinski portal' || ''
+      },
+      {
+        hid: 'name',
+        name: 'name',
+        content: 'Central news'
+      },
+      {
+        hid: 'title',
+        name: 'title',
+        content: 'Central news - novinski portal'
+      },
+      {
+        hid: 'templateTitle',
+        name: 'templateTitle',
+        content: '%name% - %title%'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.'
+      },
+      {
+        hid: 'image',
+        name: 'image',
+        content: 'https://www.centralnews.live/central-news-logo.png'
+      },
+      {
+        hid: 'url',
+        name: 'url',
+        content: 'https://www.centralnews.live/'
+      },
+     {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'Central news'
+      }, {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Central news - novinski portal'
+      },
+      {
+        hid: 'og:type',
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'Central news - novinski portal'
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://www.centralnews.live/'
+      },
+      {
+        hid: 'og:name',
+        name: 'og:name',
+        content: 'Central news'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'https://www.centralnews.live/central-news-logo.png'
       }
     ],
     link: [
@@ -52,7 +116,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/moment',
-    'nuxt-seo',
     '@nuxtjs/google-analytics'
   ],
   /*
@@ -61,33 +124,13 @@ export default {
    */
   axios: {},
   googleAnalytics: {
-    id: 'G-QCTH5GBLH2'
+    id: 'G-QCTH5GBLH2',
+    dev: false
   },
   moment: {
     /* module options */
     defaultLocale: 'bs',
     locales: ['bs']
-  },
-  seo: {
-    // Module options
-    name: 'Central news',
-    title: 'Central news - novinski portal',
-    templateTitle: '%name% - %title%',
-    description: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.',
-    image: 'https://www.centralnews.live/central-news-logo.png',
-    url: 'https://www.centralnews.live/',
-    openGraph: {
-      type: 'website',
-      url: 'https://www.centralnews.live/',
-      name: 'Central news',
-      title: 'Central news - novinski portal',
-      description: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.',
-      image: {
-        url: 'https://www.centralnews.live/central-news-logo.png',
-        width: '200',
-        height: '200'
-      }
-    }
   },
   /*
    ** Build configuration
