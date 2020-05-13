@@ -14,8 +14,6 @@
               <div class="social">
                 <social-sharing :url="'https://www.centralnews.live/vijest/' + post[0].slug"
                                 :title="post[0].title['rendered']"
-                                :description="post[0].content['rendered']"
-                                :quote="post[0].excerpt['rendered']"
                                 hashtags=""
                                 twitter-user=""
                                 inline-template>
@@ -75,14 +73,12 @@
     name: 'PostDetail',
     layout: 'blog',
     head() {
-      console.log('head data', this.post[0]);
-      console.log('dd', this.post[0].content["rendered"]);
       return {
         title: this.post[0].title["rendered"],
         meta: [{
           hid: 'description',
           name: 'description',
-          content: this.post[0].excerpt["rendered"].substring(4,100)
+          content: this.post[0].excerpt["rendered"].substring(3,100)
         }, {
           hid: 'twitter:card',
           name: 'twitter:card',
@@ -99,7 +95,7 @@
           {
             hid: 'og:description',
             name: 'og:description',
-            content: this.post[0].excerpt["rendered"].substring(4,100)
+            content: this.post[0].excerpt["rendered"].substring(3,100)
           },
           {
             hid: 'og:title',
@@ -135,13 +131,10 @@
       }
     },
     asyncData(context) {
-      console.log('cont', context);
-      console.log('param', context.route.params);
       const slug = context.route.params;
       return context.$axios
         .get('https://admincentralnews.xyz/wp-json/wp/v2/posts?slug=' + slug.slug)
         .then((res) => {
-          console.log('postic', res);
           return { post: res.data, loading: false }
         })
     },

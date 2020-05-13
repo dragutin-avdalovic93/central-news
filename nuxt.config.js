@@ -20,11 +20,6 @@ export default {
         content: 'Central news - novinski portal'
       },
       {
-        hid: 'templateTitle',
-        name: 'templateTitle',
-        content: '%name% - %title%'
-      },
-      {
         hid: 'description',
         name: 'description',
         content: 'Central news je novinski portal koji prati i izvještava o najnovijim dešavanjima u Istočnom Sarajevu, Republici Srpskoj, BiH, regionu i svijetu.'
