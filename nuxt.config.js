@@ -32,18 +32,18 @@ export default {
    */
   css: ["~/node_modules/bootstrap/dist/css/bootstrap.css"],
   /*
-   ** Plugins to load before mounting the App
+   ** Plugins to load before mounting the Ap
    */
   plugins: ["~plugins/bootstrap.js",
-    "@/plugins/vue-social-sharing.js",
-    { src: '@/plugins/ga.js', mode: 'client' }]
+    "@/plugins/vue-social-sharing.js"]
 ,
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-analytics'
   ],
   /*
    ** Nuxt.js modules
@@ -52,13 +52,17 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/moment',
-    'nuxt-seo'
+    'nuxt-seo',
+    '@nuxtjs/google-analytics'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  googleAnalytics: {
+    id: 'G-QCTH5GBLH2'
+  },
   moment: {
     /* module options */
     defaultLocale: 'bs',
