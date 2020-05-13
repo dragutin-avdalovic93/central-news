@@ -46,47 +46,47 @@ export default {
       },
       {
         hid: 'og:type',
-        name: 'og:type',
+        property: 'og:type',
         content: 'website'
       },
       {
         hid: 'og:title',
-        name: 'og:title',
+        property: 'og:title',
         content: 'Central news - novinski portal'
       },
       {
         hid: 'og:description',
-        name: 'og:description',
+        property: 'og:description',
         content: 'CENTRAL news je novinski portal koji prati najnovija dešavanja iz Sarajevsko-romanijske regije, Republike Srpske, BiH i regiona.'
       },
       {
         hid: 'og:url',
-        name: 'og:url',
+        property: 'og:url',
         content: 'https://www.centralnews.live/'
       },
       {
         hid: 'og:name',
-        name: 'og:name',
+        property: 'og:name',
         content: 'Central news'
       },
       {
         hid: 'og:image',
-        name: 'og:image',
+        property: 'og:image',
         content: 'https://www.centralnews.live/central-news-logo.png'
       },
       {
         hid: 'og:image:width',
-        name: 'og:image:width',
+        property: 'og:image:width',
         content: 200
       },
       {
         hid: 'og:image:height',
-        name: 'og:image:height',
+        property: 'og:image:height',
         content: 200
       },
       {
         hid: 'fb:app_id',
-        name: 'fb:app_id',
+        property: 'fb:app_id',
         content: '243134206938677'
       }
     ],

@@ -94,42 +94,42 @@
         },
           {
             hid: 'og:description',
-            name: 'og:description',
+            property: 'og:description',
             content: this.post[0].excerpt["rendered"].substring(3,100)
           },
           {
             hid: 'og:title',
-            name: 'og:title',
+            property: 'og:title',
             content: this.post[0].title["rendered"]
           },
           {
             hid: 'og:url',
-            name: 'og:url',
+            property: 'og:url',
             content: `https://www.centralnews.live/vijest/${this.post[0].slug}`
           },
           {
             hid: 'og:name',
-            name: 'og:name',
+            property: 'og:name',
             content: this.post[0].title["rendered"]
           },
           {
             hid: 'og:image',
-            name: 'og:image',
+            property: 'og:image',
             content: this.post[0].featured_image_url
           },
           {
             hid: 'og:image:width',
-            name: 'og:image:width',
+            property: 'og:image:width',
             content: 200
           },
           {
             hid: 'og:image:height',
-            name: 'og:image:height',
+            property: 'og:image:height',
             content: 200
           },
           {
             hid: 'fb:app_id',
-            name: 'fb:app_id',
+            property: 'fb:app_id',
             content: '243134206938677'
           }
         ]
