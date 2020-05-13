@@ -82,7 +82,7 @@
         meta: [{
           hid: 'description',
           name: 'description',
-          content: this.post[0].content["rendered"]
+          content: this.post[0].excerpt["rendered"].substring(4,100)
         }, {
           hid: 'twitter:card',
           name: 'twitter:card',
@@ -96,6 +96,11 @@
           name: 'og:type',
           content: 'website'
         },
+          {
+            hid: 'og:description',
+            name: 'og:description',
+            content: this.post[0].excerpt["rendered"].substring(4,100)
+          },
           {
             hid: 'og:title',
             name: 'og:title',
@@ -119,12 +124,12 @@
           {
             hid: 'og:image:width',
             name: 'og:image:width',
-            content: '200'
+            content: 200
           },
           {
             hid: 'og:image:height',
             name: 'og:image:height',
-            content: '200'
+            content: 200
           }
         ]
       }

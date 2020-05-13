@@ -10,11 +10,6 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description',
-        name: 'description',
-        content: 'Central news - novinski portal' || ''
-      },
-      {
         hid: 'name',
         name: 'name',
         content: 'Central news'
@@ -87,12 +82,12 @@ export default {
       {
         hid: 'og:image:width',
         name: 'og:image:width',
-        content: '200'
+        content: 200
       },
       {
         hid: 'og:image:height',
         name: 'og:image:height',
-        content: '200'
+        content: 200
       }
     ],
     link: [
