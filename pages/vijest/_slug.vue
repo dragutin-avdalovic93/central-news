@@ -39,6 +39,10 @@
                 {{$moment(post[0].date).format("dddd, DD.MM.YYYY")}}
               </div>
               <img class="thumb-img" v-bind:src="post[0].featured_image_url">
+              <div class="autor">
+                <i class="fas fa-user"></i>
+                Central News
+              </div>
               <div class="blog-detail-post-inner">
                 <div class="content">
                   <h2 class="title">
@@ -262,6 +266,25 @@
     transition: all 200ms ease-in-out;
     margin:  0 10px;
   }
+  .blog-detail-post .autor {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0;
+    color: #999;
+    opacity: 1;
+    transition: all 200ms ease-in-out;
+    padding: 5px 10px;
+    background: #fff;
+  }
+  .blog-detail-post .autor i {
+    margin-right: 5px;
+    width: 14px;
+    height: 14px;
+    color: #999;
+  }
   .blog-detail-post .created_at img {
     margin-right: 5px;
     width: 14px;
@@ -280,7 +303,6 @@
   .blog-detail-post .blog-detail-post-inner .content .title {
     overflow: hidden;
     min-height: 70px;
-    padding-top: 15px;
     margin: 0;
     line-height: 1.3;
     font-size: 26px;
