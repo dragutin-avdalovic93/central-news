@@ -34,16 +34,16 @@
                   </div>
                 </social-sharing>
               </div>
+              <div class="created_at">
+                <img src="../../static/calendar.svg"/>
+                {{$moment(post[0].date).format("dddd, DD.MM.YYYY")}}
+              </div>
               <img class="thumb-img" v-bind:src="post[0].featured_image_url">
               <div class="blog-detail-post-inner">
                 <div class="content">
                   <h2 class="title">
                     {{post[0].title["rendered"]}}
                   </h2>
-                  <div class="created_at">
-                    <img src="../../static/calendar.svg"/>
-                    {{$moment(post[0].date).format("dddd, DD.MM.YYYY")}}
-                  </div>
                   <div class='excerpt-container'>
                     <p class="description" v-html="post[0].content['rendered']"></p>
                   </div>
@@ -104,7 +104,7 @@
 
 <style>
   .social {
-    margin: 10px auto 10px 5px;
+    margin: 5px auto 5px 5px;
   }
   .social span {
     padding: 2px 4px;
@@ -250,8 +250,7 @@
     justify-content: space-between;
     padding-bottom: 25px;
   }
-  .blog-detail-post .content .created_at {
-    padding-bottom: 15px;
+  .blog-detail-post .created_at {
     display: flex;
     align-items: center;
     font-size: 12px;
@@ -261,8 +260,9 @@
     color: #999;
     opacity: 1;
     transition: all 200ms ease-in-out;
+    margin:  0 10px;
   }
-  .blog-detail-post .content .created_at img {
+  .blog-detail-post .created_at img {
     margin-right: 5px;
     width: 14px;
     height: 14px;

@@ -35,7 +35,9 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: ["~plugins/bootstrap.js",
-    "@/plugins/vue-social-sharing.js"],
+    "@/plugins/vue-social-sharing.js",
+    { src: '~plugins/ga.js', mode: 'client' }]
+,
   /*
    ** Nuxt.js dev-modules
    */

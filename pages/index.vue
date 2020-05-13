@@ -27,12 +27,12 @@
               <div class="metadata">
                 <div class="created_at">
                   <img src="../static/calendar.svg"/>
-                  {{$moment(post.date).format("dddd, DD.MM.YYYY")}}
+                  {{$moment(post.date).format("DD.MM.YYYY")}}
                 </div>
               </div>
               <div class="read-more" @click="visitPost(post.slug)">
                 <a @click="visitPost(post.slug)">
-                  <span class="read">PROČITAJ </span><i class="fa fa-angle-right"/>
+                  <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
                 </a>
               </div>
             </div>
@@ -302,13 +302,13 @@ export default {
     }
   }
   .blog-post-small .content .title:hover {
-    color: #12cead;
+    color: #00c834;
   }
   .blog-post-small .content .title h3:hover {
-    color: #12cead;
+    color: #00c834
   }
   .blog-post-small .blog-post-small-inner .read-more a:hover {
-    color: #12cead !important;
+    color: #fff !important;
   }
   .blog-post-small .main-container .content .category .cat:hover {
     color: #000 !important;
@@ -338,10 +338,11 @@ export default {
     transition: all 200ms ease-in-out;
   }
   .blog-post-small .metadata .created_at img {
-    margin-right: 10px;
+    margin-right: 3px;
     width: 14px;
     height: 14px;
     margin-bottom: 2px;
+    filter: invert(100%);
   }
   .blog-post-small .content .excerpt-container {
     max-height: 90px;
@@ -452,12 +453,13 @@ export default {
   .blog-post-small .blog-post-small-inner .post-footer .read-more a i {
     font-size: 18px;
     opacity: 0.8;
-    margin-left: 5px;
+    margin-left: 3px;
     margin-bottom: 2px;
   }
   .blog-post-small .blog-post-small-inner .post-footer .read-more a .read {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
+    text-transform: uppercase;
   }
   .blog-post-small .blog-post-small-inner .post-footer .shares {
     display: flex;
