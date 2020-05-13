@@ -27,12 +27,12 @@
               <div class="metadata">
                 <div class="created_at">
                   <img src="../static/calendar.svg"/>
-                  {{post.date.split('T')[0]}}
+                  {{$moment(post.date).format("dddd, DD.MM.YYYY")}}
                 </div>
               </div>
               <div class="read-more" @click="visitPost(post.slug)">
                 <a @click="visitPost(post.slug)">
-                  <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
+                  <span class="read">PROČITAJ </span><i class="fa fa-angle-right"/>
                 </a>
               </div>
             </div>

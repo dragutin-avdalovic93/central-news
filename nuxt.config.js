@@ -50,10 +50,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/moment',
-    'nuxt-seo',
-    ['@nuxtjs/google-analytics', {
-      id: 'G-QCTH5GBLH2'
-    }]
+    'nuxt-seo'
   ],
   /*
    ** Axios module configuration
