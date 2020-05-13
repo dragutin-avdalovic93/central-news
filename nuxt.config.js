@@ -48,7 +48,8 @@ export default {
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'Central news'
-      }, {
+      },
+      {
         hid: 'twitter:title',
         name: 'twitter:title',
         content: 'Central news - novinski portal'
@@ -64,6 +65,11 @@ export default {
         content: 'Central news - novinski portal'
       },
       {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'CENTRAL news je novinski portal koji prati najnovija dešavanja iz Sarajevsko-romanijske regije, Republike Srpske, BiH i regiona.'
+      },
+      {
         hid: 'og:url',
         name: 'og:url',
         content: 'https://www.centralnews.live/'
@@ -77,6 +83,16 @@ export default {
         hid: 'og:image',
         name: 'og:image',
         content: 'https://www.centralnews.live/central-news-logo.png'
+      },
+      {
+        hid: 'og:image:width',
+        name: 'og:image:width',
+        content: '200'
+      },
+      {
+        hid: 'og:image:height',
+        name: 'og:image:height',
+        content: '200'
       }
     ],
     link: [

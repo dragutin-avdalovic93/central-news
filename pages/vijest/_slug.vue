@@ -90,7 +90,7 @@
         }, {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.post[0].content["rendered"]
+          content: this.post[0].title["rendered"]
         }, {
           hid: 'og:type',
           name: 'og:type',
@@ -115,7 +115,18 @@
             hid: 'og:image',
             name: 'og:image',
             content: this.post[0].featured_image_url
-          }]
+          },
+          {
+            hid: 'og:image:width',
+            name: 'og:image:width',
+            content: '200'
+          },
+          {
+            hid: 'og:image:height',
+            name: 'og:image:height',
+            content: '200'
+          }
+        ]
       }
     },
     asyncData(context) {
