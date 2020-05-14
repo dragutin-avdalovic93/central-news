@@ -147,7 +147,7 @@
     width: 300%;
     display: flex;
     line-height: 30px;
-    animation: marquee 40s linear infinite;
+    animation: marquee 30s linear infinite;
     background-color: #8C8C86;
   }
   @media (max-width: 768px) {

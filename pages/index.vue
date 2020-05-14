@@ -39,11 +39,14 @@
           </div>
         </div>
         </div>
-          <div class="page-nav">
-            <div class="button" v-on:click="switchPage(currentPage-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i> </div>
-            <div class="button" v-for="num in numPages" v-bind:class="num===currentPage ? 'active' : ''" v-on:click="switchPage(num)">{{num}}</div>
-            <div class="button" v-on:click="switchPage(currentPage+1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-          </div>
+        <div class="page-nav">
+          <div class="button" v-on:click="switchPage(currentPage-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i> </div>
+          <div class="button" v-bind:class="firstPage===currentPage ? 'active' : ''" v-on:click="switchPage(firstPage)">{{firstPage}}</div>
+          <div class="button" v-bind:class="secondPage===currentPage ? 'active' : ''" v-on:click="switchPage(secondPage)">{{secondPage}}</div>
+          <div class="button">...</div>
+          <div class="button" v-bind:class="endPage===currentPage ? 'active' : ''" v-on:click="switchPage(endPage)">{{endPage}}</div>
+          <div class="button" v-on:click="switchPage(currentPage+1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        </div>
         </div>
     </div>
 </template>
@@ -66,7 +69,10 @@ export default {
       currentPage: 1,
       totalPosts: 0,
       numPages: 0,
-      perPage: 15
+      perPage: 15,
+      firstPage: 0,
+      secondPage: 0,
+      endPage: 0
     }
   },
   components: {
@@ -74,6 +80,12 @@ export default {
     LatestNews
   },
   methods: {
+    removeClasses() {
+      var elements = document.querySelectorAll('.button');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('active');
+      }
+    },
     async getNumOfPages() {
       this.totalPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/total_posts');
       let chunk = this.totalPosts%this.perPage;
@@ -85,13 +97,30 @@ export default {
       } else {
         this.numPages = num;
       }
+      this.firstPage = 1;
+      this.secondPage = 2;
+      this.endPage = this.numPages;
     },
     switchPage(pageNum) {
+      if(pageNum > this.numPages - 3) {
+        this.firstPage = this.numPages - 2;
+        this.secondPage = this.numPages - 1;
+        this.endPage = this.numPages;
+      } else if (pageNum === 0){
+        this.firstPage = 1;
+        this.secondPage = 2;
+        this.endPage = this.numPages;
+      }else {
+        this.firstPage = pageNum;
+        this.secondPage = pageNum + 1;
+        this.endPage = this.numPages;
+      }
       this.fetchData(pageNum);
       this.onLangsPageChange();
     },
     async fetchData(pageNum) {
-      if(pageNum < 1) {
+      console.log('broj stranica', this.numPages);
+      if(pageNum < 1 || pageNum > this.numPages) {
         return;
       }
       this.currentPage = pageNum;
@@ -158,8 +187,9 @@ export default {
     }
   },
   created(){
-    this.getNumOfPages();
-    this.fetchData(this.currentPage);
+    this.getNumOfPages().then(() => {
+      this.fetchData(this.currentPage);
+    });
   }
 }
 </script>
@@ -174,6 +204,10 @@ export default {
     justify-content: center;
     min-height: calc(100vh - 53px);
     background: #dae1e7;
+  }
+  .news {
+    position: relative;
+    min-height: calc(120vh);
   }
   .latest-news-slot {
     background: #dae1e7;
@@ -392,6 +426,14 @@ export default {
     text-align: justify;
   }
   @media (max-width: 1024px) {
+    .page-nav {
+      width: 100% !important;
+      text-align: center !important;
+      position: relative !important;
+      bottom:  0 !important;
+    }
+  }
+    @media (max-width: 1024px) {
     .blog-post-small .content .description {
       max-height: 80px;
       min-height: 80px;
@@ -479,29 +521,30 @@ export default {
     opacity: 0;
   }
   .page-nav {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     text-align: center;
-  }
-  .button {
-    display: inline-block;
-    border: 1px solid #00c834;
-    color: #00c834;;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 2px;
-  }
+    position: absolute;
+    bottom: 20px;
+}
+.button {
+  display: inline-block;
+  border: 1px solid #00c834;
+  color: #00c834;;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 2px;
+}
 
-  .button:hover {
-    background-color: #00c834;
-    border: 1px solid white;
-    color: white;
-    cursor: pointer;
-  }
-  .active {
-    background-color: #00c834;
-    border: 1px solid white;
-    color: white;
-    cursor: pointer;
-  }
+.button:hover {
+  background-color: #00c834;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+.active {
+  background-color: #00c834;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
 </style>
