@@ -9,36 +9,38 @@
                  :loader="loader"
         ></loading>
         <div class="news"  v-if="!loading">
-        <div class="grid-container">
-        <div class="blog-post-small" v-for="post in posts" v-bind:key="post.slug">
-          <div class="main-container">
-            <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.slug)"/>
-            <div class="content">
-              <div class="category">
-                <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
-              </div>
-              <div class="title" @click="visitPost(post.slug)">
-                <h3>{{post.title.rendered}}</h3>
-              </div>
-            </div>
-          </div>
-          <div class="blog-post-small-inner">
-            <div class="post-footer">
-              <div class="metadata">
-                <div class="created_at">
-                  <img src="../static/calendar.svg"/>
-                  {{$moment(post.date).format("DD.MM.YYYY")}}
+          <div class="grid-wrapper">
+            <div class="grid-container">
+              <div class="blog-post-small" v-for="post in posts" v-bind:key="post.slug">
+                <div class="main-container">
+                  <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.slug)"/>
+                  <div class="content">
+                    <div class="category">
+                      <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
+                    </div>
+                    <div class="title" @click="visitPost(post.slug)">
+                      <h3>{{post.title.rendered}}</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="blog-post-small-inner">
+                  <div class="post-footer">
+                    <div class="metadata">
+                      <div class="created_at">
+                        <img src="../static/calendar.svg"/>
+                        {{$moment(post.date).format("DD.MM.YYYY")}}
+                      </div>
+                    </div>
+                    <div class="read-more" @click="visitPost(post.slug)">
+                      <a @click="visitPost(post.slug)">
+                        <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="read-more" @click="visitPost(post.slug)">
-                <a @click="visitPost(post.slug)">
-                  <span class="read">Pročitaj </span><i class="fa fa-angle-right"/>
-                </a>
-              </div>
             </div>
           </div>
-        </div>
-        </div>
         <div class="page-nav">
           <div class="button" v-on:click="switchPage(currentPage-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i> </div>
           <div class="button" v-bind:class="firstPage===currentPage ? 'active' : ''" v-on:click="switchPage(firstPage)">{{firstPage}}</div>
@@ -195,6 +197,9 @@ export default {
 </script>
 
 <style>
+  .grid-wrapper {
+    min-height: 100vh;
+  }
   .main-container {
     position: relative;
   }
@@ -202,12 +207,10 @@ export default {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    /*min-height: calc(100vh - 53px);*/
     background: #dae1e7;
   }
   .news {
     position: relative;
-    min-height: calc(120vh);
   }
   .latest-news-slot {
     background: #dae1e7;
@@ -523,8 +526,7 @@ export default {
   .page-nav {
     width: 100%;
     text-align: center;
-    position: absolute;
-    bottom: 20px;
+    padding: 10px 0;
 }
 .button {
   display: inline-block;
@@ -541,6 +543,13 @@ export default {
   color: white;
   cursor: pointer;
 }
+  @media (max-width: 768px) {
+    .button:hover {
+      background-color: #dae1e7;
+      border: 1px solid #00c834;
+      color: #00c834;;
+    }
+  }
 .active {
   background-color: #00c834;
   border: 1px solid white;
