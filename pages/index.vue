@@ -487,7 +487,7 @@ export default {
     border: 1px solid #00c834;
     color: #00c834;;
     padding: 5px 10px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 2px;
   }
 

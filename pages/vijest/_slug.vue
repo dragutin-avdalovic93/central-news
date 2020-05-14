@@ -176,6 +176,15 @@
 </script>
 
 <style>
+  .blog-detail-post iframe {
+    width: 100%;
+  }
+  @media (max-width: 2400px) {
+    .blog-detail-post iframe {
+      width: 100%;
+      height: 30vh;
+    }
+  }
   .social {
     margin: 5px auto 5px 5px;
   }
