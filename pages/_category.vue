@@ -1,15 +1,17 @@
 <template>
-      <div class="news-slot">
-        <loading :active.sync="loading"
-                 :can-cancel="false"
-                 :is-full-page="true"
-                 :color="color"
-                 :width="width"
-                 :height="height"
-                 :loader="loader"
-        ></loading>
-        <div class="grid-container" v-if="!loading">
-          <div class="blog-post-small" v-for="post in postsFiltered" v-bind:key="post.slug">
+  <div class="news-slot">
+    <loading :active.sync="loading"
+             :can-cancel="false"
+             :is-full-page="true"
+             :color="color"
+             :width="width"
+             :height="height"
+             :loader="loader"
+    ></loading>
+    <div class="news"  v-if="!loading">
+      <div class="grid-wrapper">
+        <div class="grid-container">
+          <div class="blog-post-small" v-for="post in posts" v-bind:key="post.slug">
             <div class="main-container">
               <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.slug)"/>
               <div class="content">
@@ -26,7 +28,7 @@
                 <div class="metadata">
                   <div class="created_at">
                     <img src="../static/calendar.svg"/>
-                    {{post.date.split('T')[0]}}
+                    {{$moment(post.date).format("DD.MM.YYYY")}}
                   </div>
                 </div>
                 <div class="read-more" @click="visitPost(post.slug)">
@@ -39,6 +41,16 @@
           </div>
         </div>
       </div>
+      <div class="page-nav">
+        <div class="button" v-on:click="switchPage(currentPage-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i> </div>
+        <div class="button" v-bind:class="firstPage===currentPage ? 'active' : ''" v-on:click="switchPage(firstPage)">{{firstPage}}</div>
+        <div class="button" v-bind:class="secondPage===currentPage ? 'active' : ''" v-on:click="switchPage(secondPage)">{{secondPage}}</div>
+        <div class="button">...</div>
+        <div class="button" v-bind:class="endPage===currentPage ? 'active' : ''" v-on:click="switchPage(endPage)">{{endPage}}</div>
+        <div class="button" v-on:click="switchPage(currentPage+1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -56,8 +68,15 @@ export default {
       height: 128,
       width: 128,
       loader: 'bars',
-      category: '',
-      postsFiltered: []
+      currentPage: 1,
+      totalPosts: 0,
+      numPages: 0,
+      perPage: 15,
+      firstPage: 0,
+      secondPage: 0,
+      endPage: 0,
+      catId: 0,
+      allPosts: []
     }
   },
   components: {
@@ -65,10 +84,74 @@ export default {
     LatestNews
   },
   methods: {
-    async fetchData() {
-      this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?per_page=100');
+    removeClasses() {
+      var elements = document.querySelectorAll('.button');
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('active');
+      }
+    },
+    async getNumOfPages() {
+      this.category = this.$route.params.category;
+      this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
+      console.log('kategorije', this.categories);
+      this.categories.forEach((category) => {
+        if(category.slug === this.category) {
+          this.catId = category.id;
+        }
+      });
+      console.log('cat id', this.catId);
+      this.allPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts/?categories=' + this.catId);
+      console.log('svi post', this.allPosts);
+      this.totalPosts = this.allPosts.length;
+      console.log('total', this.totalPosts);
+      let chunk = this.totalPosts%this.perPage;
+      console.log(chunk);
+      let num = Math.ceil(this.totalPosts/this.perPage);
+      console.log(num);
+      if( chunk - num === 0) {
+        this.numPages = Math.floor(chunk);
+      } else {
+        this.numPages = num;
+      }
+      this.firstPage = 1;
+      this.secondPage = 2;
+      this.endPage = this.numPages;
+    },
+    switchPage(pageNum) {
+      if(pageNum > this.numPages - 3) {
+        this.firstPage = this.numPages - 2;
+        this.secondPage = this.numPages - 1;
+        this.endPage = this.numPages;
+      } else if (pageNum === 0){
+        this.firstPage = 1;
+        this.secondPage = 2;
+        this.endPage = this.numPages;
+      }else {
+        this.firstPage = pageNum;
+        this.secondPage = pageNum + 1;
+        this.endPage = this.numPages;
+      }
+      this.fetchData(pageNum);
+      this.onLangsPageChange();
+    },
+    async fetchData(pageNum) {
+      console.log('broj stranica', this.numPages);
+      if(pageNum < 1 || pageNum > this.numPages) {
+        return;
+      }
+      this.currentPage = pageNum;
+      this.posts = null;
+      this.tags = null;
+      this.categories = null;
+      this.category = this.$route.params.category;
       this.tags = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/tags?per_page=100');
       this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
+      this.categories.forEach((category) => {
+        if(category.slug === this.category) {
+          this.catId = category.id;
+        }
+      });
+      this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts/?categories=' + this.catId + '&per_page=' + this.perPage + '&page=' + pageNum);
       this.posts.forEach((post) => {
         let tagnames = [];
         let catnames = [];
@@ -115,15 +198,6 @@ export default {
           post.hasCat = false;
         }
       });
-      this.category = this.$route.params.category;
-      console.log('kat',this.category);
-      console.log('postovi', this.posts);
-      this.posts.forEach((post) => {
-        if(post.catslugs.includes(this.category)) {
-          this.postsFiltered.push(post);
-        }
-      });
-      console.log('postovi after', this.postsFiltered);
       this.loading = false;
     },
     visitPost(slug) {
@@ -134,21 +208,28 @@ export default {
     }
   },
   created(){
-    this.fetchData();
+    this.getNumOfPages().then(() => {
+      this.fetchData(this.currentPage);
+    });
   }
 }
 </script>
 
 <style>
+  .grid-wrapper {
+    min-height: 100vh;
+  }
   .main-container {
     position: relative;
   }
   .news-slot {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    min-height: calc(100vh - 53px);
     background: #dae1e7;
+  }
+  .news {
+    position: relative;
   }
   .latest-news-slot {
     background: #dae1e7;
@@ -156,7 +237,7 @@ export default {
     align-items: flex-start;
     justify-content: center;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .latest-news-slot {
       margin-top: 20px;
     }
@@ -175,7 +256,7 @@ export default {
       display: grid;
       max-width: unset;
       grid-template-columns: repeat(2, 1fr) !important;
-      grid-gap: 20px;
+      grid-gap: 5px;
       grid-auto-rows: minmax(100px, auto);
     }
   }
@@ -278,13 +359,13 @@ export default {
     }
   }
   .blog-post-small .content .title:hover {
-    color: #12cead;
+    color: #00c834;
   }
   .blog-post-small .content .title h3:hover {
-    color: #12cead;
+    color: #00c834
   }
   .blog-post-small .blog-post-small-inner .read-more a:hover {
-    color: #12cead !important;
+    color: #fff !important;
   }
   .blog-post-small .main-container .content .category .cat:hover {
     color: #000 !important;
@@ -314,10 +395,11 @@ export default {
     transition: all 200ms ease-in-out;
   }
   .blog-post-small .metadata .created_at img {
-    margin-right: 10px;
+    margin-right: 3px;
     width: 14px;
     height: 14px;
     margin-bottom: 2px;
+    filter: invert(100%);
   }
   .blog-post-small .content .excerpt-container {
     max-height: 90px;
@@ -366,6 +448,14 @@ export default {
     text-align: justify;
   }
   @media (max-width: 1024px) {
+    .page-nav {
+      width: 100% !important;
+      text-align: center !important;
+      position: relative !important;
+      bottom:  0 !important;
+    }
+  }
+  @media (max-width: 1024px) {
     .blog-post-small .content .description {
       max-height: 80px;
       min-height: 80px;
@@ -389,7 +479,7 @@ export default {
     transition: all 300ms ease-in-out;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 5px;
   }
   .blog-post-small  .main-container .content .category{
     transition: all 200ms ease-in-out;
@@ -428,12 +518,13 @@ export default {
   .blog-post-small .blog-post-small-inner .post-footer .read-more a i {
     font-size: 18px;
     opacity: 0.8;
-    margin-left: 5px;
+    margin-left: 3px;
     margin-bottom: 2px;
   }
   .blog-post-small .blog-post-small-inner .post-footer .read-more a .read {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
+    text-transform: uppercase;
   }
   .blog-post-small .blog-post-small-inner .post-footer .shares {
     display: flex;
@@ -451,5 +542,39 @@ export default {
   .page-enter, .page-leave-active {
     opacity: 0;
   }
+  .page-nav {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .button {
+    display: inline-block;
+    border: 1px solid #00c834;
+    color: #00c834;;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 2px;
+  }
+
+  .button:hover {
+    background-color: #00c834;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .button:hover {
+      background-color: #dae1e7;
+      border: 1px solid #00c834;
+      color: #00c834;;
+    }
+  }
+  .active {
+    background-color: #00c834;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+  }
 </style>
+
 
