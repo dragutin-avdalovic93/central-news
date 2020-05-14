@@ -179,7 +179,7 @@
   .blog-detail-post iframe {
     width: 100%;
   }
-  @media (max-width: 2400px) {
+  @media (max-width: 768px) {
     .blog-detail-post iframe {
       width: 100%;
       height: 30vh;
