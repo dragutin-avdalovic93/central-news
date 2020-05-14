@@ -88,6 +88,7 @@ export default {
     },
     switchPage(pageNum) {
       this.fetchData(pageNum);
+      this.onLangsPageChange();
     },
     async fetchData(pageNum) {
       if(pageNum < 1) {

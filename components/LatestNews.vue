@@ -22,7 +22,7 @@
         <div class="col-8">
           <a :href="'/vijest/' + post.slug" class="news-section-title show-loader">{{post.title.rendered}}</a>
           <div class="news-section-description" v-html="post.excerpt.rendered.substring(0,100) + '...'"></div>
-          <div class="news-section-date"><i class="far fa-calendar"> </i> {{post.date.split('T')[0]}} <span>{{post.date.split('T')[1]}} </span></div>
+          <div class="news-section-date"><i class="far fa-calendar"> </i> {{$moment(post.date).format("dddd, DD.MM.YYYY")}}</div>
         </div>
         <div class="news-section-divider"></div>
       </div>
@@ -154,7 +154,10 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+  p {
+    margin-bottom: 0;
+  }
   .lat-news
   {
     background: #dae1e7;
@@ -243,9 +246,6 @@
     line-height: 16px;
     color: #777;
     padding: 5px 0;
-  }
-  body > .news-section-description > p{
-    margin-bottom: 0 !important;
   }
 
   .news-section-description-second {
