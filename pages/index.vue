@@ -202,7 +202,7 @@ export default {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    min-height: calc(100vh - 53px);
+    /*min-height: calc(100vh - 53px);*/
     background: #dae1e7;
   }
   .news {
