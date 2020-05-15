@@ -605,11 +605,11 @@
     }
   }
   .blog-detail-post .blog-detail-post-inner .post-footer {
-    /*border-top: 2px solid rgba(139, 139, 139, 0.5);*/
+    border-bottom: 2px solid rgba(139, 139, 139, 0.5);
     transition: all 300ms ease-in-out;
     display: flex;
     justify-content: space-between;
-    /*padding-top: 10px;*/
+    padding-top: 10px;
   }
   .blog-detail-post .blog-detail-post-inner .post-footer .category{
     transition: all 200ms ease-in-out;
