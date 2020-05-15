@@ -67,8 +67,9 @@
               <div class="divider"></div>
               <div class="comments-form-title">Ostavite komentar</div>
               <div class="divider"></div>
-              <form id="form-comments" novalidate="novalidate">
-                <div id="message"></div>
+              <form id="form-comments" novalidate="novalidate" v-on:submit.prevent="sendData">
+<!--                <div id="message"></div>-->
+                <input type="hidden" id="postId" :value=this.postId />
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group row">
@@ -100,7 +101,7 @@
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="btn-box">
-                      <button id="btn-send-form" type="submit" class="btn btn-primary mb-2 comments-form-btn-send">Komentariši</button>
+                      <button id="btn-send-form" class="btn btn-primary mb-2 comments-form-btn-send" type="submit">Komentariši</button>
                     </div>
                   </div>
 <!--                  <div class="col-sm-6">-->
@@ -109,8 +110,20 @@
 <!--                    </div>-->
 <!--                  </div>-->
                 </div>
-                <input type="hidden" name="id" value="24519">
               </form>
+              <div class="info-al">
+                <div class="row">
+                  <div class="col-12">
+                    <!-- Success Alert -->
+                    <div class="alert alert-success alert-dismissible fade show" id="good-alert">
+                      <strong>USPJEH!</strong> Vaš komentar će se prikazati nakon odobrenja administratora.
+                    </div>
+                    <div class="alert alert-warning alert-dismissible fade show" id="bad-alert">
+                      <strong>GREŠKA!</strong> Komentarisanje nije uspješno.
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- comments modal  -->
               <div class="modal fade" id="comments-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -254,10 +267,44 @@
       goBack() {
         this.$router.replace('/');
       },
+      sendData() {
+        const postId  = document.getElementById("postId").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const comment = document.getElementById("message").value;
+
+        const data = JSON.stringify({
+          post: postId,
+          author_name: name,
+          author_email: email,
+          content: comment
+        });
+
+        fetch("https://admincentralnews.xyz/wp-json/wp/v2/comments", {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: data,
+        })
+          .then((response) => {
+            if(response.status === 201) {
+              document.getElementById("form-comments").style.display = "none"
+              document.getElementById("good-alert").style.display = "block"
+              document.getElementById("bad-alert").style.display = "none"
+            } else {
+                // Comment submission failed.
+                // Output `object.message` to see the error message.
+                document.getElementById("form-comments").style.display = "none"
+                document.getElementById("good-alert").style.display = "none"
+                document.getElementById("bad-alert").style.display = "block"
+            }
+              return response.json();
+          }).catch(error => console.error('Error:', error));
+      },
       async fetchPost() {
         this.slug = this.$route.params.slug;
         this.post = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?slug=' + this.slug);
-        console.log(this.post);
         this.loading = false;
       },
       async fetchId() {
@@ -267,7 +314,6 @@
       },
       async fetchComments() {
         this.comments = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/comments?post=' + this.postId);
-        console.log('kom', this.comments);
       }
     },
     created() {
@@ -276,89 +322,95 @@
       });
     },
     mounted() {
-        $( document ).ready( function ()
-        {
-          $( "form#form-comments" ).validate( {
-            rules: {
-              name: "required",
-              email: {
-                required: true,
-                email: true
-              },
-              message: "required"
-            },
-            messages: {
-              name: "Obavezno polje",
-              email: "Molimo unesite validnu email adresu.",
-              message: "Obavezno polje"
-            },
-            errorElement: "em",
-            errorPlacement: function ( error, element ) {
-              // Add the `help-block` class to the error element
-              error.addClass( "comments-form-help-block" );
-              if ( element.prop( "type" ) === "checkbox" ) {
-                error.insertAfter( element.parent( "label" ) );
-              } else {
-                error.insertAfter( element );
-              }
-            },submitHandler: function(form) {
-              $('.page-loader-wrapper').fadeIn();
-              var form_data = $(form).serialize();
-
-              $.ajax(
-                {
-                  url: '',
-                  type: 'POST',
-                  data: form_data,
-                  success: function(e)
-                  {
-                    var data = JSON.parse(e);
-                    if(data['status'] == 'YES')
-                    {
-                      $('.page-loader-wrapper').fadeOut();
-
-                      $("#comments-modal").modal('show');
-                      $('#comments-modal').on('hidden.bs.modal', function () {
-                        $('.page-loader-wrapper').fadeIn();
-                        window.location.href='https://www.princip.news/';
-                      });
-                    }
-                    else
-                    {
-                      $('.page-loader-wrapper').fadeOut();
-                      $("#message").hide();
-                      $('#message').removeClass();
-                      $('#message').addClass('comments-form-error');
-                      $('#message').text(data['message']);
-                      $("#message").show("slow");
-                      $('html, body').animate({
-                        scrollTop: $("#message").offset().top-20
-                      }, 1000);
-                    }
-                  },
-                  error: function()
-                  {
-                    $('.page-loader-wrapper').fadeOut();
-                    $("#message").hide();
-                    $('#message').removeClass();
-                    $('#message').addClass('comments-form-error');
-                    $('#message').text('Došlo je do greške prilikom slanja komentara. Molimo pokušajte ponovo.');
-                    $("#message").show("slow");
-                    $('html, body').animate({
-                      scrollTop: $("#message").offset().top-20
-                    }, 1000);
-                  }
-                });
-
-              return false;
-            }
-          });
-        });
+        // $( document ).ready( function ()
+        // {
+        //   $( "form#form-comments" ).validate( {
+        //     rules: {
+        //       name: "required",
+        //       email: {
+        //         required: true,
+        //         email: true
+        //       },
+        //       message: "required"
+        //     },
+        //     messages: {
+        //       name: "Obavezno polje",
+        //       email: "Molimo unesite validnu email adresu.",
+        //       message: "Obavezno polje"
+        //     },
+        //     errorElement: "em",
+        //     errorPlacement: function ( error, element ) {
+        //       // Add the `help-block` class to the error element
+        //       error.addClass( "comments-form-help-block" );
+        //       if ( element.prop( "type" ) === "checkbox" ) {
+        //         error.insertAfter( element.parent( "label" ) );
+        //       } else {
+        //         error.insertAfter( element );
+        //       }
+        //     },submitHandler: function(form) {
+        //       $('.page-loader-wrapper').fadeIn();
+        //       var form_data = $(form).serialize();
+        //
+        //       $.ajax(
+        //         {
+        //           url: '',
+        //           type: 'POST',
+        //           data: form_data,
+        //           success: function(e)
+        //           {
+        //             var data = JSON.parse(e);
+        //             if(data['status'] == 'YES')
+        //             {
+        //               $('.page-loader-wrapper').fadeOut();
+        //
+        //               $("#comments-modal").modal('show');
+        //               $('#comments-modal').on('hidden.bs.modal', function () {
+        //                 $('.page-loader-wrapper').fadeIn();
+        //                 window.location.href='https://www.princip.news/';
+        //               });
+        //             }
+        //             else
+        //             {
+        //               $('.page-loader-wrapper').fadeOut();
+        //               $("#message").hide();
+        //               $('#message').removeClass();
+        //               $('#message').addClass('comments-form-error');
+        //               $('#message').text(data['message']);
+        //               $("#message").show("slow");
+        //               $('html, body').animate({
+        //                 scrollTop: $("#message").offset().top-20
+        //               }, 1000);
+        //             }
+        //           },
+        //           error: function()
+        //           {
+        //             $('.page-loader-wrapper').fadeOut();
+        //             $("#message").hide();
+        //             $('#message').removeClass();
+        //             $('#message').addClass('comments-form-error');
+        //             $('#message').text('Došlo je do greške prilikom slanja komentara. Molimo pokušajte ponovo.');
+        //             $("#message").show("slow");
+        //             $('html, body').animate({
+        //               scrollTop: $("#message").offset().top-20
+        //             }, 1000);
+        //           }
+        //         });
+        //
+        //       return false;
+        //     }
+        //   });
+        // });
     }
   }
 </script>
 
 <style>
+  #good-alert {
+    display: none;
+  }
+  #bad-alert {
+    display: none;
+  }
   .btn-box {
     text-align: center;
   }
@@ -836,6 +888,8 @@
   .comments-section-divider {
     height: 1px;
     background-color: #CCCED4;
-    margin: 30px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: -100px;
   }
 </style>
