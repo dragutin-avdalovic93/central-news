@@ -140,15 +140,13 @@
                   Komentari
                 </div>
                 <div class="divider"></div>
-                <div class="comments-section">
-                  <div class="image-box">
-                    <img src="../../static/avatar.png">
-                  </div>
-                  <div class="name">test</div>
-                  <div class="date">Srijeda, 08.04.2020.</div>
-                  <div class="message">test</div>
+                <div class="comments-section"   v-for="comment in comments" v-bind:key="comment.id">
+                  <div class="image-box"><img src="../../static/avatar.png"/></div>
+                  <div class="name">{{comment.author_name}}</div>
+                  <div class="date">{{$moment(comment.date).format("dddd, DD.MM.YYYY")}}</div>
+                  <div class="message" v-html="comment.content.rendered"></div>
+                  <div class="comments-section-divider"></div>
                 </div>
-                <div class="comments-section-divider"></div>
               </div>
             </div>
           </div>
@@ -236,12 +234,16 @@
     data() {
       return {
         post: {},
+        postData: {},
         slug: "",
         loading: true,
         color: '#00909e',
         height: 128,
         width: 128,
-        loader: 'bars'
+        loader: 'bars',
+        comments: [],
+        postId: 0
+
       }
     },
     components: {
@@ -257,7 +259,21 @@
         this.post = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?slug=' + this.slug);
         console.log(this.post);
         this.loading = false;
+      },
+      async fetchId() {
+        this.slug = this.$route.params.slug;
+        this.postData = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?slug=' + this.slug);
+        this.postId = this.postData[0].id;
+      },
+      async fetchComments() {
+        this.comments = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/comments?post=' + this.postId);
+        console.log('kom', this.comments);
       }
+    },
+    created() {
+      this.fetchId().then( () => {
+        this.fetchComments();
+      });
     },
     mounted() {
         $( document ).ready( function ()
@@ -791,8 +807,9 @@
   }
 
   .comments-section .image-box{
-    position:absolute;
-    left:0;
+    position: absolute;
+    left: 20px;
+    top: 10px;
   }
 
   .comments-section .image-box img{
