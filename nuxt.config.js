@@ -96,6 +96,7 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css',integrity: "sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=",crossorigin: "anonymous" }
       ],
     script: [
+      // { src : 'https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js'}
     ]
   },
   /*
@@ -151,7 +152,7 @@ export default {
     plugins: [
       new webpack.ProvidePlugin({
         $: "jquery",
-        '_': 'lodash'
+        '_': 'lodash',
       })
     ],
     /*
