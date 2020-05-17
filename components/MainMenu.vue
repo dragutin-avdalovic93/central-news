@@ -6,7 +6,7 @@
         <li itemprop="name" data-xicon="fa fa-paper-plane">
           <a itemprop="url" class="header-selected-bg show-loader" href="/" data-target="#">Početna</a>
         </li>
-        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryFinal">
+        <li itemprop="name" class="dropdown dropdown-sub-menu-parent" :id="item.slug" data-id="685" data-level="1" data-xicon="fa fa-music" v-for="(item,index) in categoryFinal">
           <a itemprop="url" :href="'/' + item.slug" data-target="#" v-if="!item.hasChildren">{{item.name}}</a>
           <a itemprop="url" class="dropdown-toggle " :href="'/' + item.slug"  data-target="#" data-toggle="dropdown" v-else-if="item.hasChildren">{{item.name}} <em class="caret"></em></a>
           <ul class="dropdown-sub-menu width_200px" v-if="item.hasChildren">
@@ -76,7 +76,7 @@
         categories: [],
         categoryParents: [],
         categoryChilds: [],
-        categoryFinalSketch: ["vijesti","intervju", "kultura", "sport", "zabava", "zdravljeiljepota", "vrijeme", "ostalo"],
+        categoryFinalSketch: ["vijesti","intervju", "kultura", "sport", "zabava", "zdravljeiljepota", "vrijeme", "ostalo", "humanitarne-akcije", "posalji-vijest"],
         submenuSketch: ["istocnosarajevo","republikasrpska", "bih", "region", "svijet"],
         categoryFinal: []
       }
@@ -537,7 +537,9 @@
     background: #7a0000;
     color: #fff !important;
   }
-
+  .active {
+    border: none;
+  }
 
   /** max 992 *******************************************************************/
   @media screen and (max-width: 992px){
@@ -787,4 +789,7 @@
     }
   }
   /*MOBILE MENU END*/
+  #humanitarne-akcije {
+    margin-left: 20px;
+  }
 </style>
