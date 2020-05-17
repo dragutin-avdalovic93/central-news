@@ -71,25 +71,25 @@
 <!--                <div id="message"></div>-->
                 <input type="hidden" id="postId" :value=this.postId />
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-12">
                     <div class="form-group row">
-                      <label for="name" class="col-md-12 col-form-label">Vaši podaci *</label>
+                      <label for="name" class="col-md-12 col-form-label">Ime i prezime *</label>
                       <div class="col-md-12">
                         <input type="text" class="comments-form-control-custom" name="name" id="name" value="">
                       </div>
                     </div>
                   </div>
-                  <div class="col-sm-6">
-                    <div class="form-group row">
-                      <label for="email" class="col-md-12 col-form-label">E-mail adresa *</label>
-                      <div class="col-md-12">
-                        <input type="email" class="comments-form-control-custom" name="email" id="email" value="">
-                      </div>
-                    </div>
-                  </div>
+<!--                  <div class="col-sm-6">-->
+<!--                    <div class="form-group row">-->
+<!--                      <label for="email" class="col-md-12 col-form-label">E-mail adresa *</label>-->
+<!--                      <div class="col-md-12">-->
+<!--                        <input type="email" class="comments-form-control-custom" name="email" id="email" value="">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
                   <div class="col-sm-12">
                     <div class="form-group row">
-                      <label class="col-md-12 col-form-label">Vaša poruka:
+                      <label class="col-md-12 col-form-label">Vaš komentar:
                       </label> <br>
                       <div class="col-md-12">
                         <textarea id="message" name="message" class="comments-form-control-custom" rows="5"></textarea>
@@ -270,13 +270,13 @@
       sendData() {
         const postId  = document.getElementById("postId").value;
         const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
+        // const email = document.getElementById("email").value;
         const comment = document.getElementById("message").value;
 
         const data = JSON.stringify({
           post: postId,
           author_name: name,
-          author_email: email,
+          author_email: 'commenter@centralnews.live',
           content: comment
         });
 
@@ -322,84 +322,6 @@
       });
     },
     mounted() {
-        // $( document ).ready( function ()
-        // {
-        //   $( "form#form-comments" ).validate( {
-        //     rules: {
-        //       name: "required",
-        //       email: {
-        //         required: true,
-        //         email: true
-        //       },
-        //       message: "required"
-        //     },
-        //     messages: {
-        //       name: "Obavezno polje",
-        //       email: "Molimo unesite validnu email adresu.",
-        //       message: "Obavezno polje"
-        //     },
-        //     errorElement: "em",
-        //     errorPlacement: function ( error, element ) {
-        //       // Add the `help-block` class to the error element
-        //       error.addClass( "comments-form-help-block" );
-        //       if ( element.prop( "type" ) === "checkbox" ) {
-        //         error.insertAfter( element.parent( "label" ) );
-        //       } else {
-        //         error.insertAfter( element );
-        //       }
-        //     },submitHandler: function(form) {
-        //       $('.page-loader-wrapper').fadeIn();
-        //       var form_data = $(form).serialize();
-        //
-        //       $.ajax(
-        //         {
-        //           url: '',
-        //           type: 'POST',
-        //           data: form_data,
-        //           success: function(e)
-        //           {
-        //             var data = JSON.parse(e);
-        //             if(data['status'] == 'YES')
-        //             {
-        //               $('.page-loader-wrapper').fadeOut();
-        //
-        //               $("#comments-modal").modal('show');
-        //               $('#comments-modal').on('hidden.bs.modal', function () {
-        //                 $('.page-loader-wrapper').fadeIn();
-        //                 window.location.href='https://www.princip.news/';
-        //               });
-        //             }
-        //             else
-        //             {
-        //               $('.page-loader-wrapper').fadeOut();
-        //               $("#message").hide();
-        //               $('#message').removeClass();
-        //               $('#message').addClass('comments-form-error');
-        //               $('#message').text(data['message']);
-        //               $("#message").show("slow");
-        //               $('html, body').animate({
-        //                 scrollTop: $("#message").offset().top-20
-        //               }, 1000);
-        //             }
-        //           },
-        //           error: function()
-        //           {
-        //             $('.page-loader-wrapper').fadeOut();
-        //             $("#message").hide();
-        //             $('#message').removeClass();
-        //             $('#message').addClass('comments-form-error');
-        //             $('#message').text('Došlo je do greške prilikom slanja komentara. Molimo pokušajte ponovo.');
-        //             $("#message").show("slow");
-        //             $('html, body').animate({
-        //               scrollTop: $("#message").offset().top-20
-        //             }, 1000);
-        //           }
-        //         });
-        //
-        //       return false;
-        //     }
-        //   });
-        // });
     }
   }
 </script>
