@@ -13,7 +13,7 @@
         <div class="card-body px-lg-5">
         <div class="form-group required">
           <label for="name">Vaše ime</label>
-          <input type="text" id="name" class="form-control" name="name" autofocus="" aria-required="true" ref="name">
+          <input type="text" id="name" class="form-control" name="name" aria-required="true" ref="name">
           <div class="invalid-feedback" ref="err-name">Molimo unesite ime</div>
         </div>
         <div class="form-group subject">
@@ -26,9 +26,10 @@
           <textarea id="message" class="form-control" name="message" rows="8" aria-required="true" ref="message"></textarea>
           <div class="invalid-feedback" ref="err-message">Molimo unesite sadržaj</div>
         </div>
+        <p id="my-form-status"></p>
         </div>
         <div class="card-footer px-lg-5 bg-white">
-            <button class="btn btb-primary btn-send">Pošaljite vijest</button>
+            <button class="btn btb-primary btn-send" id="my-form-button">Pošaljite vijest</button>
         </div>
       </form>
     </div>
@@ -43,7 +44,7 @@ export default {
     return {
       name: '',
       subject: '',
-      message: ''
+      message: '',
     }
   },
   components: {
@@ -73,7 +74,25 @@ export default {
         this.$refs["err-name"].style.display = 'none';
         this.$refs["err-subject"].style.display = 'none';
         this.$refs["err-message"].style.display = 'none';
-
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://formspree.io/mqkyebab');
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+            var button = document.getElementById("my-form-button");
+            var status = document.getElementById("my-form-status");
+            button.style = "display: none ";
+            status.innerHTML = "Vijest je uspješno poslana! Sačekajte odgovor administratora.";
+          } else {
+            var button = document.getElementById("my-form-button");
+            var status = document.getElementById("my-form-status");
+            status.innerHTML = "Dogodila se greška.";
+          }
+        };
+        var form = document.getElementById("contact-form");
+        var data = new FormData(form);
+        xhr.send(data);
       }
     }
   },
@@ -111,6 +130,16 @@ export default {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem;
+  }
+  .btn-send:hover {
+    background-color: #fff;
+    color: #12cead;
+    border: solid 1px #12cead;
+  }
+  .btn-send:focus {
+    background-color: #fff;
+    color: #12cead;
+    border: solid 1px #12cead;
   }
 </style>
 
