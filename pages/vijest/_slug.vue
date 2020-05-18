@@ -68,7 +68,6 @@
               <div class="comments-form-title">Ostavite komentar</div>
               <div class="divider"></div>
               <form id="form-comments" novalidate="novalidate" v-on:submit.prevent="sendData">
-<!--                <div id="message"></div>-->
                 <input type="hidden" id="postId" :value=this.postId />
                 <div class="row">
                   <div class="col-sm-12">
