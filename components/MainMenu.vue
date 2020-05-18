@@ -797,7 +797,7 @@
   }
   #posalji-vijest {
     margin-left: 5px;
-    background: #08a883;
+    background: #00c834;
     border-right: 1px solid rgba(0, 0, 0, 0.16);
     box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.55);
   }
