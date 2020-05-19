@@ -80,7 +80,7 @@
         categories: [],
         categoryParents: [],
         categoryChilds: [],
-        categoryFinalSketch: ["vijesti","intervju", "kultura", "sport", "zabava", "zdravljeiljepota", "vrijeme", "ostalo"],
+        categoryFinalSketch: ["vijesti", "magazin", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "humanitarne-akcije", "posalji-vijest"],
         submenuSketch: ["istocnosarajevo","republikasrpska", "bih", "region", "svijet"],
         categoryFinal: [], loading: true,
         color: '#00909e',

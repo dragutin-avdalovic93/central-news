@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-      <div class="page-nav">
+      <div class="page-nav" v-if="this.totalPosts > 15">
         <div class="button" v-on:click="switchPage(currentPage-1)"><i class="fa fa-chevron-left" aria-hidden="true"></i> </div>
         <div class="button" v-bind:class="firstPage===currentPage ? 'active' : ''" v-on:click="switchPage(firstPage)">{{firstPage}}</div>
         <div class="button" v-bind:class="secondPage===currentPage ? 'active' : ''" v-on:click="switchPage(secondPage)">{{secondPage}}</div>

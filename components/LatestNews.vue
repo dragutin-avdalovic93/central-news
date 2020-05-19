@@ -183,6 +183,11 @@
     padding-right: 0;
     position: relative;
   }
+  .news-background-image {
+    background-repeat: no-repeat !important;
+    background-position: center center;
+    background-size: cover;
+  }
 
   .news-section-category {
     background-color: #00c834;
