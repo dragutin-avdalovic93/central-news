@@ -4,6 +4,14 @@
       <div class="high-resolution-photo"></div>
       <h1>CENTRAL <span class="bordo">news</span></h1>
     </div>
+    <form id="top-search-form" class="form-search form-horizontal pull-right" action="">
+      <div id="top-search-form-in" class="top-search-form-in input-append span12 search_beli">
+        <input type="text" class="search-query" id="search_news" value="" placeholder="Pretraga...">
+        <button type="submit" class="btn" id="btnSearchA">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
     <div class="footer-navigation-category">
       <div class="ml-md-auto d-flex flex-nowrap">
         <a class="fab fa-facebook-f social-media-icon ml-0" href="https://www.facebook.com/centralnews.live" title="Facebook" target="_blank"></a>
@@ -16,6 +24,8 @@
 </template>
 
 <script>
+  import $ from 'jquery'
+
   export default {
     name: 'MenuTop',
     props: {
@@ -28,12 +38,85 @@
       goHome() {
         this.$router.push('/');
       }
+    },
+    mounted() {
+      $(document).ready(function() {
+        $("form#top-search-form").submit(function(){
+          var search = $( "#search_news" ).val();
+          if (search == "") {
+            alert('Molimo unesite ključnu riječ. ');
+            return false;
+          }
+          else
+          {
+            $("#top-search-form").attr("action", '/pretraga/' + search);
+          }
+        });
+      });
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  @media (min-width: 0px) and (max-width: 1024px) {
+    #top-search-form {
+      display: none !important;
+    }
+  }
+  #top-search-form {
+    padding: 0;
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+  }
+
+  #top-search-form .search-query{
+    margin-top: 1px;
+    margin-left: 15px;
+    padding-right: 3px;
+    padding-left: 3px;
+    width: 200px;
+    border: none;
+    background: white;
+    color: #999999;
+  }
+  .search-query:focus{
+    outline: none;
+  }
+  #top-search-form button:focus{
+    outline: none;
+    box-shadow:none !important;
+  }
+  #top-search-form-in{
+    color: #999999;
+    border: 1px solid #999999;
+    background-color: white;
+    line-height: 34px;
+    border-radius: 20px;
+  }
+  .search_beli{
+    background: #FFF;
+  }
+  #top-search-form-in input{
+    height: 34px;
+    font-size: 14px;
+  }
+  #top-search-form button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    position: relative;
+    left: -12px;
+    color: #999999;
+    outline: none;
+    box-shadow:none !important;
+  }
+  .search-query:focus + button {
+    z-index: 3;
+  }
   .footer-navigation-category .fa-facebook-f {
     background: #3b5998;
   }
