@@ -91,9 +91,7 @@ export default {
     async getNumOfPages() {
       this.totalPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/total_posts');
       let chunk = this.totalPosts%this.perPage;
-      console.log(chunk);
       let num = Math.ceil(this.totalPosts/this.perPage);
-      console.log(num);
       if( chunk - num === 0) {
         this.numPages = Math.floor(chunk);
       } else {
@@ -121,7 +119,6 @@ export default {
       this.onLangsPageChange();
     },
     async fetchData(pageNum) {
-      console.log('broj stranica', this.numPages);
       if(pageNum < 1 || pageNum > this.numPages) {
         return;
       }
@@ -178,7 +175,6 @@ export default {
           post.hasCat = false;
         }
       });
-      console.log(this.posts);
       this.loading = false;
     },
     visitPost(slug) {

@@ -93,21 +93,15 @@ export default {
     async getNumOfPages() {
       this.category = this.$route.params.category;
       this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
-      console.log('kategorije', this.categories);
       this.categories.forEach((category) => {
         if(category.slug === this.category) {
           this.catId = category.id;
         }
       });
-      console.log('cat id', this.catId);
       this.allPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts/?categories=' + this.catId);
-      console.log('svi post', this.allPosts);
       this.totalPosts = this.allPosts.length;
-      console.log('total', this.totalPosts);
       let chunk = this.totalPosts%this.perPage;
-      console.log(chunk);
       let num = Math.ceil(this.totalPosts/this.perPage);
-      console.log(num);
       if( chunk - num === 0) {
         this.numPages = Math.floor(chunk);
       } else {
@@ -135,7 +129,6 @@ export default {
       this.onLangsPageChange();
     },
     async fetchData(pageNum) {
-      console.log('broj stranica', this.numPages);
       if(pageNum < 1 || pageNum > this.numPages) {
         return;
       }

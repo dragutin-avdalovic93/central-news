@@ -138,7 +138,6 @@
           }
         });
         this.loading = false;
-        console.log(this.latestPosts);
       },
       goHome() {
         this.$router.replace('/');

@@ -102,7 +102,6 @@
           if(post.hasTag !== false) {
             if(post.tagnames.includes("vijestdana")) {
               this.newsOfDay = post;
-              console.log('NEWS OF DAY', this.newsOfDay);
             }
           }
         });

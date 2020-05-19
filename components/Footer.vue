@@ -134,7 +134,6 @@
           });
         });
         this.loading = false;
-        console.log(this.categoryFinal);
       },
       goTo(string) {
         this.$router.push({name: string});

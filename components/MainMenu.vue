@@ -76,8 +76,10 @@
         categories: [],
         categoryParents: [],
         categoryChilds: [],
-        categoryFinalSketch: ["vijesti","intervju", "kultura", "sport", "zabava", "zdravljeiljepota", "vrijeme", "ostalo", "humanitarne-akcije", "posalji-vijest"],
+        categoryChildsSec: [],
+        categoryFinalSketch: ["vijesti", "magazin", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "humanitarne-akcije", "posalji-vijest"],
         submenuSketch: ["istocnosarajevo","republikasrpska", "bih", "region", "svijet"],
+        submenuSketchSec: ["zabava", "zdravljeiljepota", "nadanasnjidan"],
         categoryFinal: []
       }
     },
@@ -100,6 +102,7 @@
         this.categories = [];
         this.categoryParents = [];
         this.categoryChilds = [];
+        this.categoryChildsSec = [];
         this.categoryFinal = [];
         this.fetchCategories();
       },
@@ -110,10 +113,28 @@
             delete category["parent"];
             this.categoryParents.push(category);
           } else {
-            this.categoryChilds.push(category);
+            if (category.parent === 84) {
+              this.categoryChilds.push(category);
+            } else if (category.parent === 1) {
+              this.categoryChildsSec.push(category);
+            }
           }
         });
         this.categoryChilds.forEach((child) => {
+          this.categoryParents.forEach((parent) => {
+            if(child.parent === parent.id) {
+              if(parent["children"] === undefined) {
+                parent["children"] = [];
+              }
+              delete child["parent"];
+              parent["hasChildren"] = true;
+              parent["children"].push(child);
+            } else {
+              parent["hasChildren"] = false;
+            }
+          });
+        });
+        this.categoryChildsSec.forEach((child) => {
           this.categoryParents.forEach((parent) => {
             if(child.parent === parent.id) {
               if(parent["children"] === undefined) {
@@ -131,18 +152,32 @@
           this.categoryParents.forEach((parent) => {
             if(parent.slug === sketchName) {
               this.categoryFinal.push(parent);
-            }
-            if(parent.hasChildren) {
-              let newChilds = [];
-              this.submenuSketch.forEach((sub) => {
-                parent.children.forEach((child) => {
-                  if(child.slug === sub) {
-                    newChilds.push(child);
-                  }
+            } else {
+              if(parent.slug === 'magazin') {
+                parent.hasChildren = true;
+                let newChilds = [];
+                this.submenuSketchSec.forEach((sub) => {
+                  parent.children.forEach((child) => {
+                    if(child.slug === sub) {
+                      newChilds.push(child);
+                    }
+                  });
                 });
-              });
-              delete parent["children"];
-              parent["children"] = newChilds;
+                delete parent["children"];
+                parent["children"] = newChilds;
+              } else if (parent.slug === 'vijesti') {
+                parent.hasChildren = true;
+                let newChilds = [];
+                this.submenuSketch.forEach((sub) => {
+                  parent.children.forEach((child) => {
+                    if(child.slug === sub) {
+                      newChilds.push(child);
+                    }
+                  });
+                });
+                delete parent["children"];
+                parent["children"] = newChilds;
+              }
             }
           });
         });
