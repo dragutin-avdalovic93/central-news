@@ -198,7 +198,7 @@
           $('#menu-container .menu-list').toggleClass('active');
           slideMenu();
 
-          $('body').toggleClass('overflow-hidden');
+          //$('body').toggleClass('overflow-hidden');
         });
 
         $(".menu-list").on('click', '.accordion-toggle', function() {
@@ -699,7 +699,6 @@
   }
 
   #menu-container .menu-list {
-    height: calc(100vh - 126px);
     padding-left: 0;
     display: block;
     position: absolute;
