@@ -9,6 +9,7 @@
              :loader="loader"
     ></loading>
     <div class="news"  v-if="!loading">
+      <div class="no-post" id="no-post">{{noPost}}</div>
       <div class="grid-wrapper">
         <div class="grid-container">
           <div class="blog-post-small" v-for="post in posts" v-bind:key="post.slug">
@@ -77,7 +78,8 @@
         endPage: 0,
         catId: 0,
         allPosts: [],
-        search: ''
+        search: '',
+        noPost: ''
       }
     },
     components: {
@@ -96,6 +98,10 @@
         console.log('pretraga', this.search);
         this.allPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?search=' + this.search);
         this.totalPosts = this.allPosts.length;
+        if (this.totalPosts === 0) {
+          this.noPost = 'Nema rezultata'
+          this.loading = false;
+        }
         let chunk = this.totalPosts%this.perPage;
         let num = Math.ceil(this.totalPosts/this.perPage);
         if( chunk - num === 0) {
@@ -558,6 +564,10 @@
     border: 1px solid white;
     color: white;
     cursor: pointer;
+  }
+  #no-post {
+    text-align: center;
+    display: block;
   }
 </style>
 

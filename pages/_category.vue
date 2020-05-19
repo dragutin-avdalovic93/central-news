@@ -9,6 +9,7 @@
              :loader="loader"
     ></loading>
     <div class="news"  v-if="!loading">
+      <div class="no-post" id="no-post">{{noPost}}</div>
       <div class="grid-wrapper">
         <div class="grid-container">
           <div class="blog-post-small" v-for="post in posts" v-bind:key="post.slug">
@@ -76,7 +77,8 @@ export default {
       secondPage: 0,
       endPage: 0,
       catId: 0,
-      allPosts: []
+      allPosts: [],
+      noPost: ''
     }
   },
   components: {
@@ -100,6 +102,10 @@ export default {
       });
       this.allPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts/?categories=' + this.catId);
       this.totalPosts = this.allPosts.length;
+      if (this.totalPosts === 0) {
+          this.noPost = 'Nema članaka'
+          this.loading = false;
+        }
       let chunk = this.totalPosts%this.perPage;
       let num = Math.ceil(this.totalPosts/this.perPage);
       if( chunk - num === 0) {
@@ -129,6 +135,7 @@ export default {
       this.onLangsPageChange();
     },
     async fetchData(pageNum) {
+      console.log(this.numPages);
       if(pageNum < 1 || pageNum > this.numPages) {
         return;
       }
@@ -204,11 +211,17 @@ export default {
     this.getNumOfPages().then(() => {
       this.fetchData(this.currentPage);
     });
+  },
+  mounted() {
   }
 }
 </script>
 
 <style>
+  #no-post {
+    text-align: center;
+    display: block;
+  }
   .grid-wrapper {
     min-height: 100vh;
   }
