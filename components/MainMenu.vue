@@ -40,7 +40,7 @@
       <div class="search_form_mobile">
       <form id="top-search-form2" class="form-search form-horizontal pull-right" action="">
         <div id="top-search-form-in" class="top-search-form-in input-append span12 search_beli">
-          <input type="text" class="search-query" id="search_news_mobile" value="" placeholder="Pretraga vijesti ...">
+          <input type="text" class="search-query" id="search_news_mobile" value="" placeholder="Pretraga">
           <button type="submit" class="btn" id="btnSearchA">
             <i class="fas fa-search"></i>
           </button>
@@ -50,21 +50,6 @@
     </div>
   </div>
 </template>
-<!--      <script>-->
-<!--        //search mobile-->
-<!--        $("form#top-search-form2").submit(function(){-->
-<!--          var search = $( "#search_news_mobile" ).val();-->
-<!--          if (search == "") {-->
-<!--            alert('Molimo unesite parametar pretrage. ');-->
-<!--            return false;-->
-<!--          }-->
-<!--          else-->
-<!--          {-->
-<!--            $('.page-loader-wrapper').fadeIn();-->
-<!--            $("#top-search-form2").attr("action", 'https://www.princip.news/pretraga/' + search);-->
-<!--          }-->
-<!--        });-->
-<!--      </script>-->
 <script>
   import $ from 'jquery';
   import _ from 'lodash';
@@ -240,6 +225,18 @@
         $('.menu-hide').removeClass('show');
         $('.menu-tab').removeClass('active');
       });
+
+      $("form#top-search-form2").submit(function(){
+       var search = $( "#search_news_mobile" ).val();
+        if (search == "") {
+          alert('Molimo unesite ključnu riječ. ');
+          return false;
+        }
+       else
+        {
+         $("#top-search-form2").attr("action", '/pretraga/' + search);
+        }
+       });
     },
     created() {
       this.fetchCategories();
