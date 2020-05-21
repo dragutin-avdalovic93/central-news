@@ -41,12 +41,14 @@
         tags: [],
         categories: [],
         newsOfDay: {},
-        latestPosts: []
+        latestPosts: [],
+        latPosts: []
       }
     },
     methods: {
       async fetchData() {
-        this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?per_page=100');
+        this.latPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?per_page=15&page=1');
+        this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?tag=vijestdana');
         this.tags = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/tags?per_page=100');
         this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
         this.posts.forEach((post) => {
@@ -98,19 +100,13 @@
         this.$router.replace('/vijest/' + slug);
       },
       async extractNewsOfDay() {
-        this.posts.forEach((post) => {
-          if(post.hasTag !== false) {
-            if(post.tagnames.includes("vijestdana")) {
-              this.newsOfDay = post;
-            }
-          }
-        });
+       this.newsOfDay = this.posts[0];
       }
     },
     created(){
       this.fetchData().then( _ => {
         this.extractNewsOfDay().then( _ => {
-          this.latestPosts = this.posts.splice(0,5);
+          this.latestPosts = this.latPosts.splice(0,5);
         })
       })
     }

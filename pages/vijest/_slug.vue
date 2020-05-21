@@ -9,7 +9,7 @@
                    :height="height"
                    :loader="loader"
           ></loading>
-          <div class="article" v-if="!loading">
+          <div class="article" v-if="!loading" :key="componentKey">
             <div class="blog-detail-post">
               <div class="social">
                 <social-sharing :url="'https://www.centralnews.live/vijest/' + post[0].slug"
@@ -254,8 +254,8 @@
         width: 128,
         loader: 'bars',
         comments: [],
-        postId: 0
-
+        postId: 0,
+        componentKey: 0
       }
     },
     components: {
@@ -265,6 +265,10 @@
     methods: {
       goBack() {
         this.$router.replace('/');
+      },
+      forceRerender() {
+        this.componentKey += 1;
+        console.log('rerenderdone');
       },
       sendData() {
         const postId  = document.getElementById("postId").value;
@@ -321,6 +325,12 @@
       });
     },
     mounted() {
+      // var elementExists = document.getElementsByClassName("fb-video");
+      // console.log(elementExists.length);
+      // if(elementExists.length !== 0) {
+      //   location = "#";
+      //   window.location.reload(true);
+      // }
     }
   }
 </script>
@@ -343,11 +353,11 @@
     width: 98% !important;
     margin: 0 1% !important;
   }
-  .blog-detail-post .fb-post span iframe{
+  .blog-detail-post .fb-video span iframe{
     width: 98% !important;
     margin: 0 1% !important;
   }
-  .blog-detail-post .fb_iframe_widget span iframe{
+  .blog-detail-post .fb-video span iframe{
     width: 98% !important;
     margin: 0 1% !important;
   }
@@ -358,11 +368,11 @@
     }
   }
   @media (max-width: 768px) {
-    .blog-detail-post .fb-post span iframe{
+    .blog-detail-post .fb-video span iframe{
       width: 98% !important;
       margin: 0 1% !important;
     }
-    .blog-detail-post .fb_iframe_widget span iframe{
+    .blog-detail-post .fb-post span iframe{
       width: 98% !important;
       margin: 0 1% !important;
     }
