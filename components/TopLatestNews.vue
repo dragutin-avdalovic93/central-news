@@ -15,7 +15,7 @@
             <div class="col">
               <div class="marquee">
                 <div class="marquee__content">
-                  <ul class="list-inline" v-for="post in latestPosts">
+                  <ul class="list-inline" v-for="post in latPosts">
                     <li class="marquee-li"><span v-if="post.hasCat" class="marquee-box">{{post.catnames[0]}} {{post.date.split('T')[1].substring(0, 5)}}</span><a @click="goTo(post.slug)">{{post.title.rendered}}</a></li>
                   </ul>
                 </div>
@@ -37,7 +37,7 @@
     },
     data: function () {
       return {
-        posts: [],
+        gradPost: [],
         tags: [],
         categories: [],
         newsOfDay: {},
@@ -48,10 +48,51 @@
     methods: {
       async fetchData() {
         this.latPosts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?per_page=15&page=1');
-        this.posts = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?tag=vijestdana');
+        this.grandPost = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/posts?tag=vijestdana');
         this.tags = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/tags?per_page=100');
         this.categories = await this.$axios.$get('https://admincentralnews.xyz/wp-json/wp/v2/categories?per_page=100');
-        this.posts.forEach((post) => {
+        this.latPosts.forEach((post) => {
+          let tagnames = [];
+          let catnames = [];
+          if(post.tags.length !== 0){
+            post.tags.forEach((tagNum) => {
+              if(tagNum !== undefined) {
+                this.tags.forEach((tag) => {
+                  post.hasTag = true;
+                  if(tag.id === tagNum) {
+                    tagnames.push(tag.name);
+                  }
+                });
+                post.tagnames = tagnames;
+              } else {
+                tagnames = [];
+                post.tagnames = [];
+              }
+            });
+          }else {
+            post.hasTag = false;
+          }
+          if(post.categories.length !== 0){
+            post.categories.forEach((catNum) => {
+              if(catNum !== undefined) {
+                post.hasCat = true;
+                this.categories.forEach((cat) => {
+                  if(cat.id === catNum) {
+                    catnames.push(cat.name);
+                  }
+                });
+                post.catnames = catnames;
+              } else {
+                catnames = [];
+                post.catnames = [];
+              }
+            });
+          }
+          else {
+            post.hasCat = false;
+          }
+        });
+        this.grandPost.forEach((post) => {
           let tagnames = [];
           let catnames = [];
           if(post.tags.length !== 0){
@@ -100,7 +141,7 @@
         this.$router.replace('/vijest/' + slug);
       },
       async extractNewsOfDay() {
-       this.newsOfDay = this.posts[0];
+       this.newsOfDay = this.grandPost[0];
       }
     },
     created(){

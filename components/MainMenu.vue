@@ -62,9 +62,9 @@
         categoryParents: [],
         categoryChilds: [],
         categoryChildsSec: [],
-        categoryFinalSketch: ["vijesti", "magazin", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "humanitarne-akcije", "posalji-vijest"],
+        categoryFinalSketch: ["vijesti", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "magazin", "humanitarne-akcije", "posalji-vijest"],
         submenuSketch: ["istocnosarajevo","republikasrpska", "bih", "region", "svijet"],
-        submenuSketchSec: ["zabava", "zdravljeiljepota", "nadanasnjidan"],
+        submenuSketchSec: [ "nadanasnjidan", "zanimljivosti", "zabava", "zdravljeiljepota"],
         categoryFinal: []
       }
     },
