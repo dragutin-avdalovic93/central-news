@@ -8,6 +8,7 @@ export default {
     title: 'Central news - novinski portal' || '',
     meta: [
       { charset: 'utf-8' },
+      { 'Referrer-Policy': 'origin'},
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'name',
