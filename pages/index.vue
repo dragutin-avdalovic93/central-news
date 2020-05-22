@@ -11,7 +11,7 @@
         <div class="news"  v-if="!loading">
           <div class="grid-wrapper">
             <div class="grid-container">
-              <div class="blog-post-small" v-for="post in posts" v-bind:key="post.slug">
+              <div class="" v-for="post in posts" v-bind:key="post.slug" v-bind:class="[post.isFirst ? 'box-one' : '', 'blog-post-small']">
                 <div class="main-container">
                   <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.slug)"/>
                   <div class="content">
@@ -175,6 +175,13 @@ export default {
           post.hasCat = false;
         }
       });
+      for( var i = 0; i < 15; i ++) {
+        if(i === 0) {
+          this.posts[i].isFirst = true;
+        } else {
+          this.posts[i].isFirst = false;
+        }
+      }
       this.loading = false;
     },
     visitPost(slug) {
@@ -193,6 +200,35 @@ export default {
 </script>
 
 <style>
+  @media (min-width: 1024px) {
+    .box-one {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      margin: 0;
+    }
+    .box-one .thumb-img {
+      max-height: unset !important;
+      max-width: unset !important;
+    }
+    .box-one .blog-post-small-inner {
+      max-width: unset !important;
+    }
+  }
+  @media (max-width: 1024px) {
+    .box-one {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      margin: auto;
+    }
+    .box-one .thumb-img {
+    }
+    .box-one .blog-post-small-inner {
+    }
+  }
   .grid-wrapper {
     min-height: 100vh;
   }
