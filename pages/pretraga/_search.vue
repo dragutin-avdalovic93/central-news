@@ -287,7 +287,7 @@
     z-index: 1;
   }
   .blog-post-small .thumb-img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
