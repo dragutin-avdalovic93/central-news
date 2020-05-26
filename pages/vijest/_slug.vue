@@ -349,6 +349,10 @@
     width: 90%;
     margin: 0 5%;
   }
+  .blog-detail-post img {
+    max-width: 100% !important;
+    height: auto;
+  }
   .blog-detail-post iframe {
     width: 98% !important;
     margin: 0 1% !important;

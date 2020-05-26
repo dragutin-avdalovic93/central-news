@@ -382,7 +382,7 @@
   .dropdown-sub-menu a, .dropdown-sub-menu2 a{
     color: #333333 !important;
     text-transform: uppercase;
-    font-size: 13px !important;
+    font-size: 12px !important;
   }
 
   .dropdown-sub-menu a:hover, .dropdown-sub-menu2 a:hover{

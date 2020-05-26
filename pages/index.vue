@@ -187,6 +187,9 @@ export default {
     visitPost(slug) {
       this.$router.replace('/vijest/' + slug);
     },
+    visitCat(category) {
+      this.$router.replace(category);
+    },
     onLangsPageChange() {
       window.scrollTo(0, 0);
     }
@@ -296,6 +299,7 @@ export default {
     margin: auto;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
   .blog-post-small .thumb-img {
     width: 100%;
@@ -304,6 +308,12 @@ export default {
     min-height: 135px;
     max-height: 135px;
     cursor: pointer;
+    transform-origin: 50 50;
+    transition: transform .5s, visibility .5s ease-in;
+    z-index: 1;
+  }
+  .blog-post-small .thumb-img:hover {
+    transform: scale(1.2);
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
@@ -347,6 +357,7 @@ export default {
     background: #8C8C86  0 0 no-repeat padding-box;
     color: #2b2b2b;
     cursor: pointer;
+    z-index: 1;
   }
   @media (max-width: 2400px) {
     .blog-post-small .blog-post-small-inner {
@@ -495,6 +506,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 0 5px;
+    z-index: 10;
   }
   .blog-post-small  .main-container .content .category{
     transition: all 200ms ease-in-out;
