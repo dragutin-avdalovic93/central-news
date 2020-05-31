@@ -62,7 +62,7 @@
         categoryParents: [],
         categoryChilds: [],
         categoryChildsSec: [],
-        categoryFinalSketch: ["vijesti", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "magazin", "humanitarne-akcije", "posalji-vijest"],
+        categoryFinalSketch: ["vijesti", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "centralmagazin", "humanitarne-akcije", "posalji-vijest"],
         submenuSketch: ["istocnosarajevo","republikasrpska", "bih", "region", "svijet"],
         submenuSketchSec: [ "nadanasnjidan", "istorijske-zanimljivosti", "zabava", "zdravljeiljepota", "dalisteznali"],
         categoryFinal: []
@@ -265,9 +265,9 @@
   }
 
   .header-navigation-inner {
-    max-width: 1140px;
+    max-width: 1240px;
     margin: auto;
-    padding: 0 15px;
+    padding: 0 50px;
     position: relative;
   }
 
