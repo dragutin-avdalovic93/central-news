@@ -270,6 +270,14 @@
     padding: 0 50px;
     position: relative;
   }
+  @media screen and (max-width: 1024px) {
+    .header-navigation-inner {
+      margin: auto;
+      padding: 0 20px 0 15px;
+      position: relative;
+    }
+  }
+
 
   .header-navigation-inner ul {
     margin: 0px;
