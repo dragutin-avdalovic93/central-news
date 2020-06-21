@@ -4,6 +4,26 @@
     <TopLatestNews/>
     <MainMenu/>
     <div class="container inner-content">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="banners-top">
+            <div class="divider-15-w"></div>
+            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/ski_centar.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
+          <div class="divider-15-w"></div>
+          <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+            <video width="100%" height="250" autoplay muted class="img-fluid-top">
+              <source src="https://admincentralnews.xyz/wp-content/uploads/2020/06/lavina.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </a></div>
+          <div class="divider-15-w"></div>
+          <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/al_parco.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
+          <div class="divider-15-w"></div>
+          <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/zlatni_bor.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+            <div class="divider-15-w"></div>
+          </div>
+        </div>
+      </div>
       <div class="row main-row">
         <div class="col-12 col-md-2 col-lg-2 banners order-1 order-sm-1 order-xs-1 order-md-0 order-lg-0 order-xl-0">
           <div class="divider-15"></div>
@@ -72,6 +92,11 @@ html {
   width: 100%;
   height: auto;
 }
+.img-fluid-top {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+}
 .main-row {
   margin: 0!important;
 }
@@ -79,12 +104,33 @@ html {
   height: 15px;
   clear: both;
 }
+.divider-15-w {
+  width: 15px;
+  clear: both;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
+.banners-top {
+  padding: 10px 0;
+  background: #dae1e7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .banners-top {
+    display: none;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
 .banners {
-  background: #dae1e7
+  background: #dae1e7;
 }
 @media (max-width: 767px) {
   .banners {
