@@ -32,7 +32,7 @@
           <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
             <video width="100%" height="auto" autoplay muted class="img-fluid-ad">
               <source src="https://admincentralnews.xyz/wp-content/uploads/2020/06/lavina.mp4" type="video/mp4">
-              Your browser does not support the video tag.
+              Your browser does not support the video tags.
             </video>
           </a></div>
            <div class="divider-15"></div>
