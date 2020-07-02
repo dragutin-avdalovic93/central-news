@@ -81,7 +81,7 @@
         </div>
         <div class="col-12 col-md-3 col-lg-3 latest-news-slot order-2 order-sm-2 order-xs-2 order-md-2 order-lg-2 order-xl-2"><LatestNews/></div>
         <div class="col-12 col-md-1 col-lg-1 banners-end order-3 order-sm-3 order-xs-3 order-md-3 order-lg-3 order-xl-3">
-          <div class="banners-top-column">
+          <div class="banners-top-column-sec">
             <div class="divider-15"></div>
             <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
             <div class="divider-15"></div>
@@ -101,7 +101,7 @@
           <div class="divider-15"></div>
         </div>
       </div>
-      <div class="col-12 col-md-12  col-lg-12">
+      <div class="col-12 col-md-12  col-lg-12" style="padding: 0;">
         <div class="banners-top">
           <div class="divider-15-w"></div>
           <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
@@ -146,7 +146,7 @@ html {
   box-sizing: border-box;
 }
 .layout {
-  background: #27496d;
+  background: url('https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg') !important;
 }
 *,
 *:before,
@@ -197,20 +197,33 @@ html {
   margin-bottom: 15px;
 }
 .banners-top-column {
-  padding: 10px 0;
   background: #dae1e7;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
 }
 @media (max-width: 767px) {
   .banners-top-column {
     display: none;
     flex-direction: column;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+.banners-top-column-sec {
+  background: #dae1e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .banners-top-column-sec {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 }
 @media (max-width: 767px) {

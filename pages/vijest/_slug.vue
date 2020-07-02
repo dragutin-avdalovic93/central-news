@@ -62,6 +62,33 @@
               </div>
             </div>
           </div>
+          <div>
+            <div class="banners-top-column-third">
+              <div class="divider-15-w"></div>
+              <div class="divider-15"></div>
+              <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
+              <div class="divider-15"></div>
+              <div class="divider-15-w"></div>
+
+              <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+                <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
+              </a></div>
+              <div class="divider-15"></div>
+              <div class="divider-15-w"></div>
+
+              <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
+              <div class="divider-15"></div>
+              <div class="divider-15-w"></div>
+
+              <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+              <div class="divider-15"></div>
+              <div class="divider-15-w"></div>
+
+              <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+              <div class="divider-15"></div>
+              <div class="divider-15-w"></div>
+            </div>
+          </div>
           <div class="comm-cont">
             <div class="comments-form">
               <div class="divider"></div>
@@ -336,6 +363,21 @@
 </script>
 
 <style>
+  .banners-top-column-third {
+    background: #dae1e7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 767px) {
+    .banners-top-column-third {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+  }
   #good-alert {
     display: none;
   }
