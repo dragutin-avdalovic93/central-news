@@ -1,6 +1,20 @@
 <template>
   <div class="layout">
     <MenuTop/>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12">
+        <div class="banners-top-video" style="margin-top: 15px;">
+          <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+            <video width="100%" height="250" autoplay muted class="img-fluid-top">
+              <source src="https://admincentralnews.xyz/wp-content/uploads/2020/06/lavina.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </a></div>
+        </div>
+      </div>
+    </div>
+    </div>
     <TopLatestNews/>
     <MainMenu/>
     <div class="container inner-content">
@@ -8,20 +22,17 @@
         <div class="col-12 col-md-12 col-lg-12">
           <div class="banners-top">
             <div class="divider-15-w"></div>
-            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/ravna_planina.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
-          <div class="divider-15-w"></div>
-          <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
-            <video width="100%" height="250" autoplay muted class="img-fluid-top">
-              <source src="https://admincentralnews.xyz/wp-content/uploads/2020/06/lavina.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </a></div>
-          <div class="divider-15-w"></div>
-          <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/al_parco-1.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
-          <div class="divider-15-w"></div>
-          <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/zlatni_bor-1.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
             <div class="divider-15-w"></div>
-            <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/kumbara.png" class="img-fluid-top" alt="Kumbara"></a></div>
+            <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
+            </a></div>
+            <div class="divider-15-w"></div>
+            <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
+            <div class="divider-15-w"></div>
+            <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+            <div class="divider-15-w"></div>
+            <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
             <div class="divider-15-w"></div>
           </div>
         </div>
@@ -30,7 +41,23 @@
         <div class="col-12 col-md-2 col-lg-2 banners order-1 order-sm-1 order-xs-1 order-md-0 order-lg-0 order-xl-0">
           <div class="divider-15"></div>
           <ImageSlider></ImageSlider>
-<!--          <div class="divider-15"></div>-->
+          <div class="banners-top-column">
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
+            </a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+            <div class="divider-15"></div>
+          </div>
+
+          <!--          <div class="divider-15"></div>-->
 <!--          <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/ravna_planina.jpg" class="img-fluid-ad" alt="Ski centar 'Ravna Planina'"></a></div>-->
 <!--          <div class="divider-15"></div>-->
 <!--          <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >-->
@@ -54,9 +81,41 @@
         </div>
         <div class="col-12 col-md-3 col-lg-3 latest-news-slot order-2 order-sm-2 order-xs-2 order-md-2 order-lg-2 order-xl-2"><LatestNews/></div>
         <div class="col-12 col-md-1 col-lg-1 banners-end order-3 order-sm-3 order-xs-3 order-md-3 order-lg-3 order-xl-3">
+          <div class="banners-top-column">
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
+            </a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+            <div class="divider-15"></div>
+            <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+            <div class="divider-15"></div>
+          </div>
           <div class="divider-15"></div>
           <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>
           <div class="divider-15"></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-12  col-lg-12">
+        <div class="banners-top">
+          <div class="divider-15-w"></div>
+          <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
+          <div class="divider-15-w"></div>
+          <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+            <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
+          </a></div>
+          <div class="divider-15-w"></div>
+          <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
+          <div class="divider-15-w"></div>
+          <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+          <div class="divider-15-w"></div>
+          <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+          <div class="divider-15-w"></div>
         </div>
       </div>
     </div>
@@ -127,6 +186,32 @@ html {
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+}
+.banners-top-video{
+  padding: 10px 0;
+  background: #dae1e7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.banners-top-column {
+  padding: 10px 0;
+  background: #dae1e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .banners-top-column {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 }
 @media (max-width: 767px) {
   .banners-top {

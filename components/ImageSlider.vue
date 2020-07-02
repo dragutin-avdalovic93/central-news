@@ -5,24 +5,30 @@
       <!-- Full-width images with number and caption text -->
       <div class="mySlides fade">
 <!--        <div class="numbertext">1 / 3</div>-->
-        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/ravna_planina.jpg" style="width:100%">
+        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" style="width:100%">
         <div class="text">Ski centar 'Ravna Planina'</div>
       </div>
 
       <div class="mySlides fade">
+        <!--        <div class="numbertext">1 / 3</div>-->
+        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" style="width:100%">
+        <div class="text">Hotel Lavina Jahorina</div>
+      </div>
+
+      <div class="mySlides fade">
 <!--        <div class="numbertext">2 / 3</div>-->
-        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/al_parco-1.jpg" style="width:100%">
+        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" style="width:100%">
         <div class="text">Al Parco Ristorante</div>
       </div>
 
       <div class="mySlides fade">
 <!--        <div class="numbertext">3 / 3</div>-->
-        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/zlatni_bor-1.jpg" style="width:100%">
+        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" style="width:100%">
         <div class="text">Hotel Zlatni Bor</div>
       </div>
       <div class="mySlides fade">
 <!--        <div class="numbertext">3 / 3</div>-->
-        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/kumbara.png" style="width:100%">
+        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" style="width:100%">
         <div class="text">Kumbara</div>
       </div>
 
@@ -117,9 +123,6 @@
     right: 0;
     border-radius: 3px 0 0 3px;
   }
-  .slider {
-    min-height: 420px;
-  }
 
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
@@ -135,6 +138,7 @@
     bottom: 8px;
     width: 100%;
     text-align: center;
+    font-weight: 800;
   }
 
   /* Number text (1/3 etc) */
