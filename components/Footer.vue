@@ -7,8 +7,8 @@
           <div class="contact">
           <div class="divider-15"></div>
           <span class="text-contact-us">Kontaktirajte nas</span><br>
-          <a href="mailto:redakcija@centralnews.live" class="link-footer-email">redakcija@centralnews.live</a><br>
-          <a href="mailto:marketing@centralnews.live" class="link-footer-email">marketing@centralnews.live</a>
+          <a href="mailto:redakcija_centralnews@yahoo.com" class="link-footer-email">redakcija_centralnews@yahoo.com</a><br>
+          <a href="mailto:marketing_centralnews@yahoo.com" class="link-footer-email">marketing_centralnews@yahoo.com</a>
           <br>
           <div class="divider"></div>
           </div>

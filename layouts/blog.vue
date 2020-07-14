@@ -32,7 +32,7 @@
             <div class="divider-15-w"></div>
             <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
             <div class="divider-15-w"></div>
-            <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+            <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
             <div class="divider-15-w"></div>
           </div>
         </div>
@@ -53,7 +53,7 @@
             <div class="divider-15"></div>
             <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
             <div class="divider-15"></div>
-            <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+            <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
             <div class="divider-15"></div>
           </div>
 
@@ -71,7 +71,7 @@
 <!--          <div class="divider-15"></div>-->
 <!--          <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/zlatni_bor-1.jpg" class="img-fluid-ad" alt="Hotel Zlatni Bor"></a></div>-->
 <!--          <div class="divider-15"></div>-->
-<!--          <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/kumbara.png" class="img-fluid-ad" alt="Kumbara"></a></div>-->
+<!--          <div><a href="https://www.facebook.com/etnorestoran.kumbarapale/" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/06/kumbara.png" class="img-fluid-ad" alt="Kumbara"></a></div>-->
 <!--          <div class="divider-15"></div>-->
 <!--          <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>-->
 <!--          <div class="divider-15"></div>-->
@@ -93,7 +93,7 @@
             <div class="divider-15"></div>
             <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
             <div class="divider-15"></div>
-            <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+            <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
             <div class="divider-15"></div>
           </div>
           <div class="divider-15"></div>
@@ -114,7 +114,7 @@
           <div class="divider-15-w"></div>
           <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
           <div class="divider-15-w"></div>
-          <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+          <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
           <div class="divider-15-w"></div>
         </div>
       </div>

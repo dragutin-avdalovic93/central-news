@@ -84,7 +84,7 @@
               <div class="divider-15"></div>
               <div class="divider-15-w"></div>
 
-              <div><a href="https://www.facebook.com/profile.php?id=100011117460201" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+              <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
               <div class="divider-15"></div>
               <div class="divider-15-w"></div>
             </div>
