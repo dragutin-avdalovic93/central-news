@@ -74,7 +74,8 @@ export default {
       perPage: 15,
       firstPage: 0,
       secondPage: 0,
-      endPage: 0
+      endPage: 0,
+      separatedTag: {}
     }
   },
   components: {
@@ -133,12 +134,13 @@ export default {
         let tagnames = [];
         let catnames = [];
         let catslugs = [];
+        post.isFirst = false;
         if(post.tags.length !== 0){
           post.tags.forEach((tagNum) => {
             if(tagNum !== undefined) {
               this.tags.forEach((tag) => {
                 post.hasTag = true;
-                if(tag.id === tagNum) {
+                if(String(tag.id) === String(tagNum)) {
                   tagnames.push(tag.name);
                 }
               });
@@ -150,6 +152,8 @@ export default {
           });
         }else {
           post.hasTag = false;
+          tagnames = [];
+          post.tagnames = [];
         }
         if(post.categories.length !== 0){
           post.categories.forEach((catNum) => {
@@ -174,14 +178,12 @@ export default {
         else {
           post.hasCat = false;
         }
+        post.tags.forEach((tag) => {
+          if(String(tag) === String('1695')) {
+            post.isFirst = true;
+          }
+        });
       });
-      for( var i = 0; i < 15; i ++) {
-        if(i === 0) {
-          this.posts[i].isFirst = true;
-        } else {
-          this.posts[i].isFirst = false;
-        }
-      }
       this.loading = false;
     },
     visitPost(slug) {
@@ -206,10 +208,10 @@ export default {
   @media (min-width: 1024px) {
     .box-one {
       grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column-end: 4;
       grid-row-start: 1;
-      grid-row-end: 3;
-      margin: 0;
+      grid-row-end: 4;
+      margin: 0 !important;
     }
     .box-one .thumb-img {
       max-height: unset !important;
