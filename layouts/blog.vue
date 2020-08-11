@@ -146,7 +146,7 @@ html {
   box-sizing: border-box;
 }
 .layout {
-  background: url('https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg') !important;
+  background: #fff;
 }
 *,
 *:before,
