@@ -64,17 +64,17 @@
           </div>
           <div>
             <div class="banners-top-column-third">
-              <div class="divider-15-w"></div>
-              <div class="divider-15"></div>
-              <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
-              <div class="divider-15"></div>
-              <div class="divider-15-w"></div>
+<!--              <div class="divider-15-w"></div>-->
+<!--              <div class="divider-15"></div>-->
+<!--              <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>-->
+<!--              <div class="divider-15"></div>-->
+<!--              <div class="divider-15-w"></div>-->
 
-              <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
-                <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
-              </a></div>
-              <div class="divider-15"></div>
-              <div class="divider-15-w"></div>
+<!--              <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >-->
+<!--                <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">-->
+<!--              </a></div>-->
+<!--              <div class="divider-15"></div>-->
+<!--              <div class="divider-15-w"></div>-->
 
               <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
               <div class="divider-15"></div>

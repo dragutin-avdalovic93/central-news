@@ -3,17 +3,17 @@
     <div class="slideshow-container"  ref="mySlides">
 
       <!-- Full-width images with number and caption text -->
-      <div class="mySlides fade">
-<!--        <div class="numbertext">1 / 3</div>-->
-        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" style="width:100%">
-        <div class="text">Ski centar 'Ravna Planina'</div>
-      </div>
+<!--      <div class="mySlides fade">-->
+<!--&lt;!&ndash;        <div class="numbertext">1 / 3</div>&ndash;&gt;-->
+<!--        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" style="width:100%">-->
+<!--        <div class="text">Ski centar 'Ravna Planina'</div>-->
+<!--      </div>-->
 
-      <div class="mySlides fade">
-        <!--        <div class="numbertext">1 / 3</div>-->
-        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" style="width:100%">
-        <div class="text">Hotel Lavina Jahorina</div>
-      </div>
+<!--      <div class="mySlides fade">-->
+<!--        &lt;!&ndash;        <div class="numbertext">1 / 3</div>&ndash;&gt;-->
+<!--        <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" style="width:100%">-->
+<!--        <div class="text">Hotel Lavina Jahorina</div>-->
+<!--      </div>-->
 
       <div class="mySlides fade">
 <!--        <div class="numbertext">2 / 3</div>-->
