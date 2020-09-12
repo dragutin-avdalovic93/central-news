@@ -20,7 +20,7 @@
                   </ul>
                 </div>
               </div>
-            </div><!-- .col -->
+            </div><!-- .cols -->
           </div><!-- .row .align-items-center -->
         </div><!-- .col-12 .col-sm .top-stories-lists -->
       </div><!-- .row .top-stories-box -->
