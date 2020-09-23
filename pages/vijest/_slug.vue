@@ -34,7 +34,7 @@
               </div>
               <div class="created_at">
                 <i class="fas fa-calendar" aria-hidden="true"></i>
-                {{$moment(post[0].date).format("dddd, DD.MM.YYYY")}}
+                {{$moment(post[0].date).format("dddd, DD.MM.YYYY HH:MM")}}
               </div>
               <img class="thumb-img" v-bind:src="post[0].featured_image_url">
               <div class="autor">

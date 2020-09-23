@@ -224,7 +224,7 @@ export default {
   @media (max-width: 1024px) {
     .box-one {
       grid-column-start: 1;
-      grid-column-end: 1;
+      grid-column-end: 3;
       grid-row-start: 1;
       grid-row-end: 1;
       margin: auto;
@@ -283,7 +283,7 @@ export default {
       display: grid;
       max-width: unset;
       grid-template-columns: repeat(2, 1fr) !important;
-      grid-gap: 20px;
+      grid-gap: 10px;
       grid-auto-rows: minmax(100px, auto);
     }
   }
@@ -291,8 +291,8 @@ export default {
     .grid-container {
       display: grid;
       max-width: unset;
-      grid-template-columns: repeat(1, 1fr) !important;
-      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-gap: 10px;
       grid-auto-rows: minmax(100px, auto);
     }
   }
@@ -340,18 +340,18 @@ export default {
   }
   @media (max-width: 568px) {
     .blog-post-small .thumb-img {
-      max-width: 300px;
-      min-width: 300px;
-      min-height: 200px;
-      max-height: 200px;
+      ax-width: 200px;
+      min-width: 155px;
+      min-height: 125px;
+      max-height: 125px;
     }
   }
   @media (max-width: 300px) {
     .blog-post-small .thumb-img {
-      min-width: 290px;
-      max-width: 290px;
-      min-height: 200px;
-      max-height: 200px;
+      ax-width: 200px;
+      min-width: 155px;
+      min-height: 125px;
+      max-height: 125px;
     }
   }
   .blog-post-small .blog-post-small-inner {
