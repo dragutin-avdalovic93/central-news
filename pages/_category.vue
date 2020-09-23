@@ -328,7 +328,7 @@ export default {
   }
   @media (max-width: 568px) {
     .blog-post-small .thumb-img {
-      ax-width: 200px;
+      max-width: 200px;
       min-width: 155px;
       min-height: 125px;
       max-height: 125px;
@@ -336,7 +336,7 @@ export default {
   }
   @media (max-width: 300px) {
     .blog-post-small .thumb-img {
-      ax-width: 200px;
+      max-width: 200px;
       min-width: 155px;
       min-height: 125px;
       max-height: 125px;
@@ -366,7 +366,7 @@ export default {
   }
   @media (max-width: 568px) {
     .blog-post-small .blog-post-small-inner {
-      max-width: 300px;
+      max-width: 330px;
     }
   }
   @media (max-width: 340px) {
