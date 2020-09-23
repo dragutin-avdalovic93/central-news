@@ -28,7 +28,7 @@
                     <div class="metadata">
                       <div class="created_at">
                         <img src="../static/calendar.svg"/>
-                        {{$moment(post.date).format("DD.MM.YYYY")}}
+                        {{$moment(post.date).format("DD.MM.YYYY HH:MM")}}
                       </div>
                     </div>
                     <div class="read-more" @click="visitPost(post.slug)">
