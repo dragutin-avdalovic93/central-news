@@ -76,36 +76,36 @@
 <!--              <div class="divider-15"></div>-->
 <!--              <div class="divider-15-w"></div>-->
 
-              <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
-              <div class="divider-15"></div>
-              <div class="divider-15-w"></div>
+              <!--                <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
+                            <div class="divider-15"></div>
+                            <div class="divider-15-w"></div>
 
-              <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
-              <div class="divider-15"></div>
-              <div class="divider-15-w"></div>
+                            <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
+                            <div class="divider-15"></div>
+                            <div class="divider-15-w"></div>
 
-              <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
-              <div class="divider-15"></div>
-              <div class="divider-15-w"></div>
-            </div>
-          </div>
-          <div class="comm-cont">
-            <div class="comments-form">
-              <div class="divider"></div>
-              <div class="comments-form-title">Ostavite komentar</div>
-              <div class="divider"></div>
-              <form id="form-comments" novalidate="novalidate" v-on:submit.prevent="sendData">
-                <input type="hidden" id="postId" :value=this.postId />
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="form-group row">
-                      <label for="name" class="col-md-12 col-form-label">Ime i prezime *</label>
-                      <div class="col-md-12">
-                        <input type="text" class="comments-form-control-custom" name="name" id="name" value="">
-                      </div>
-                    </div>
-                  </div>
-<!--                  <div class="col-sm-6">-->
+                            <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
+                            <div class="divider-15"></div>
+                            <div class="divider-15-w"></div>-->
+                          </div>
+                        </div>
+                        <div class="comm-cont">
+                          <div class="comments-form">
+                            <div class="divider"></div>
+                            <div class="comments-form-title">Ostavite komentar</div>
+                            <div class="divider"></div>
+                            <form id="form-comments" novalidate="novalidate" v-on:submit.prevent="sendData">
+                              <input type="hidden" id="postId" :value=this.postId />
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <div class="form-group row">
+                                    <label for="name" class="col-md-12 col-form-label">Ime i prezime *</label>
+                                    <div class="col-md-12">
+                                      <input type="text" class="comments-form-control-custom" name="name" id="name" value="">
+                                    </div>
+                                  </div>
+                                </div>
+              <!--                  <div class="col-sm-6">-->
 <!--                    <div class="form-group row">-->
 <!--                      <label for="email" class="col-md-12 col-form-label">E-mail adresa *</label>-->
 <!--                      <div class="col-md-12">-->
