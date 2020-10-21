@@ -6,6 +6,9 @@ export default {
    */
   head: {
     title: 'Central news - novinski portal' || '',
+    htmlAttrs: {
+      lang: 'sr'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
