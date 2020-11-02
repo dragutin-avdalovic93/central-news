@@ -12,14 +12,14 @@
         </button>
       </div>
     </form>
-    <div class="footer-navigation-category">
+    <!--<div class="footer-navigation-category">
       <div class="ml-md-auto d-flex flex-nowrap">
         <a class="fab fa-facebook-f social-media-icon ml-0" href="https://www.facebook.com/centralnews.live" title="Facebook" target="_blank"></a>
         <a class="fab fa-instagram social-media-icon" href="https://www.instagram.com/central_news_/" title="Instagram" target="_blank"></a>
         <a class="fab fa-youtube social-media-icon" href="" title="YouTube" target="_blank"></a>
         <a class="fab fa-twitter social-media-icon" href="https://twitter.com/Centralnews13?s=07&fbclid=IwAR1NhsOQM-UvagoZvtEsBL1ZY1ZN4rAoSPeJ0YX7Q3my_yh74RqZV0Bx8Ao" title="Twitter" target="_blank"></a>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -68,7 +68,7 @@
     padding: 0;
     display: inline-block;
     position: absolute;
-    left: 10px;
+    right: 10px;
     bottom: 10px;
   }
 
@@ -177,6 +177,7 @@
   .header-cont {
     background: #142850;
     position: relative;
+    min-height: 100px;
   }
   .header {
     display: flex;
@@ -184,6 +185,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: absolute;left: 10px;
+    top: 0;
   }
   h1 {
     margin-top: 48px;
