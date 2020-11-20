@@ -62,7 +62,7 @@
         categoryParents: [],
         categoryChilds: [],
         categoryChildsSec: [],
-        categoryFinalSketch: ["vijesti", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "centralmagazin", "humanitarne-akcije", "posalji-vijest"],
+        categoryFinalSketch: ["vijesti", "intervju", "kultura", "sport","vrijeme", "kolumne", "anketa", "centralmagazin", "humanitarne-akcije"],
         submenuSketch: ["istocnosarajevo","republikasrpska", "bih", "region", "svijet"],
         submenuSketchSec: [ "nadanasnjidan", "istorijske-zanimljivosti", "zabava", "zdravljeiljepota", "dalisteznali"],
         categoryFinal: []

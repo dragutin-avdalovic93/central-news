@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="footer-inner">
-      <div class="row">
+      <!--<div class="row">
         <div class="col-md-3 logo-col">
           <div class="high-resolution-photo" @click="goHome"></div>
           <div class="contact">
@@ -57,15 +57,15 @@
              </div>
           </div>
         </div>
-      </div>
-      <div class="divider-underline-footer"></div>
+      </div>-->
+      <!--<div class="divider-underline-footer"></div>-->
       <div class="row">
         <div class="col-sm-6 copyright align-left">
           © 2020 CENTRAL NEWS. Sva prava zadržana. <br>
           <div class="divider-15"></div>
         </div>
         <div class="col-sm-6 align-right">
-          <a href="" target="_blank" class="link-footer">Design &amp; development by Dragutin Avdalovic</a>
+          <a href="https://www.facebook.com/dragutin.avdalovic.gago" target="_blank" class="link-footer">Design &amp; development by Dragutin Avdalovic</a>
         </div>
       </div>
     </div>
