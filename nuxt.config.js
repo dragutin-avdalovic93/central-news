@@ -7,7 +7,7 @@ export default {
   head: {
     title: 'Central news - novinski portal' || '',
     htmlAttrs: {
-      lang: 'sr'
+      lang: 'sr_latin'
     },
     meta: [
       { charset: 'utf-8' },
