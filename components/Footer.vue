@@ -60,13 +60,21 @@
       </div>-->
       <!--<div class="divider-underline-footer"></div>-->
       <div class="row">
-        <div class="col-sm-6 copyright align-left">
+        <div class="col-sm-6 col-6 copyright align-left">
           © 2020 CENTRAL NEWS. Sva prava zadržana. <br>
           <div class="divider-15"></div>
         </div>
-        <div class="col-sm-6 align-right">
+        <div class="col-sm-6 col-6 align-right">
           <a href="https://www.facebook.com/dragutin.avdalovic.gago" target="_blank" class="link-footer">Design &amp; development by Dragutin Avdalovic</a>
         </div>
+        <div class="col-sm-12 col-12 align-center" style=" background: grey;text-align: center;display: flex; align-items: center;flex-direction: row; justify-content:center;">
+          <p><a  style=" padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Terms and Conditions</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Privacy Policy</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Disclaimer</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">About us</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Contact us</a></p>
+        </div>
+
       </div>
     </div>
   </div>
@@ -203,7 +211,7 @@
   .footer-inner {
     max-width: 1140px;
     margin: auto;
-    padding: 40px 15px 15px 15px;
+    padding: 40px 15px 0 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     color: #999;
