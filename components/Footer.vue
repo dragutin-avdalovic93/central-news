@@ -69,10 +69,10 @@
         </div>
         <div class="col-sm-12 col-12 align-center" style=" background: grey;text-align: center;display: flex; align-items: center;flex-direction: row; justify-content:center;">
           <p><a  style=" padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Terms and Conditions</a></p>
-          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Privacy Policy</a></p>
-          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Disclaimer</a></p>
-          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">About us</a></p>
-          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Contact us</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/privacy_policy">Privacy Policy</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/disclaimer">Disclaimer</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/about_us">About us</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/contact_us">Contact us</a></p>
         </div>
 
       </div>
