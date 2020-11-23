@@ -51,6 +51,9 @@ export default {
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
+  #choices p {
+    font-size: 14px;
+  }
 </style>
 
 
