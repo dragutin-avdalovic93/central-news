@@ -207,6 +207,15 @@
     font-size: 14px;
     color: #999;
   }
+  .footer-inner-2 p{
+    line-height: 1;
+    text-align: center;
+    margin: 5px 10px;
+  }
+  .footer-inner-2 a{
+    padding: 0 !important;
+  }
+
 
   .footer-inner .title{
     font-size: 16px;
