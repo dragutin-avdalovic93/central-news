@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="footer-inner">
+    <div class="footer-inner-2">
       <!--<div class="row">
         <div class="col-md-3 logo-col">
           <div class="high-resolution-photo" @click="goHome"></div>
@@ -60,12 +60,12 @@
       </div>-->
       <!--<div class="divider-underline-footer"></div>-->
       <div class="row">
-        <div class="col-sm-6 col-6 copyright align-left">
-          © 2020 CENTRAL NEWS. Sva prava zadržana. <br>
-          <div class="divider-15"></div>
-        </div>
-        <div class="col-sm-6 col-6 align-right">
-          <a href="https://www.facebook.com/dragutin.avdalovic.gago" target="_blank" class="link-footer">Design &amp; development by Dragutin Avdalovic</a>
+        <div class="col-sm-12 col-12 align-center" style=" background: grey;text-align: center;display: flex; align-items: center;flex-direction: row; justify-content:center;">
+          <p><a  style=" padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Terms and Conditions</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/privacy_policy">Privacy Policy</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/disclaimer">Disclaimer</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/about_us">About us</a></p>
+          <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/contact_us">Contact us</a></p>
         </div>
       </div>
     </div>
@@ -200,10 +200,9 @@
   .footer .social-media-icon:hover {
     opacity: .7;
   }
-  .footer-inner {
-    max-width: 1140px;
+  .footer-inner-2 {
     margin: auto;
-    padding: 40px 15px 0 15px;
+    padding: 0px 15px 0 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     color: #999;

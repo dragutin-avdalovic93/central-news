@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <Footer2/>
     <MenuTop/>
 <!--    <div class="container-fluid">-->
 <!--    <div class="row">-->
@@ -126,13 +127,14 @@
 <script>
   import MenuTop from '../components/MenuTop'
   import Footer from '../components/Footer'
+  import Footer2 from '@/components/Footer2'
   import TopLatestNews from '../components/TopLatestNews'
   import MainMenu from '../components/MainMenu'
   import LatestNews from '../components/LatestNews'
   import ImageSlider from '../components/ImageSlider'
   export default {
     layout: 'default',
-    components: { MenuTop, Footer, TopLatestNews, MainMenu, LatestNews, ImageSlider }
+    components: { MenuTop, Footer, Footer2, TopLatestNews, MainMenu, LatestNews, ImageSlider }
   }
 </script>
 <style>
