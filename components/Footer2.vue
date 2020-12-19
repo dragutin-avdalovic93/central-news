@@ -60,7 +60,8 @@
       </div>-->
       <!--<div class="divider-underline-footer"></div>-->
       <div class="row">
-        <div class="col-sm-12 col-12 align-center" style=" background: grey;text-align: center;display: flex; align-items: center;flex-direction: row; justify-content:center;">
+        <div class="col-sm-12 col-12 align-center" style="z-index: 10000; background: grey;text-align: center;display: flex; align-items: center;flex-direction: row; justify-content:center;">
+          <p><a  style=" padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/">Home</a></p>
           <p><a  style=" padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/terms_and_conditions">Terms and Conditions</a></p>
           <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/privacy_policy">Privacy Policy</a></p>
           <p><a  style="padding:0 10px;font-family: 'Roboto', Arial;font-size: 12px;color: #fff;" href="/disclaimer">Disclaimer</a></p>
@@ -206,6 +207,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     color: #999;
+    z-index:100000;
   }
   .footer-inner-2 p{
     line-height: 1;
@@ -379,7 +381,15 @@
   }
   /** max 560 *******************************************************************/
   @media screen and (max-width: 574px){
-
+    .footer-inner-2 p{
+      line-height: 1;
+      text-align: center;
+      margin: 5px 5px;
+    }
+    .footer-inner-2 a{
+      padding: 0 !important;
+      font-size: 10px;
+    }
     .footer-inner .align-left {
       text-align: center !important;
     }
