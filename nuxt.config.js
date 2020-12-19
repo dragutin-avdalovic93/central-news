@@ -132,13 +132,27 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/moment',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  robots: {
+    UserAgent: '*',
+    Disallow: '',
+  },
+  sitemap: {
+    hostname: 'https://www.centralnews.live/',
+    gzip: true,
+    exclude: [
+    ],
+    routes: [
+    ]
+  },
   googleAnalytics: {
     id: 'G-QCTH5GBLH2',
     dev: false
