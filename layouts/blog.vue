@@ -43,13 +43,13 @@
           <div class="divider-15"></div>
           <!--<ImageSlider></ImageSlider>-->
           <div class="banners-top-column">
-           <div class="divider-15"></div>
+           <!--<div class="divider-15"></div>
             <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
               <img src="https://admincentralnews.xyz/wp-content/uploads/2020/11/Lavina.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
             </a></div>
             <div class="divider-15"></div>
             <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/11/ravna_planina.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
-           <div class="divider-15"></div>
+           <div class="divider-15"></div>-->
             <!--<div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
             <div class="divider-15"></div>-->
             <!--<div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
@@ -122,6 +122,7 @@
      <!-- </div>-->
     </div>
     <Footer/>
+    <div><span class="hidden" id="snowflake">&#10052;</span></div>
   </div>
 </template>
 <script>
@@ -138,6 +139,7 @@
   }
 </script>
 <style>
+
 html {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
