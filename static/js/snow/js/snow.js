@@ -2,14 +2,14 @@ setInterval(function(){
 	var documentHeight = $(document).height();
 	var startPositionLeft = Math.random() * $(document).width() - 100;
 	var startOpacity = 0.5 + Math.random();
-	
+
 	var endPositionTop = documentHeight - 50;
 	var endPositionLeft = startPositionLeft - 100 + Math.random() * 200;
 	var durationFall = documentHeight * 10 + Math.random() * 4000;
-	
+
 	var animationFlake = endPositionLeft > startPositionLeft ? 'clockwise' : 'counterclockwise';
-	var sizeFlake = 10 + Math.random() * 20;
-	
+	var sizeFlake = 1 + Math.random() * 20;
+
 	$('#snowflake.hidden').clone()
 	.attr('class', null)
 	.attr('id', 'snowflake')

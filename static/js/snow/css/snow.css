@@ -26,33 +26,33 @@
   -moz-animation: spin-clockwise 6s linear infinite;
   animation: spin-clockwise 6s linear infinite;
 }
- @-moz-keyframes 
+ @-moz-keyframes
 spin-clockwise { 100% {
 -moz-transform: rotate(360deg);
 }
 }
-@-webkit-keyframes 
+@-webkit-keyframes
 spin-clockwise { 100% {
 -webkit-transform: rotate(360deg);
 }
 }
-@keyframes 
+@keyframes
 spin-clockwise { 100% {
 -webkit-transform: rotate(360deg);
 transform: rotate(360deg);
 }
 }
- @-moz-keyframes 
+ @-moz-keyframes
 spin-counterclockwise { 100% {
 -moz-transform: rotate(-360deg);
 }
 }
-@-webkit-keyframes 
+@-webkit-keyframes
 spin-counterclockwise { 100% {
 -webkit-transform: rotate(-360deg);
 }
 }
-@keyframes 
+@keyframes
 spin-counterclockwise { 100% {
 -webkit-transform: rotate(-360deg);
 transform: rotate(-360deg);
