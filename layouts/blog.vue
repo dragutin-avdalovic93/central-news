@@ -43,12 +43,12 @@
           <div class="divider-15"></div>
           <!--<ImageSlider></ImageSlider>-->
           <div class="banners-top-column">
-           <!--<div class="divider-15"></div>
-            <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
-              <img src="https://admincentralnews.xyz/wp-content/uploads/2020/11/Lavina.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">
+           <div class="divider-15"></div>
+            <div><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
             <div class="divider-15"></div>
-            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/11/ravna_planina.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
+            <!--<div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/11/ravna_planina.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
            <div class="divider-15"></div>-->
             <!--<div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
             <div class="divider-15"></div>-->
@@ -86,10 +86,10 @@
           <div class="banners-top-column-sec">
 <!--            <div class="divider-15"></div>-->
 <!--            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>-->
-<!--            <div class="divider-15"></div>-->
-<!--            <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >-->
-<!--              <img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/hotel_lavina_final.jpg" class="img-fluid-top" alt="Hotel Lavina Jahorina">-->
-<!--            </a></div>-->
+            <div class="divider-15"></div>
+            <div><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
+            </a></div>
             <!--<div class="divider-15"></div>-->
             <!--<div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
             <div class="divider-15"></div>
@@ -152,6 +152,16 @@ html {
 }
 .layout {
   background: #fff;
+}
+.tt {
+  background: #a71d2a;
+  color:gold;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Droid Sans Mono Slashed";
+}
+.tt:hover {
+  text-underline: none;
 }
 *,
 *:before,
