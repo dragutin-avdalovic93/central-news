@@ -44,7 +44,7 @@
           <!--<ImageSlider></ImageSlider>-->
           <div class="banners-top-column">
            <div class="divider-15"></div>
-            <div><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
+            <div class="baner-right"><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
             <div class="divider-15"></div>
@@ -87,9 +87,11 @@
 <!--            <div class="divider-15"></div>-->
 <!--            <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>-->
             <div class="divider-15"></div>
-            <div><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
+            <div class="baner-left"><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
+            <div class="divider-15"></div>
+
             <!--<div class="divider-15"></div>-->
             <!--<div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
             <div class="divider-15"></div>
@@ -235,6 +237,12 @@ html {
   justify-content: center;
 }
 @media (max-width: 767px) {
+  .baner-left {
+    max-width: 70%;
+  }
+  .baner-right {
+    max-width: 70%;
+  }
   .banners-top-column-sec {
     display: flex;
     flex-direction: column;

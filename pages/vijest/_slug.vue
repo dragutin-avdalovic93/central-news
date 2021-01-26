@@ -67,10 +67,7 @@
 <!--              <div class="divider-15-w"></div>-->
 <!--              <div class="divider-15"></div>-->
 <!--              <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>-->
-<!--              <div class="divider-15"></div>-->
-              <div class="divider-15-w"></div>
-
-              <div style="max-width: 33%;"><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
+              <div style="max-width: 50%;margin-top: 15px;"><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
                 <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
               </a></div>
 <!--              <div class="divider-15"></div>-->
