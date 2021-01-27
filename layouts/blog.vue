@@ -124,7 +124,8 @@
      <!-- </div>-->
     </div>
     <Footer/>
-    <div><span class="hidden" id="snowflake">&#10052;</span></div>
+    <!--for snowing uncomment-->
+    <!--<div><span class="hidden" id="snowflake">&#10052;</span></div>-->
   </div>
 </template>
 <script>
