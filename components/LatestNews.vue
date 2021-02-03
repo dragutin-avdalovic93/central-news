@@ -159,7 +159,7 @@
   }
   .lat-news
   {
-    background: #dae1e7;
+    background: white;
   }
   /* news section */
   .news-section-name {

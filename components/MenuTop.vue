@@ -171,11 +171,11 @@
     height: 108px;
   }
   .bordo {
-    color: #f70c0c;
+    color: white;
   }
   /*#df2027*/
   .header-cont {
-    background: #142850;
+    background: skyblue;
     position: relative;
     min-height: 100px;
   }
@@ -189,15 +189,18 @@
     top: 0;
   }
   h1 {
+    padding: 5px;
+    border-radius: 5px;
+    border: solid 1px white;
     margin-top: 48px;
-    font-size: 28px;
+    font-size: 15px;
     font-weight: 700;
-    color: #dae1e7;
+    color: white;
     margin-left: -15px;
   }
   @media (min-width: 0px) and (max-width: 728px) {
     h1 {
-      font-size: 22px !important;
+      font-size: 15px !important;
       margin-top: 48px;
       margin-left: -15px;
     }

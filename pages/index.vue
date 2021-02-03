@@ -208,9 +208,9 @@ export default {
   @media (min-width: 1024px) {
     .box-one {
       grid-column-start: 1;
-      grid-column-end: 4;
+      grid-column-end: 3;
       grid-row-start: 1;
-      grid-row-end: 4;
+      grid-row-end: 3;
       margin: 0 !important;
     }
     .box-one .thumb-img {
@@ -250,7 +250,7 @@ export default {
     position: relative;
   }
   .latest-news-slot {
-    background: #dae1e7;
+    background: white;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -264,7 +264,7 @@ export default {
     align-self: start;
     justify-self: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 5px;
     grid-auto-rows: minmax(100px, auto);
     padding: 5px;
@@ -298,7 +298,7 @@ export default {
   }
   .blog-post-small {
     width: auto;
-    margin: auto;
+    margin: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -319,16 +319,16 @@ export default {
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 220px;
-      min-height: 135px;
-      max-height: 135px;
+      max-width: 300px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 220px;
-      min-height: 135px;
-      max-height: 135px;
+      max-width: 300px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 1024px) {

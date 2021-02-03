@@ -1,7 +1,7 @@
 <template>
   <div class="header-navigation">
     <div class="header-navigation-inner">
-      <!-- desktop navigations -->
+      <!-- desktop navigations oldlook -->
       <ul>
         <li itemprop="name" data-xicon="fa fa-paper-plane">
           <a itemprop="url" class="header-selected-bg show-loader" href="/" data-target="#">Početna</a>

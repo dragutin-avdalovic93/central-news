@@ -238,7 +238,7 @@ export default {
     position: relative;
   }
   .latest-news-slot {
-    background: #dae1e7;
+    background: white;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -252,7 +252,7 @@ export default {
     align-self: start;
     justify-self: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 5px;
     grid-auto-rows: minmax(100px, auto);
     padding: 5px;
@@ -307,16 +307,16 @@ export default {
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 220px;
-      min-height: 135px;
-      max-height: 135px;
+      max-width: 300px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 2400px) {
     .blog-post-small .thumb-img {
-      max-width: 220px;
-      min-height: 135px;
-      max-height: 135px;
+      max-width: 300px;
+      min-height: 200px;
+      max-height: 200px;
     }
   }
   @media (max-width: 1024px) {

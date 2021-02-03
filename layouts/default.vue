@@ -25,7 +25,7 @@ html {
   box-sizing: border-box;
 }
 .layout {
-  background: #27496d;
+  background: white;
 }
 *,
 *:before,
