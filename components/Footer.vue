@@ -15,15 +15,7 @@
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-6 footer-cnt">
-          <loading :active.sync="loading"
-                   :can-cancel="false"
-                   :is-full-page="true"
-                   :color="color"
-                   :width="width"
-                   :height="height"
-                   :loader="loader"
-          ></loading>
-          <div v-if="!this.loading" class="row">
+          <div class="row">
             <!--<div class="col-6 col-md-4">
               <div class="footer-navigation-title">Vijesti</div>
               <div class="divider-15"></div>
@@ -37,14 +29,14 @@
                 <div class="footer-navigation-title">Ostalo&nbsp;</div>
                 <div class="divider-15"></div>
                 <div class="footer-navigation-category">
-                    <a href="/contact-us" class="link-footer-navigation-category show-loader">Contact us</a>
+                    <a href="/contact_us" class="link-footer-navigation-category show-loader">Contact us</a>
                   <div class="footer-navigation-divider"></div>
                 </div><div class="footer-navigation-category">
-              <a href="/terms-and-conditions" class="link-footer-navigation-category show-loader">Terms and conditions</a>
+              <a href="/terms_and_conditions" class="link-footer-navigation-category show-loader">Terms and conditions</a>
                   <div class="footer-navigation-divider"></div>
                 </div>
               <div class="footer-navigation-category">
-                <a href="/privacy-policy" class="link-footer-navigation-category show-loader">Privacy policy</a>
+                <a href="/privacy_policy" class="link-footer-navigation-category show-loader">Privacy policy</a>
 
                 <div class="footer-navigation-divider"></div>
                 </div>
