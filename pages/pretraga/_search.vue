@@ -216,7 +216,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background: #dae1e7;
+    background: white;
   }
   .news {
     position: relative;

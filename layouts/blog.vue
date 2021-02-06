@@ -40,10 +40,8 @@
       </div>
       <div class="row main-row">
         <div class="col-12 col-md-3 col-lg-3 banners order-1 order-sm-1 order-xs-1 order-md-0 order-lg-0 order-xl-0">
-          <div class="divider-15"></div>
           <!--<ImageSlider></ImageSlider>-->
           <div class="banners-top-column">
-           <div class="divider-15"></div>
             <div class="baner-right"><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
@@ -193,7 +191,7 @@ html {
   margin-bottom: 15px;
 }
 .banners-top-column {
-  background: #dae1e7;
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,7 +235,7 @@ html {
   }
 }
 .banners {
-  background: #dae1e7;
+  background: white;
 }
 @media (max-width: 767px) {
   .banners {

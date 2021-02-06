@@ -20,13 +20,13 @@
                   <div class="row handler-row">
                     <div class="col-sm-12 col-12 col-lg-12 col-xl-12 col-xs-12 col-sm-12">
                     <network network="facebook">
-                        <i class="fab fa-facebook"></i> Facebook
+                        <i class="fab fa-facebook"></i>
                       </network>
                     <network network="twitter">
-                        <i class="fab fa-twitter"></i> Twitter
+                        <i class="fab fa-twitter"></i>
                       </network>
                     <network network="whatsapp">
-                        <i class="fab fa-whatsapp"></i> Whatsapp
+                        <i class="fab fa-whatsapp"></i>
                       </network>
                     </div>
                   </div>
@@ -456,7 +456,7 @@
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 53px);
-    background: #dae1e7;
+    background: white;
   }
   .latest-news-slot {
     background: white;
@@ -480,6 +480,7 @@
   .article {
     margin: auto auto auto auto;
     width: 100%;
+    background: white;
   }
   .blog-detail-post {
     width: auto;

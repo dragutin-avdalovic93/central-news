@@ -1,8 +1,8 @@
 <template>
   <div class="footer">
     <div class="footer-inner">
-      <!--<div class="row">
-        <div class="col-md-3 logo-col">
+      <div class="row">
+        <div class="col-md-5 logo-col">
           <div class="high-resolution-photo" @click="goHome"></div>
           <div class="contact">
           <div class="divider-15"></div>
@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-8 footer-cnt">
+        <div class="col-md-6 footer-cnt">
           <loading :active.sync="loading"
                    :can-cancel="false"
                    :is-full-page="true"
@@ -24,7 +24,7 @@
                    :loader="loader"
           ></loading>
           <div v-if="!this.loading" class="row">
-            <div class="col-6 col-md-4">
+            <!--<div class="col-6 col-md-4">
               <div class="footer-navigation-title">Vijesti</div>
               <div class="divider-15"></div>
                 <div class="footer-navigation-category" v-for="category in categoryFinal[0].children">
@@ -32,17 +32,25 @@
                   <div class="footer-navigation-divider"></div>
                 </div>
               <div class="divider-15"></div>
-            </div>
-            <div class="col-6 col-md-4">
+            </div>-->
+            <div class="col-6 col-md-6">
                 <div class="footer-navigation-title">Ostalo&nbsp;</div>
                 <div class="divider-15"></div>
-                <div class="footer-navigation-category" v-for="category in categoryFinal">
-                    <a :href="'/' + category.slug" class="link-footer-navigation-category show-loader">{{category.name}}</a>
+                <div class="footer-navigation-category">
+                    <a href="/contact-us" class="link-footer-navigation-category show-loader">Contact us</a>
                   <div class="footer-navigation-divider"></div>
+                </div><div class="footer-navigation-category">
+              <a href="/terms-and-conditions" class="link-footer-navigation-category show-loader">Terms and conditions</a>
+                  <div class="footer-navigation-divider"></div>
+                </div>
+              <div class="footer-navigation-category">
+                <a href="/privacy-policy" class="link-footer-navigation-category show-loader">Privacy policy</a>
+
+                <div class="footer-navigation-divider"></div>
                 </div>
               <div class="divider-15"></div>
             </div>
-             <div class="col-6 col-md-4">
+             <div class="col-6 col-md-6">
               <div class="footer-navigation-title">Društvene mreže</div>
               <div class="divider-15"></div>
                  <div class="footer-navigation-category">
@@ -57,8 +65,8 @@
              </div>
           </div>
         </div>
-      </div>-->
-      <!--<div class="divider-underline-footer"></div>-->
+      </div>
+      <div class="divider-underline-footer"></div>
       <div class="row">
         <div class="col-sm-6 col-6 copyright align-left">
           © 2020 CENTRAL NEWS. Sva prava zadržana. <br>
@@ -171,7 +179,8 @@
    text-align: center;
   }
   .footer {
-    background: #142850;
+    background-image: linear-gradient(to bottom, #016e9c 0, #014a69 100%);
+    background-repeat: repeat-x;
   }
   .footer .fa-facebook-f {
     background: #3b5998;

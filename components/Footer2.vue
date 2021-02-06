@@ -172,7 +172,8 @@
    text-align: center;
   }
   .footer {
-    background: #142850;
+    background-image: linear-gradient(to bottom, #016e9c 0, #014a69 100%);
+    background-repeat: repeat-x;
   }
   .footer .fa-facebook-f {
     background: #3b5998;

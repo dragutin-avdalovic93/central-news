@@ -275,6 +275,7 @@
       margin: auto;
       padding: 0 20px 0 15px;
       position: relative;
+      background: #7a0000;
     }
   }
 
@@ -829,8 +830,12 @@
 
   /** max 992 *******************************************************************/
   @media screen and (max-width: 992px){
+    .header-navigation-inner ul li a {
+      color:white;
+    }
     .header-mobile-navigation{
       display: block;
+      background: #7a0000;
     }
   }
   /*MOBILE MENU END*/
