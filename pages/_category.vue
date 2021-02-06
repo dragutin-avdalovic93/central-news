@@ -16,9 +16,9 @@
             <div class="main-container">
               <img class="thumb-img" v-bind:src="post.featured_image_url" @click="visitPost(post.slug)"/>
               <div class="content">
-                <div class="category">
+                <!--<div class="category">
                   <span :id="'cat' + index" class="cat" v-if="post.hasCat" v-for="(catName,index) in post.catnames">{{catName}}</span>
-                </div>
+                </div>-->
                 <div class="title" @click="visitPost(post.slug)">
                   <h3>{{post.title.rendered}}</h3>
                 </div>

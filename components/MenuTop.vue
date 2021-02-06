@@ -2,7 +2,7 @@
   <div class="header-cont">
     <div class="header" @click="goHome">
       <div class="high-resolution-photo"></div>
-      <h1>CENTRAL <span class="bordo">news</span></h1>
+      <!--<h1>CENTRAL <span class="bordo">news</span></h1>-->
     </div>
     <form id="top-search-form" class="form-search form-horizontal pull-right" action="">
       <div id="top-search-form-in" class="top-search-form-in input-append span12 search_beli">
@@ -175,7 +175,8 @@
   }
   /*#df2027*/
   .header-cont {
-    background: skyblue;
+    background-image: linear-gradient(to bottom, #016e9c 0, #014a69 100%);
+    background-repeat: repeat-x;
     position: relative;
     min-height: 100px;
   }

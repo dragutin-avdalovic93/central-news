@@ -360,6 +360,9 @@
 </script>
 
 <style>
+   figure {
+     width: 100% !important;
+   }
   .banners-top-column-third {
     background: #dae1e7;
     display: flex;
@@ -391,6 +394,8 @@
   .blog-detail-post img {
     max-width: 100% !important;
     height: auto;
+    width: 100%;
+    padding: 10px 0;
   }
   .blog-detail-post iframe {
     width: 98% !important;
@@ -454,7 +459,7 @@
     background: #dae1e7;
   }
   .latest-news-slot {
-    background: #dae1e7;
+    background: white;
     display: flex;
     align-items: flex-start;
     justify-content: center;

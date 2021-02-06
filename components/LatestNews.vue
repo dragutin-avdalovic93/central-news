@@ -11,7 +11,7 @@
     <div class="lat-news"  v-if="!loading">
       <div class="news-section-name">Najnovije vijesti</div>
       <div class="row" v-for="post in latestPosts">
-        <div class="col-4 news-section-col-image">
+        <div class="col-12 news-section-col-image">
           <div class="news-background-image" :style="'background-image: url(' + post.featured_image_url + ');'">
             <a :href="'/vijest/' + post.slug"><div class="news-background-image-space-70 show-loader"></div></a>
             <a :href="'/vijest/' + post.slug">
@@ -19,7 +19,7 @@
             </a>
           </div>
         </div>
-        <div class="col-8">
+        <div class="col-12">
           <a :href="'/vijest/' + post.slug" class="news-section-title show-loader">{{post.title.rendered}}</a>
           <div class="news-section-description" v-html="post.excerpt.rendered.substring(0,100) + '...'"></div>
           <div class="news-section-date"><i class="far fa-calendar"> </i> {{$moment(post.date).format("dddd, DD.MM.YYYY")}}</div>
@@ -308,10 +308,11 @@
   }
 
   .news-background-image-space-70 {
-    padding-top: 70%;
+    padding-top: 50%;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
+    margin-bottom: 5px;
   }
 
   .news-background-image-space-70:hover {

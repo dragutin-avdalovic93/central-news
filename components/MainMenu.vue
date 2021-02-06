@@ -258,7 +258,7 @@
   }
 
   .header-navigation {
-    background-color: #7a0000;
+    background-color: white;
     min-height: 49px;
     line-height: 49px;
     color:#fff;
@@ -290,14 +290,15 @@
     float: left;
     border-right: 1px solid rgba(0, 0, 0, 0.16);
     box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.55);
+    background: white;
     z-index: 200;
   }
 
   .header-navigation-inner ul li a {
     cursor: pointer;
-    color: #fff;
+    font-weight: bold;
+    color:black;
     text-rendering: optimizeLegibility;
-    font-weight: 400;
     font-size: 14px;
     margin: 0;
     line-height: 25px;
@@ -835,13 +836,14 @@
   /*MOBILE MENU END*/
   #humanitarne-akcije {
     margin-left: 20px;
-    background: #08a883;
+    background: grey;
     border-right: 1px solid rgba(0, 0, 0, 0.16);
     box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.55);
+
   }
   #posalji-vijest {
     margin-left: 5px;
-    background: #00c834;
+    background: grey;
     border-right: 1px solid rgba(0, 0, 0, 0.16);
     box-shadow: 5px 5px 2px 0px rgba(0,0,0,0.55);
   }
