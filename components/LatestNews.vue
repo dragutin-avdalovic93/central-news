@@ -180,7 +180,6 @@
   }
 
   .news-section-col-image {
-    padding-right: 0;
     position: relative;
   }
   .news-background-image {

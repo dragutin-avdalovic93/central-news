@@ -46,6 +46,10 @@
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
             <div class="divider-15"></div>
+            <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>
+            <div class="divider-15"></div>
+            <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>
+            <div class="divider-15"></div>
             <!--<div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/11/ravna_planina.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
            <div class="divider-15"></div>-->
             <!--<div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
@@ -156,9 +160,6 @@ html {
   height: auto;
   max-height: 200px;
 }
-.main-row {
-  margin: 0!important;
-}
 .divider-15 {
   height: 15px;
   clear: both;
@@ -199,7 +200,7 @@ html {
 }
 @media (max-width: 767px) {
   .banners-top-column {
-    display: none;
+    display: flex;
     flex-direction: column;
     margin-bottom: 10px;
     margin-top: 10px;
