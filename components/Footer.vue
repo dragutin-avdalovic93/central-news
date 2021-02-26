@@ -5,7 +5,6 @@
         <div class="col-md-5 logo-col">
           <div class="high-resolution-photo" @click="goHome"></div>
           <div class="contact">
-          <div class="divider-15"></div>
           <span class="text-contact-us">Kontaktirajte nas</span><br>
           <a href="mailto:redakcija_centralnews@yahoo.com" class="link-footer-email">redakcija_centralnews@yahoo.com</a><br>
           <a href="mailto:marketing_centralnews@yahoo.com" class="link-footer-email">marketing_centralnews@yahoo.com</a>
@@ -154,13 +153,20 @@
 <style>
   .high-resolution-photo {
     background-image: url('https://admincentralnews.xyz/wp-content/uploads/2021/02/central_logo.gif');
-    background-size: 108px 81px;
+    background-size: 180px 135px;
     background-repeat: no-repeat;
     display: block;
-    width: 108px;
-    height: 81px;
-    margin-top: 20px;
+    width: 180px ;
+    height: 135px;
+    margin-top: 0;
+    margin-left: 0;
     z-index: 1;
+    transform: scale(1.2);
+  }
+  @media (max-width: 768px) {
+    .high-resolution-photo {
+      transform: scale(1.1) !important;
+    }
   }
   .contact {
     z-index: 2;

@@ -2,20 +2,23 @@
   <div class="layout">
     <Footer2/>
     <MenuTop/>
-<!--    <div class="container-fluid">-->
-<!--    <div class="row">-->
-<!--      <div class="col-12 col-md-12 col-lg-12">-->
-<!--        <div class="banners-top-video" style="margin-top: 15px;">-->
-<!--&lt;!&ndash;          <div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >&ndash;&gt;-->
-<!--&lt;!&ndash;            <video width="100%" height="250" autoplay muted class="img-fluid-top">&ndash;&gt;-->
-<!--&lt;!&ndash;              <source src="https://admincentralnews.xyz/wp-content/uploads/2020/06/lavina.mp4" type="video/mp4">&ndash;&gt;-->
-<!--&lt;!&ndash;              Your browser does not support the video tag.&ndash;&gt;-->
-<!--&lt;!&ndash;            </video>&ndash;&gt;-->
-<!--&lt;!&ndash;          </a></div>&ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    </div>-->
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12">
+        <div class="banners-top-video" style="margin-top: 15px;">
+          <div class="baner-right" style="border: solid 1px grey;"><a href="" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
+            <img src="https://admincentralnews.xyz/wp-content/uploads/2021/02/reklama_apoteka.gif" class="img-fluid-top" alt="Apoteka CENTRAL Krasula">
+          </a></div>
+          <!--<div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
+            <video width="100%" height="250" autoplay muted class="img-fluid-top">
+              <source src="https://admincentralnews.xyz/wp-content/uploads/2020/06/lavina.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </a></div>-->
+        </div>
+      </div>
+    </div>
+    </div>
     <TopLatestNews/>
     <MainMenu/>
     <div class="container-fluid inner-content">

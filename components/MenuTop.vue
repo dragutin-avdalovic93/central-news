@@ -154,15 +154,23 @@
       display: none;
     }
   }
+  @media (max-width: 768px) {
+    .high-resolution-photo {
+      margin-left: calc( (100vw - 210px) / 2 ) !important;
+      transform: scale(1.1) !important;
+    }
+  }
   .high-resolution-photo {
     background-image: url('https://admincentralnews.xyz/wp-content/uploads/2021/02/central_logo.gif');
-    background-size: 108px 81px;
+    background-size: 180px 135px;
     background-repeat: no-repeat;
     display: block;
-    width: 108px;
-    height: 81px;
-    margin-top: 20px;
+    width: 180px ;
+    height: 135px;
+    margin-top: -17px;
+    margin-left: 40px;
     z-index: 1;
+    transform: scale(1.2);
   }
   .normal-photo{
     background-image: url('https://admincentralnews.xyz/wp-content/uploads/2020/05/central-news-logo.gif');

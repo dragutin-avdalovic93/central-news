@@ -155,13 +155,20 @@
 <style>
   .high-resolution-photo {
     background-image: url('https://admincentralnews.xyz/wp-content/uploads/2021/02/central_logo.gif');
-    background-size: 108px 81px;
+    background-size: 180px 135px;
     background-repeat: no-repeat;
     display: block;
-    width: 108px;
-    height: 81px;
-    margin-top: 20px;
+    width: 180px ;
+    height: 135px;
+    margin-top: 0;
+    margin-left: 0;
     z-index: 1;
+    transform: scale(1.2);
+  }
+  @media (max-width: 768px) {
+    .high-resolution-photo {
+      transform: scale(1.1) !important;
+    }
   }
   .contact {
     z-index: 2;
