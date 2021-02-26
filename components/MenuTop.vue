@@ -155,14 +155,13 @@
     }
   }
   .high-resolution-photo {
-    background-image: url('https://admincentralnews.xyz/wp-content/uploads/2020/05/central-news-logo.gif');
+    background-image: url('https://admincentralnews.xyz/wp-content/uploads/2021/02/central_logo.gif');
     background-size: 108px 81px;
     background-repeat: no-repeat;
     display: block;
     width: 108px;
     height: 81px;
     margin-top: 20px;
-    transform: scale(2.5);
     z-index: 1;
   }
   .normal-photo{

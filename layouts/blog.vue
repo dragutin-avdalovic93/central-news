@@ -42,14 +42,18 @@
         <div class="col-12 col-md-3 col-lg-3 banners order-1 order-sm-1 order-xs-1 order-md-0 order-lg-0 order-xl-0">
           <!--<ImageSlider></ImageSlider>-->
           <div class="banners-top-column">
+            <div class="divider-15"></div>
+            <div class="baner-right" style="border: solid 1px grey;"><a href="" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2021/02/reklama_apoteka.gif" class="img-fluid-top" alt="Apoteka CENTRAL Krasula">
+            </a></div>
+            <div class="divider-15"></div>
             <div class="baner-right"><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
             <div class="divider-15"></div>
-            <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>
-            <div class="divider-15"></div>
-            <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>
-            <div class="divider-15"></div>
+
+            <!--<div class="divider-15"></div>
+            <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>-->
             <!--<div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/11/ravna_planina.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>
            <div class="divider-15"></div>-->
             <!--<div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
@@ -274,5 +278,13 @@ html {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+}
+.ttj {
+  background-color: #12cead;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Droid Sans Mono Slashed";
+  border-bottom: solid 1px grey;
 }
 </style>
