@@ -3,9 +3,12 @@
     <Footer2/>
     <MenuTop/>
     <div class="container-fluid">
+    </div>
+    <TopLatestNews/>
+    <MainMenu/>
     <div class="row">
-      <div class="col-12 col-md-12 col-lg-12">
-        <div class="banners-top-video" style="margin-top: 15px;">
+      <div class="col-12 col-md-12 col-lg-12" style="padding: 0!important;">
+        <div class="banners-top-video">
           <div class="baner-right" style="border: solid 1px grey;"><a href="" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
             <img src="https://admincentralnews.xyz/wp-content/uploads/2021/02/reklama_apoteka.gif" class="img-fluid-top" alt="Apoteka CENTRAL Krasula">
           </a></div>
@@ -18,9 +21,6 @@
         </div>
       </div>
     </div>
-    </div>
-    <TopLatestNews/>
-    <MainMenu/>
     <div class="container-fluid inner-content">
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
@@ -196,7 +196,6 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
 }
 .banners-top-column {
   background: white;
