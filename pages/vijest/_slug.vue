@@ -64,11 +64,8 @@
           </div>
           <div>
             <div class="banners-top-column-third">
-<!--              <div class="divider-15-w"></div>-->
-<!--              <div class="divider-15"></div>-->
-<!--              <div><a href="https://www.facebook.com/skiravnaplanina/" title="Ski centar 'Ravna Planina'" target="_blank" ><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/ravna_planina_final.jpg" class="img-fluid-top" alt="Ski centar 'Ravna Planina'"></a></div>-->
               <div class="divider-15-w"></div>
-              <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
+              <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="https://www.instagram.com/apoteka_central_krasula/?igshid=huknd45jf69l" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
                 <img src="https://admincentralnews.xyz/wp-content/uploads/2021/02/reklama_apoteka.gif" class="img-fluid-top" alt="Apoteka CENTRAL Krasula">
               </a></div>
               <div class="divider-15-w"></div>
@@ -76,22 +73,11 @@
                 <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
               </a></div>
               <div class="divider-15-w"></div>
-
-              <!--              <div class="divider-15"></div>-->
-<!--              <div class="divider-15-w"></div>-->
-
-              <!--                <div><a href="https://www.facebook.com/Al-Parco-ristorante-1709486515947045/" title="Al Parco Ristorante" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/al_parco_final.jpg" class="img-fluid-top" alt="Al Parco Ristorante"></a></div>
-                            <div class="divider-15"></div>
-                            <div class="divider-15-w"></div>
-
-                            <div><a href="https://www.facebook.com/zlatniborhotel/" title="Hotel Zlatni Bor" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/zlatni_bor_final.jpg" class="img-fluid-top" alt="Hotel Zlatni Bor"></a></div>
-                            <div class="divider-15"></div>
-                            <div class="divider-15-w"></div>
-
-                            <div><a href="https://www.facebook.com/etnorestoran.kumbarapale" title="Kumbara" target="_blank"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/07/kumbara_final.jpg" class="img-fluid-top" alt="Kumbara"></a></div>
-                            <div class="divider-15"></div>
-                            <div class="divider-15-w"></div>-->
-                          </div>
+          </div><div class="banners-top-column-third">
+              <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="https://www.facebook.com/zucentralmed/" title="CENTRAL MED laboratorija" target="_blank" ><p class="ttj">CENTRAL MED laboratorija</p>
+                <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CENTRAL MED laboratorija">
+              </a></div>
+          </div>
                         </div>
                         <div class="comm-cont">
                           <div class="comments-form">
@@ -781,6 +767,8 @@
     text-align: center;
     font-family: "Droid Sans Mono Slashed";
     border-bottom: solid 1px grey;
+    line-height: 1;
+    padding:5px 0;
   }
   .comments-form-btn-send:focus {
     background-color: #12cead;

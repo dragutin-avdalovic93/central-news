@@ -9,8 +9,12 @@
     <div class="row">
       <div class="col-12 col-md-12 col-lg-12" style="padding: 0!important;">
         <div class="banners-top-video">
-          <div class="baner-right" style="border: solid 1px grey;"><a href="" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
+          <div class="baner-right" style="border: solid 1px grey;max-width: 300px;"><a href="https://www.instagram.com/apoteka_central_krasula/?igshid=huknd45jf69l" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
             <img src="https://admincentralnews.xyz/wp-content/uploads/2021/02/reklama_apoteka.gif" class="img-fluid-top" alt="Apoteka CENTRAL Krasula">
+          </a></div>
+          <div class="divider-15-w"></div>
+          <div class="baner-right" style="border: solid 1px grey;max-width: 300px;"><a href="https://www.facebook.com/zucentralmed/" title="CENTRAL MED laboratorija" target="_blank" ><p class="ttj">CENTRAL MED laboratorija</p>
+            <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CENTRAL MED laboratorija">
           </a></div>
           <!--<div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
             <video width="100%" height="250" autoplay muted class="img-fluid-top">
@@ -46,8 +50,12 @@
           <!--<ImageSlider></ImageSlider>-->
           <div class="banners-top-column">
             <div class="divider-15"></div>
-            <div class="baner-right" style="border: solid 1px grey;"><a href="" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
+            <div class="baner-right" style="border: solid 1px grey;"><a href="https://www.instagram.com/apoteka_central_krasula/?igshid=huknd45jf69l" title="Apoteka CENTRAL Krasula" target="_blank" ><p class="ttj">Apoteka CENTRAL Krasula</p>
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/02/reklama_apoteka.gif" class="img-fluid-top" alt="Apoteka CENTRAL Krasula">
+            </a></div>
+            <div class="divider-15"></div>
+            <div class="baner-right" style="border: solid 1px grey;"><a href="https://www.facebook.com/zucentralmed/" title="CENTRAL MED laboratorija" target="_blank" ><p class="ttj">CENTRAL MED laboratorija</p>
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CENTRAL MED laboratorija">
             </a></div>
             <div class="divider-15"></div>
             <div class="baner-right"><a href="https://www.instagram.com/lola.fashion.style/" title="Lola Fashion Style" target="_blank" ><p class="tt">Lola Fashion Style</p>
@@ -211,6 +219,10 @@ html {
     margin-bottom: 10px;
     margin-top: 10px;
   }
+  .banners-top-video{
+    display: flex;
+    flex-direction: column;
+  }
 }
 .banners-top-column-sec {
   background: #dae1e7;
@@ -225,6 +237,7 @@ html {
   }
   .baner-right {
     max-width: 70%;
+    margin: 10px;
   }
   .banners-top-column-sec {
     display: flex;
@@ -288,5 +301,7 @@ html {
   text-align: center;
   font-family: "Droid Sans Mono Slashed";
   border-bottom: solid 1px grey;
+  line-height: 1;
+  padding:5px 0;
 }
 </style>
