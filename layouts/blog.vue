@@ -16,6 +16,10 @@
           <div class="baner-right" style="border: solid 1px grey;max-width: 300px;"><a href="https://www.facebook.com/zucentralmed/" title="CENTRAL MED laboratorija" target="_blank" ><p class="ttj">CENTRAL MED laboratorija</p>
             <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CENTRAL MED laboratorija">
           </a></div>
+          <div class="divider-15-w"></div>
+          <div class="baner-right" style="border: solid 1px grey;max-width: 300px;"><a href="https://ff.ues.rs.ba/" title="Filozofski fakultet Pale" target="_blank" ><p class="ttjp">Filozofski fakultet Pale</p>
+            <img src="https://admincentralnews.xyz/wp-content/uploads/2021/05/fp1.gif" class="img-fluid-top" alt="Filozofski fakultet Pale">
+          </a></div>
           <!--<div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
             <video width="100%" height="250" autoplay muted class="img-fluid-top">
               <source src="https://admincentralnews.xyz/wp-content/uploads/2020/06/lavina.mp4" type="video/mp4">
@@ -62,6 +66,9 @@
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
             <div class="divider-15"></div>
+            <div class="baner-right"><a href="https://ff.ues.rs.ba/" title="Filozofski fakultet Pale" target="_blank" ><p class="ttjp">Filozofski fakultet Pale</p>
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2021/05/fp1.gif" class="img-fluid-top" alt="Filozofski fakultet Pale">
+            </a></div>
 
             <!--<div class="divider-15"></div>
             <div><a href="" title="Mjesto za vašu reklamu" target="_self"><img src="https://admincentralnews.xyz/wp-content/uploads/2020/05/ad.png" class="img-fluid-ad" alt="Mjesto za reklamu"></a></div>-->
@@ -151,6 +158,7 @@ html {
   background: #fff;
 }
 .tt {
+  border-bottom: solid 1px grey;
   background: #a71d2a;
   color:gold;
   text-decoration: none;
@@ -296,6 +304,16 @@ html {
 }
 .ttj {
   background-color: #12cead;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Droid Sans Mono Slashed";
+  border-bottom: solid 1px grey;
+  line-height: 1;
+  padding:5px 0;
+}
+.ttjp {
+  background-color: #800000;
   color: #ffffff;
   text-decoration: none;
   text-align: center;

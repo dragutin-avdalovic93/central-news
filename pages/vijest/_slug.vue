@@ -77,6 +77,10 @@
               <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="https://www.facebook.com/zucentralmed/" title="CENTRAL MED laboratorija" target="_blank" ><p class="ttj">CENTRAL MED laboratorija</p>
                 <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CENTRAL MED laboratorija">
               </a></div>
+            <div class="divider-15-w"></div>
+            <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="https://ff.ues.rs.ba/" title="Filozofski fakultet Pale" target="_blank" ><p class="ttj">Filozofski fakultet Pale</p>
+                  <img src="https://admincentralnews.xyz/wp-content/uploads/2021/05/fp1.gif" class="img-fluid-top" alt="Filozofski fakultet Pale">
+              </a></div>
           </div>
                         </div>
                         <div class="comm-cont">
@@ -762,6 +766,16 @@
   }
   .ttj {
     background-color: #12cead;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Droid Sans Mono Slashed";
+    border-bottom: solid 1px grey;
+    line-height: 1;
+    padding:5px 0;
+  }
+   .ttjp {
+    background-color: #800000;
     color: #ffffff;
     text-decoration: none;
     text-align: center;
