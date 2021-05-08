@@ -159,6 +159,7 @@
       /*margin-left: calc( (100vw - 210px) / 2 ) !important;*/
       margin-left:20px !important;
       transform: scale(1.1) !important;
+      background-size: 150px 105px !important;
     }
   }
   .high-resolution-photo {
