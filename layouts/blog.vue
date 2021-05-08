@@ -17,8 +17,8 @@
             <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CENTRAL MED laboratorija">
           </a></div>
           <div class="divider-15-w"></div>
-          <div class="baner-right" style="border: solid 1px grey;max-width: 300px;"><a href="https://ff.ues.rs.ba/" title="Filozofski fakultet Pale" target="_blank" ><p class="ttjp">Filozofski fakultet Pale</p>
-            <img src="https://admincentralnews.xyz/wp-content/uploads/2021/05/fp1.gif" class="img-fluid-top" alt="Filozofski fakultet Pale">
+          <div class="baner-right" style="border: solid 1px grey;max-width: 300px;"><a href="https://ff.ues.rs.ba/" title="Филозофски факултет Пале" target="_blank" ><p class="ttjp">Филозофски факултет Пале</p>
+            <img src="https://admincentralnews.xyz/wp-content/uploads/2021/05/fp1.gif" class="img-fluid-top" alt="Филозофски факултет Пале">
           </a></div>
           <!--<div><a href="https://m.facebook.com/HotelLavinaJahorina/" title="Hotel Lavina Jahorina" target="_blank" >
             <video width="100%" height="250" autoplay muted class="img-fluid-top">
@@ -66,8 +66,8 @@
               <img src="https://admincentralnews.xyz/wp-content/uploads/2021/01/lola-banner-final.png" class="img-fluid-top" alt="Lola Fashion Style">
             </a></div>
             <div class="divider-15"></div>
-            <div class="baner-right"><a href="https://ff.ues.rs.ba/" title="Filozofski fakultet Pale" target="_blank" ><p class="ttjp">Filozofski fakultet Pale</p>
-              <img src="https://admincentralnews.xyz/wp-content/uploads/2021/05/fp1.gif" class="img-fluid-top" alt="Filozofski fakultet Pale">
+            <div class="baner-right"><a href="https://ff.ues.rs.ba/" title="Филозофски факултет Пале" target="_blank" ><p class="ttjp">Филозофски факултет Пале</p>
+              <img src="https://admincentralnews.xyz/wp-content/uploads/2021/05/fp1.gif" class="img-fluid-top" alt="Филозофски факултет Пале">
             </a></div>
 
             <!--<div class="divider-15"></div>
