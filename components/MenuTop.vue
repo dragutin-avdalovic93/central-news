@@ -157,7 +157,7 @@
   @media (max-width: 768px) {
     .high-resolution-photo {
       /*margin-left: calc( (100vw - 210px) / 2 ) !important;*/
-      margin-left:15px !important;
+      margin-left:20px !important;
       transform: scale(1.1) !important;
     }
   }
