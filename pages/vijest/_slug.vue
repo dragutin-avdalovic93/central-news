@@ -74,8 +74,8 @@
               </a></div>
               <div class="divider-15-w"></div>
           </div><div class="banners-top-column-third">
-              <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="https://www.facebook.com/zucentralmed/" title="CENTRAL MED laboratorija" target="_blank" ><p class="ttj">CENTRAL MED laboratorija</p>
-                <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CENTRAL MED laboratorija">
+              <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="https://www.facebook.com/zucentralmed/" title="CentralMed laboratorija" target="_blank" ><p class="ttj">CentralMed laboratorija</p>
+                <img src="https://admincentralnews.xyz/wp-content/uploads/2021/03/central_med.jpeg" class="img-fluid-top" alt="CentralMed laboratorija">
               </a></div>
             <div class="divider-15-w"></div>
             <div style="max-width: 50%;margin-top: 15px; border: solid 1px grey;"><a href="https://ff.ues.rs.ba/" title="Филозофски факултет Пале" target="_blank" ><p class="ttjp">Филозофски факултет Пале</p>
