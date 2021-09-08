@@ -154,20 +154,20 @@
 
 <style>
   .high-resolution-photo {
-    background-image: url('https://admincentralnews.xyz/wp-content/uploads/2021/02/central_logo.gif');
-    background-size: 180px 135px;
+    background-image: url(https://admincentralnews.xyz/wp-content/uploads/2021/09/cn21novi.gif);
+    background-size: 300px 77px;
     background-repeat: no-repeat;
     display: block;
-    width: 180px ;
-    height: 135px;
-    margin-top: 0;
-    margin-left: 0;
+    width: 300px;
+    height: 77px;
+    margin-top: 15px;
+    margin-left: 40px;
     z-index: 1;
-    transform: scale(1.2);
+    transform: scale(1);
   }
   @media (max-width: 768px) {
     .high-resolution-photo {
-      transform: scale(1.1) !important;
+      transform: scale(1) !important;
     }
   }
   .contact {
