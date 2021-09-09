@@ -153,23 +153,22 @@
 </script>
 
 <style>
+.high-resolution-photo {
+  background-image: url(https://admincentralnews.xyz/wp-content/uploads/2021/09/novi_finalno.gif);
+  background-size: 210px 70px;
+  background-repeat: no-repeat;
+  display: block;
+  width: 210px;
+  height: 70px;
+  z-index: 1;
+}
+@media (max-width: 768px) {
   .high-resolution-photo {
-    background-image: url(https://admincentralnews.xyz/wp-content/uploads/2021/09/cn21novi.gif);
-    background-size: 300px 77px;
-    background-repeat: no-repeat;
-    display: block;
-    width: 300px;
-    height: 77px;
-    margin-top: 15px;
-    margin-left: 40px;
-    z-index: 1;
-    transform: scale(1);
+    margin-left: 0 !important;
+    background-size: 165px 55px !important;
+    background-position: left;
   }
-  @media (max-width: 768px) {
-    .high-resolution-photo {
-      transform: scale(1) !important;
-    }
-  }
+}
   .contact {
     z-index: 2;
   }

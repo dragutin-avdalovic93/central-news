@@ -154,26 +154,21 @@
       display: none;
     }
   }
-  @media (max-width: 768px) {
-    .high-resolution-photo {
-      margin-top: 15px;
-      margin-left: 0px !important;
-      transform: scale(1.1) !important;
-      background-size: 240px 62px !important;
-      background-position: right;
-    }
-  }
   .high-resolution-photo {
-    background-image: url(https://admincentralnews.xyz/wp-content/uploads/2021/09/cn21novi.gif);
-    background-size: 300px 77px;
+    background-image: url(https://admincentralnews.xyz/wp-content/uploads/2021/09/novi_finalno.gif);
+    background-size: 210px 70px;
     background-repeat: no-repeat;
     display: block;
-    width: 300px;
-    height: 77px;
-    margin-top: 15px;
-    margin-left: 40px;
+    width: 210px;
+    height: 70px;
     z-index: 1;
-    transform: scale(1);
+  }
+  @media (max-width: 768px) {
+    .high-resolution-photo {
+      margin-left: 0 !important;
+      background-size: 165px 55px !important;
+      background-position: left;
+    }
   }
   .normal-photo{
     background-image: url('https://admincentralnews.xyz/wp-content/uploads/2020/05/central-news-logo.gif');
